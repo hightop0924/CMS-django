@@ -1,0 +1,233 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# Andre Manzano <andremanzano@gmail.com>, 2014
+# Cleber de Souza Corrêa <cscorrea@gmail.com>, 2014
+# Diefferson Môro <dieffersonmoro@gmail.com>, 2018
+# Diego Ponci <dgo.ponciano@gmail.com>, 2016
+# Fabian Braun <fsbraun@gmx.de>, 2022
+# Marcelo J. Both <marcelo.both@gmail.com>, 2012
+# Marcelo Soares <marcelo.rs@gmail.com>, 2015
+# Massa <massa_@msn.com>, 2015
+# Rafaela Santos <faelaphoenix@gmail.com>, 2019
+# Rafael Duarte Trevisan <rafa.trevisan@gmail.com>, 2013
+# Rodrigo de Almeida Sottomaior Macedo <rmsolucoeseminformatica@protonmail.com>, 2015
+# Rodrigo <rprior@infranology.com.br>, 2014-2015
+# Welligton Miguel <miguelwelligton@gmail.com>, 2020
+msgid ""
+msgstr ""
+"Project-Id-Version: django CMS\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-09-05 17:55+0200\n"
+"PO-Revision-Date: 2010-11-30 06:47+0000\n"
+"Last-Translator: Fabian Braun <fsbraun@gmx.de>, 2022\n"
+"Language-Team: Portuguese (Brazil) (http://app.transifex.com/divio/django-cms/language/pt_BR/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: pt_BR\n"
+"Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
+
+msgid "All"
+msgstr "Todos"
+
+msgid "Copy permissions"
+msgstr "Copiar permissões"
+
+msgid "Title"
+msgstr "Título"
+
+msgid "The default title"
+msgstr "O título padrão"
+
+msgid "Slug"
+msgstr "Slug"
+
+msgid "The part of the title that is used in the URL"
+msgstr "A parte do título que é usada na URL"
+
+msgid "Menu Title"
+msgstr "Título do Menu"
+
+msgid "Overwrite what is displayed in the menu"
+msgstr "Sobrescreva o que será exibido no menu"
+
+msgid "Page Title"
+msgstr "Título da página"
+
+msgid ""
+"Overwrites what is displayed at the top of your browser or in bookmarks"
+msgstr "Sobrescreve o que será exibido no topo do seu navegador ou nos favoritos"
+
+msgid "Description meta tag"
+msgstr "Descrição da tag meta"
+
+msgid "A description of the page used by search engines."
+msgstr "Uma descrição da página as vezes utilizada por sites de busca."
+
+msgid "Page type"
+msgstr "Tipo de página"
+
+msgid "Page Types"
+msgstr "Tipos de Página"
+
+msgid "Application"
+msgstr "Aplicação"
+
+msgid "Hook application to this page."
+msgstr "Associe uma aplicação a esta página."
+
+msgid "Overwrite URL"
+msgstr "Sobrescreva a URL"
+
+msgid "Keep this field empty if standard path should be used."
+msgstr "Se o caminho padrão deve ser utilizado, deixe este campo em branco."
+
+msgid "X Frame Options"
+msgstr "Opções X Frame"
+
+msgid "Whether this page can be embedded in other pages or websites"
+msgstr "Se essa página pode ser incorporada em outras páginas ou websites"
+
+msgid "Redirect"
+msgstr "Redirecionar"
+
+msgid "Redirects to this URL."
+msgstr "Redireciona para esta URL"
+
+msgid "Start typing..."
+msgstr "Comece a digitar..."
+
+msgid "Application configurations"
+msgstr "Configurações da aplicação"
+
+msgid "Language independent options"
+msgstr "Opções independentes de idioma"
+
+msgid "You entered an invalid URL."
+msgstr "Introduziu um URL inválido."
+
+#, python-format
+msgid "Please set the %(language)s slug before editing its advanced settings."
+msgstr "Por favor digite o slug %(language)s antes de editar as configurações avançadas."
+
+msgid "A page with this reverse URL id exists already."
+msgstr "Já existe uma página com esta URL reversa."
+
+msgid "Invalid application config value"
+msgstr "Valor inválido da configuração da aplicação"
+
+msgid "An application instance using this configuration already exists."
+msgstr "Uma instância da aplicação usando essa configuração já existe."
+
+msgid "An application instance with this name already exists."
+msgstr "Uma instância da aplicação usando esse nome já existe."
+
+msgid "You can't move the home page inside another page"
+msgstr "Você não pode mover a página inicial para dentro de outra página"
+
+msgid "Yes"
+msgstr "Sim"
+
+msgid "No"
+msgstr "Não"
+
+msgid "user"
+msgstr "usuário"
+
+msgid "can_view"
+msgstr "can_view"
+
+msgid "Add"
+msgstr "Adicionar"
+
+msgid "Change"
+msgstr "Modificar"
+
+msgid "Delete"
+msgstr "Excluir"
+
+msgid ""
+"Users can't create a page without permissions to change the created page. "
+"Edit permissions required."
+msgstr "Usuários não podem criar uma página sem permissão para mudar a página criada. São necessárias permissões de edição."
+
+msgid ""
+"Users can't delete a page without permissions to change the page. Edit "
+"permissions required."
+msgstr "Usuários não podem deletar uma página sem permissões para mudar a página. São necessárias permissões de edição."
+
+msgid ""
+"Users can't set page permissions without permissions to change a page. Edit "
+"permissions required."
+msgstr "Usuários não podem definir as permissões da página sem permissões para alterar uma página. São necessárias permissões de edição."
+
+msgid ""
+"Users can't delete page permissions without permissions to change a page. "
+"Edit permissions required."
+msgstr "Usuários não podem deletar as permissões da página sem permissões para alterar uma página. São necessárias permissões de edição."
+
+msgid ""
+"Users can't create page permissions without permissions to change the "
+"created permission. Edit permissions required."
+msgstr "Os usuários não podem excluir permissões de página sem permissões para alterar as permissões. Edite as permissões necessárias."
+
+msgid ""
+"Users can't delete page permissions without permissions to change "
+"permissions. Edit permissions required."
+msgstr "Os usuários não podem excluir permissões de página sem permissões para alterar as permissões. Edite as permissões necessárias."
+
+#, python-format
+msgid "Invalid plugin type '%s'"
+msgstr "Tipo de plugin inválido '%s'"
+
+msgid "Language must be set to a supported language!"
+msgstr "O idioma deve ser definido para um idioma suportado pelo sistema!"
+
+msgid "Parent plugin language must be same as language!"
+msgstr "O idioma do plugin pai deve ser o mesmo idioma!"
+
+msgid "Parent plugin placeholder must be same as placeholder!"
+msgstr "O placeholder do plugin pai deve ser o mesmo placeholder!"
+
+#, python-format
+msgid ""
+"Please create the %(language)s page translation before editing it's advanced"
+" settings."
+msgstr "Por favor crie a página de tradução em %(language)s antes de editar as configurações avançadas."
+
+msgid "Advanced Settings"
+msgstr "Configurações Avançadas"
+
+msgid "Publishing dates"
+msgstr "Datas de publicação"
+
+msgid "Change Permissions"
+msgstr "Mudar Permissões"
+
+#, python-format
+msgid "Cannot delete %(name)s"
+msgstr "Não foi possível excluir %(name)s"
+
+msgid "Are you sure?"
+msgstr "Você tem certeza?"
+
+#, python-format
+msgid "%(name)s object with primary key %(key)r does not exist."
+msgstr "Não existe nenhum objeto de '%(name)s' com chave primária '%(key)r'"
+
+msgid "Database error"
+msgstr "Erro na base de dados"
+
+msgid "Template not valid"
+msgstr "Template inválido."
+
+msgid "The template was successfully changed"
+msgstr "O template foi alterado com sucesso."
+
+msgid ""
+"Error! You don't have permissions to move this page. Please reload the page"
+msgstr "Erro! Você não tem permissão para mover esta página. Por favor, recarregue a página"
+

@@ -1,0 +1,11 @@
+.. _upgrade-to-3.5.2:
+
+###################
+3.5.2 release notes
+###################
+
+*******************
+What's new in 3.5.2
+*******************
+
+* Fixed a bug where the migration 0018 would fail under certain databases.

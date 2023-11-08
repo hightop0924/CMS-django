@@ -1,0 +1,19 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# angularcircle, 2012
+# angularcircle, 2012
+# Maciej Olko <maciej.olko@gmail.com>, 2016
+msgid ""
+msgstr ""
+
+msgid "/"
+msgstr ""
+
+msgid ":"
+msgstr ""
+
+msgid "Are you sure you want to change tabs without saving the page first?"
+msgstr "Czy na pewno chcesz zmienić zakładkę nie zapisując wcześniej strony?"

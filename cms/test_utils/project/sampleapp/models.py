@@ -1,0 +1,38 @@
+from django.db import models
+from django.urls import reverse
+from treebeard.mp_tree import MP_Node
+
+from cms.models.fields import PageField, PlaceholderField
+
+
+class Category(MP_Node):
+    parent = models.ForeignKey('self', blank=True, null=True, on_delete=models.CASCADE)
+    name = models.CharField(max_length=20)
+
+class Picture(models.Model):
+    image = models.ImageField(upload_to="pictures")
+    category = models.ForeignKey(Category, on_delete=models.CASCADE)
+
+
+class SampleAppConfig(models.Model):
+    namespace = models.CharField(
+        default=None,
+        max_length=100,
+        unique=True,
+    )
+
+
+class PageOnDeleteCascade(models.Model):
+    page = PageField(null=True)
+
+
+class PageOnDeleteSetNull(models.Model):
+    page = PageField(on_delete=models.SET_NULL, null=True)
+
+
+class PlaceholderOnDeleteCascade(models.Model):
+    placeholder = PlaceholderField('body', null=True)
+
+
+class PlaceholderOnDeleteSetNull(models.Model):
+    placeholder = PlaceholderField('body', on_delete=models.SET_NULL, null=True)

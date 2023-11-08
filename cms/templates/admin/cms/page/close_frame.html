@@ -1,0 +1,26 @@
+{% extends "admin/change_form.html" %}
+{% load i18n l10n static cms_static %}
+
+{% block title %}{% trans "Change a page" %}{% endblock %}
+
+{% block content %}
+{# trick for cms to understand that the plugin was actually correctly saved #}
+<div class="messagelist">
+    <div class="success"></div>
+</div>
+        Window.CMS.API.Helpers.dataBridge = {{ plugin_data|safe }};
+
+        {% if plugin_structure %}
+            Window.CMS.API.Helpers.dataBridge.structure = {{ plugin_structure|safe }};
+        {% endif %}
+
+        Window.CMS.$(document).ready(function () {
+            // make sure we're doing after the "modal" mechanism kicked in
+            setTimeout(function () {
+                // save current plugin
+                Window.CMS.API.Helpers.onPluginSave();
+            }, 100);
+        });
+    })(window.parent || window);
+</script>
+{% endblock %}

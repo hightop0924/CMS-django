@@ -1,0 +1,16 @@
+.. _upgrade-to-3.4.1:
+
+###################
+3.4.1 release notes
+###################
+
+*******************
+What's new in 3.4.1
+*******************
+
+  structure board
+* Fixed a bug where output from the ``show_admin_menu_for_pages`` template tag
+  was escaped in Django 1.9
+* Fixed a bug where plugins would be rendered as editable if toolbar was shown
+  but user was not in edit mode.
+* Fixed CSS reset issue with short-cuts modal

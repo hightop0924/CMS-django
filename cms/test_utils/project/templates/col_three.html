@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load i18n cms_tags %}
+
+{% block tpl_id %}tpl_col_three{% endblock %}
+
+{% block content %}
+	<h1>{% render_model request.current_page "page_title" %}</h1>
+    <div id="col1" class="grid_3">
+		{% include "sidebar_submenu.html" %}
+		{% block col_sidebar %}
+		{% endblock %}
+    </div>
+	
+    <div id="col3" class="grid_3">
+		{% block col_right %}
+			{% with "220" as width %}
+				{% placeholder col_right %}
+			{% endwith %}
+		{% endblock %}
+    </div>
+{% endblock %}

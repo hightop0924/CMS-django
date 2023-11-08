@@ -1,0 +1,19 @@
+.. _upgrade-to-3.0.7:
+
+###################
+3.0.7 release notes
+###################
+
+*******************
+What's new in 3.0.7
+*******************
+
+* Fixes an issue relating to `limit_choices_to` in `forms.MultiValueFields`
+* Fixes `PageField` to work in Django 1.7 environments
+
+Project & Community Governance
+==============================
+
+* Updates to community and project governance documentation
+* Added list of retired core developers
+* Added branch policy documentation

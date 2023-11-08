@@ -1,0 +1,11 @@
+.. _upgrade-to-3.4.7:
+
+###################
+3.4.7 release notes
+###################
+
+
+*******************
+What's new in 3.4.7
+*******************
+* Fixed a security vulnerability in the plugin_type url parameter to insert JavaScript code.
