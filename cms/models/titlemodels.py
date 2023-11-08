@@ -8,6 +8,17 @@ from cms.models.pagemodel import Page
 
 
 class Title(models.Model):
+    # These are the fields whose values are compared when saving
+    # a Title object to know if it has changed.
+    editable_fields = [
+        'title',
+        'slug',
+        'redirect',
+        'page_title',
+        'menu_title',
+        'meta_description',
+        'has_url_overwrite',
+    ]
 
     language = models.CharField(_("language"), max_length=15, db_index=True)
     title = models.CharField(_("title"), max_length=255)

@@ -13,22 +13,6 @@ import { Helpers } from './cms.base';
  * @namespace CMS
  */
 var PageTreeStickyHeader = new Class({
-    initialize: function initialize(options) {
-        var that = this;
-
-        that.options = $.extend(true, {}, that.options, options);
-        that.resize = 'resize.cms.pagetree.header';
-        that.scroll = 'scroll.cms.pagetree.header';
-        that.areClonesInDOM = false;
-
-        that._setupUI();
-        that._saveSizes();
-        that._events();
-    },
-
-    /**
-     * @method _setupUI
-     * @private
      */
     _setupUI: function _setupUI() {
         var container = this.options.container;

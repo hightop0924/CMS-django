@@ -8,16 +8,11 @@ django CMS 3.1 has been planned largely as a consolidation release, to build on 
 in 3.0 and establish a safe, solid base for more ambitious work in the future.
 
 In this release we have tried to maintain maximum backwards-compatibility, particularly for
-*****************
+third-party applications, and endeavoured to identify and tidy loose ends in the system wherever
+possible.
 
-Switch from MPTT to MP
-======================
+.. warning:: Upgrading from previous versions
 
-Since django CMS 2.0 we have relied on MPTT (Modified Pre-order Tree Traversal) for efficiently
-handling tree structures in the database.
-
-In 3.1, `Django MPTT <https://github.com/django-mptt/django-mptt>`_ has been replaced by
-`django-treebeard <https://github.com/django-treebeard/django-treebeard>`_, to improve performance and
 reliability.
 
 Over the years MPTT has proved not to be fast enough for big tree operations (>1000 pages); tree

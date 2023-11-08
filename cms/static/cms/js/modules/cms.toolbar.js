@@ -8,16 +8,11 @@ import Navigation from './cms.navigation';
 import Sideframe from './cms.sideframe';
 import Modal from './cms.modal';
 import Plugin from './cms.plugins';
- * @function hideDropdownIfRequired
- * @private
- * @param {jQuery} publishBtn
- */
-function hideDropdownIfRequired(publishBtn) {
-    var dropdown = publishBtn.closest('.cms-dropdown');
+import { filter, throttle, uniq } from 'lodash';
+import { showLoader, hideLoader } from './loader';
+import { Helpers, KEYS } from './cms.base';
 
-    if (dropdown.length && dropdown.find('li[data-cms-hidden]').length === dropdown.find('li').length) {
-        dropdown.hide().attr('data-cms-hidden', 'true');
-    }
+var SECOND = 1000;
 }
 
 /**

@@ -8,6 +8,17 @@
     display: none;
     position: fixed;
     top: 50%;
+    left: 50%;
+    overflow: hidden;
+    z-index: z(modal, base);
+    border-radius: $modal-border-radius;
+    background: $modal-bgcolor;
+    box-shadow: $modal-shadow;
+    user-select: none;
+    opacity: 0;
+    transform: translate3d(0, -10%, 0);
+    transition: transform 150ms, opacity 150ms;
+
     @at-root .cms-structure-mode-structure & {
         transform: translate3d(10%, 0, 0);
     }

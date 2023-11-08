@@ -8,3 +8,5 @@
     $wider-than-any-screen: -9999em;
     text-indent: $wider-than-any-screen * $approximate-em-value;
     overflow: hidden;
+    text-align: left;
+}

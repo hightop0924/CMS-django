@@ -13,22 +13,6 @@ class UserCreationForm(forms.ModelForm):
 
     error_messages = {
         'duplicate_email': "A user with that email already exists.",
-        'password_mismatch': "The two password fields didn't match.",
-    }
-
-    email = forms.EmailField(
-        label='Email',
-        help_text="Required.  Standard format email address.",
-    )
-
-    password1 = forms.CharField(
-        label='Password',
-        widget=forms.PasswordInput
-    )
-
-    password2 = forms.CharField(
-        label='Password confirmation',
-        widget=forms.PasswordInput,
         help_text="Enter the same password as above, for verification."
     )
 

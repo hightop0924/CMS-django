@@ -8,16 +8,11 @@
     top: 50%;
     left: 50%;
     z-index: z(dialog);
-        padding: 0;
-    }
-    form {
-        margin: 0 - $padding-large;
-        padding: 0 $padding-large !important;
-        border-top: 1px solid $gray-lighter;
-        label {
-            display: inline;
-        }
-        input[type="checkbox"] {
+    box-sizing: border-box;
+    width: $dialog-width;
+    margin: -100px 0 0  math.div(-$dialog-width, 2);
+    padding: $padding-large;
+    border: 1px solid $gray-lighter;
             position: relative;
             top: auto;
             vertical-align: middle;

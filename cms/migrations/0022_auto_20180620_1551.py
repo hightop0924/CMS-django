@@ -8,6 +8,17 @@ class Migration(migrations.Migration):
     dependencies = [
         ('cms', '0021_auto_20180507_1432'),
     ]
+
+    operations = [
+        migrations.AlterModelOptions(
+            name='page',
+            options={'default_permissions': ('add', 'change', 'delete'), 'permissions': (('view_page', 'Can view page'), ('publish_page', 'Can publish page'), ('edit_static_placeholder', 'Can edit static placeholders')), 'verbose_name': 'page', 'verbose_name_plural': 'pages'},
+        ),
+    ]
+
+    operations.append(
+        migrations.AlterField(
+            model_name='title',
             name='published',
             field=models.BooleanField(blank=True, default=False, verbose_name='is published'),
         ),

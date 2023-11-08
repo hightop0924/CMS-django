@@ -8,3 +8,10 @@
             <span class="cms-icon cms-icon-plugins"></span>
         </a>
     </div>
+{% else %}
+    <div class="cms-toolbar-item cms-toolbar-item-buttons {{ extra_classes|join:' ' }}">
+        {% for button in buttons %}
+            {{ button.render }}
+        {% endfor %}
+    </div>
+{% endif %}

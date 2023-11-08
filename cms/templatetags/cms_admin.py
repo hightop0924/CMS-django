@@ -13,22 +13,6 @@ from cms.constants import PUBLISHER_STATE_PENDING
 
 register = template.Library()
 
-CMS_ADMIN_ICON_BASE = "%sadmin/img/" % settings.STATIC_URL
-
-
-@register.simple_tag(takes_context=True)
-def show_admin_menu_for_pages(context, descendants, depth=1):
-    admin = context['admin']
-    request = context['request']
-
-    if 'tree' in context:
-        filtered = context['tree']['is_filtered']
-    else:
-        filtered = False
-
-    rows = admin.get_tree_rows(
-        request,
-        pages=descendants,
         language=context['preview_language'],
         depth=depth,
         follow_descendants=not bool(filtered),

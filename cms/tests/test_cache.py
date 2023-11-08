@@ -13,22 +13,6 @@ from cms.cache.placeholder import (
     _set_placeholder_cache_version,
     clear_placeholder_cache,
     get_placeholder_cache,
-    set_placeholder_cache,
-)
-from cms.exceptions import PluginAlreadyRegistered
-from cms.models import Page
-from cms.plugin_pool import plugin_pool
-from cms.test_utils.project.placeholderapp.models import Example1
-from cms.test_utils.project.pluginapp.plugins.caching.cms_plugins import (
-    DateTimeCacheExpirationPlugin,
-    LegacyCachePlugin,
-    NoCachePlugin,
-    SekizaiPlugin,
-    TimeDeltaCacheExpirationPlugin,
-    TTLCacheExpirationPlugin,
-    VaryCacheOnPlugin,
-)
-from cms.test_utils.testcases import CMSTestCase
 from cms.test_utils.util.fuzzy_int import FuzzyInt
 from cms.toolbar.toolbar import CMSToolbar
 from cms.utils.conf import get_cms_setting

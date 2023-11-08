@@ -8,6 +8,17 @@ var template = require('./help.html');
 /**
  * Binds [?] to open modal with shortcuts listing.
  *
+ * @function initHelpShortcut
+ * @public
+ */
+export default function initHelpShortcut() {
+    var shortcutAreas = CMS.config.lang.shortcutAreas;
+    var modal = new Modal({
+        width: 600,
+        height: 600,
+        resizable: false,
+        minimizable: false,
+        maximizable: false
     });
 
     /**

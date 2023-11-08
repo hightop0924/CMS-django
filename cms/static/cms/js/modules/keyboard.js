@@ -8,14 +8,9 @@ import $ from 'jquery';
  * @param {Function} functionBuilder function that accepts a function to wrap
  * @returns {Function}
  */
-keyboard._applyBindings = override(keyboard._applyBindings, function(originalBind) {
-    return function(event) {
-        if ($(':focus').is('input, textarea, select, [contenteditable]')) {
-            return true;
-        }
+function override(originalFunction, functionBuilder) {
+    var newFn = functionBuilder(originalFunction);
 
-        originalBind.call(this, event);
-    };
-});
-
+    newFn.prototype = originalFunction.prototype;
+    return newFn;
 export default keyboard;

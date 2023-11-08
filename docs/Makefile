@@ -13,22 +13,6 @@ PAPEROPT_a4     = -D latex_paper_size=a4
 PAPEROPT_letter = -D latex_paper_size=letter
 ALLSPHINXOPTS   = -n -d build/doctrees $(PAPEROPT_$(PAPER)) $(SPHINXOPTS) .
 
-# list the targets that we don't want confused with files in the directory
-.PHONY: help clean html dirhtml pickle json htmlhelp qthelp latex changes linkcheck doctest
-
-# "help" is first so that "make" without an argument acts like "make help".
-help:
-	@echo "Please use \`make <target>' where <target> is one of"
-	@echo "  html      to make standalone HTML files"
-	@echo "  run       to build the docs, watch for changes, and serve them at http://0.0.0.0:8001"
-	@echo "  dirhtml   to make HTML files named index.html in directories"
-	@echo "  pickle    to make pickle files"
-	@echo "  json      to make JSON files"
-	@echo "  htmlhelp  to make HTML files and a HTML help project"
-	@echo "  qthelp    to make HTML files and a qthelp project"
-	@echo "  latex     to make LaTeX files, you can set PAPER=a4 or PAPER=letter"
-	@echo "  changes   to make an overview of all changed/added/deprecated items"
-	@echo "  linkcheck to check all external links for integrity"
 	@echo "  doctest   to run all doctests embedded in the documentation (if enabled)"
 	@echo "  spelling  to check for typos in documentation"
 

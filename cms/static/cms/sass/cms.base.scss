@@ -8,6 +8,17 @@
 @import "settings/all";
 @import "mixins/all";
 
+//##############################################################################
+// IMPORT COMPONENTS
+@import "components/reset";
+@import "components/general";
+@import "components/animation";
+@import "components/iconography";
+@import "components/hovertooltip";
+@import "components/dialog";
+@import "components/content";
+@import "components/loader";
+@import "components/dark-mode-toggle";
 
 // div.cms needs to beat .cms-reset a selectors
 div.cms {

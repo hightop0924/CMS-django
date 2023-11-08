@@ -13,22 +13,6 @@ var SECOND_PAGE_TITLE = 'Second';
 
 casper.test.setUp(function(done) {
     casper
-        .start()
-        .then(cms.login())
-        .then(cms.addPage({ title: 'First page' }))
-        // adding second one because first is published by default
-        .then(cms.addPage({ title: SECOND_PAGE_TITLE }))
-        .run(done);
-});
-
-casper.test.tearDown(function(done) {
-    casper
-        .start()
-        .then(cms.removePage({ title: SECOND_PAGE_TITLE }))
-        .then(cms.removePage({ title: 'First page' })) // removing both pages
-        .then(cms.logout())
-        .run(done);
-});
 
 casper.test.begin('Different page template can be applied', function(test) {
     casper

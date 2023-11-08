@@ -8,16 +8,11 @@ from django.utils.encoding import force_str
 from django.utils.functional import cached_property
 from django.utils.module_loading import autodiscover_modules
 from django.utils.translation import activate, deactivate_all, get_language
-        self.discovered = False
 
-    def _clear_cached(self):
-        if 'registered_plugins' in self.__dict__:
-            del self.__dict__['registered_plugins']
-
-        if 'plugins_with_extra_menu' in self.__dict__:
-            del self.__dict__['plugins_with_extra_menu']
-
-        if 'plugins_with_extra_placeholder_menu' in self.__dict__:
+from cms.exceptions import PluginAlreadyRegistered, PluginNotRegistered
+from cms.plugin_base import CMSPluginBase
+from cms.utils.conf import get_cms_setting
+from cms.utils.helpers import normalize_name
             del self.__dict__['plugins_with_extra_placeholder_menu']
 
     def discover_plugins(self):

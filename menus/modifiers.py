@@ -8,16 +8,11 @@ class Marker(Modifier):
     current_node: selected = True
     siblings: sibling = True
     descendants: descendant = True
-                node.ancestor = False
-            if not node.parent:
-                if selected and not selected.parent:
-                    node.sibling = True
-                root_nodes.append(node)
-            if node.selected:
-                if node.parent:
-                    newnode = node
-                    while newnode.parent:
-                        newnode = newnode.parent
+    ancestors: ancestor = True
+    """
+    def modify(self, request, nodes, namespace, root_id, post_cut, breadcrumb):
+        if post_cut or breadcrumb:
+            return nodes
                         newnode.ancestor = True
                     for sibling in node.parent.children:
                         if not sibling.selected:

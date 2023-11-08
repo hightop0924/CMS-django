@@ -8,6 +8,17 @@ What's new in 2.3.4
 
 WymEditor fixed
 ===============
+
+2.3.4 fixes a critical issue with WymEditor that prevented it from load it's
+JavaScript assets correctly.
+
+Moved Norwegian translations
+============================
+
+The Norwegian translations are now available as ``nb``, which is the new
+(since 2003) official language code for Norwegian, replacing the older and
+deprecated ``no`` code.
+
 If your site runs in Norwegian, you need to change your ``LANGUAGES`` settings!
 
 Added support for time zones

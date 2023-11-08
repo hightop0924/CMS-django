@@ -13,22 +13,6 @@ casper.test.setUp(function(done) {
         .start()
         .then(cms.login())
         .then(cms.addPage({ title: 'First page' }))
-        .then(
-            cms.addPlugin({
-                type: 'LinkPlugin',
-                content: {
-                    id_name: 'Link Plugin',
-                    id_external_link: 'http://google.com'
-                }
-            })
-        )
-        .run(done);
-});
-
-casper.test.tearDown(function(done) {
-    casper.start().then(cms.removePage()).then(cms.logout()).run(done);
-});
-
 casper.test.begin('Doubleclick on plugins with links handled correctly', function(test) {
     casper
         .start(globals.editUrl)

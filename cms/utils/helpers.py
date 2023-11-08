@@ -8,6 +8,17 @@ def find_placeholder_relation(obj):
     return 'page'
 
 
+class classproperty:
+    """Like @property, but for classes, not just instances.
+
+    Example usage:
+
+        >>> from cms.utils.helpers import classproperty
+        >>> class A:
+        ...     @classproperty
+        ...     def x(cls):
+        ...         return 'x'
+        ...     @property
         ...     def y(self):
         ...         return 'y'
         ...

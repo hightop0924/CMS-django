@@ -8,15 +8,10 @@
 What's new in 3.2.5
 *******************
 
-* Fixes an issue relating to uninstalling a namespaced application
-* Adds "Can change page" permission
-* Fixes a number of page-tree issues the could lead data corruption under
-  certain conditions
-* Addresses security vulnerabilities in the `render_model` template tag that
-  could lead to escalation of privileges or other security issues.
-* Addresses a security vulnerability in the cms' usage of the messages framework
-* Fixes security vulnerabilities in custom FormFields that could lead to
-  escalation of privileges or other security issues.
+.. note::
+
+    This release is identical to 3.2.4, but had to be released also as 3.2.4 due
+    to a Python wheel packaging issue.
 
 .. important::
 

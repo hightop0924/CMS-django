@@ -8,6 +8,17 @@ from cms.publisher.query import PublisherQuerySet
 
 class PageQuerySet(PublisherQuerySet):
 
+    def on_site(self, site=None):
+        from cms.utils import get_current_site
+
+        if site is None:
+            site = get_current_site()
+        return self.filter(node__site=site)
+
+    def published(self, site=None, language=None):
+        now = timezone.now()
+        if language:
+            pub = self.on_site(site).filter(
                 Q(publication_date__lte=now) | Q(publication_date__isnull=True),
                 Q(publication_end_date__gt=now) | Q(publication_end_date__isnull=True),
                 title_set__published=True, title_set__language=language,

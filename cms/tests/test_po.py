@@ -14,22 +14,6 @@ from cms.utils.compat import DJANGO_2_2, DJANGO_3_0, DJANGO_3_1
 THIS_DIR = os.path.dirname(__file__)
 SOURCE_DIR = os.path.abspath(os.path.join(THIS_DIR, '..', 'locale'))
 
-
-def compile_messages():
-    # check if gettext is installed
-    try:
-        pipe = subprocess.Popen(['msgfmt', '--version'], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-    except OSError as e:
-        raise CommandError('Unable to run msgfmt (gettext) command. You probably don\'t have gettext installed. {}'.format(e))
-
-    basedirs = [os.path.join('conf', 'locale'), 'locale']
-    if os.environ.get('DJANGO_SETTINGS_MODULE'):
-        from django.conf import settings
-        basedirs.extend(settings.LOCALE_PATHS)
-
-    # Gather existing directories.
-    basedirs = set(map(os.path.abspath, filter(os.path.isdir, basedirs)))
-
     if not basedirs:
         raise CommandError("This script should be run from the Django SVN tree or your project or app tree, or with the settings module specified.")
 

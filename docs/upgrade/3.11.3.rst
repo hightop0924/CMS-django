@@ -8,6 +8,17 @@ This release focuses on Django 4.2 support which will be LTS. django CMS version
 
 Compared to 3.11.2 it fixes a bug which broke the dropdown menu in the page tree.
 
+********************
+What's new in 3.11.3
+********************
+
+Bug Fixes:
+----------
+* Remove superfluous curly bracket left behind on PR 7488 (#7529) -- Corentin Bettiol
+* Fix admin tests (#6848) for some post requests (#7535) -- Fabian Braun
+
+Statistics:
+-----------
 
 This release includes 2 pull requests, and was created with the help of the following contributors (in alphabetical order):
 

@@ -8,4 +8,8 @@
 What's new in 3.5.2
 *******************
 
-* Fixed a bug where the migration 0018 would fail under certain databases.
+Bug Fixes
+=========
+
+* Fixed a bug where short-cuts menu entry would stop working after toolbar reload
+* Fixed a race condition in frontend code that could lead to sideframe being

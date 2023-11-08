@@ -8,6 +8,17 @@ from .models import MultiColumns
 
 class MultiColumnPlugin(CMSPluginBase):
     model = MultiColumns
+    module = "Multi Columns"
+    name = "Multi Columns"
+    render_template = 'pluginapp/multicolumn/multicolumn.html'
+    allow_children = True
+    child_classes = ["ColumnPlugin"]
+    form = MultiColumnForm
+
+    def save_model(self, request, obj, form, change):
+        response = super().save_model(
+            request, obj, form, change
+        )
         for _x in range(int(form.cleaned_data['create'])):
             col = CMSPlugin(
                 parent=obj,

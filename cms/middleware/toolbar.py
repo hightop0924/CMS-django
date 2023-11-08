@@ -13,22 +13,6 @@ from cms.utils.request_ip_resolvers import get_request_ip_resolver
 
 get_request_ip = get_request_ip_resolver()
 
-
-class ToolbarMiddleware:
-    """
-    Middleware to set up CMS Toolbar.
-    """
-
-    def __init__(self, get_response):
-        self.get_response = get_response
-
-    def __call__(self, request):
-
-        if not self.is_cms_request(request):
-            return
-
-        edit_on = get_cms_setting('CMS_TOOLBAR_URL__EDIT_ON')
-        edit_off = get_cms_setting('CMS_TOOLBAR_URL__EDIT_OFF')
         disable = get_cms_setting('CMS_TOOLBAR_URL__DISABLE')
         anonymous_on = get_cms_setting('TOOLBAR_ANONYMOUS_ON')
         edit_enabled = edit_on in request.GET and 'preview' not in request.GET

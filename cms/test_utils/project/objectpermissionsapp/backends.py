@@ -8,6 +8,17 @@ class ObjectPermissionBackend:
         if user_obj and user_obj.is_superuser:
             return True
         elif obj is None or not isinstance(obj, Model) or \
+                not user_obj.is_authenticated or not user_obj.is_active:
+            return False
+        if len(perm.split('.')) > 1:
+            app_label, perm = perm.split('.')
+            if app_label != obj._meta.app_label:
+                raise Exception("Passed perm has app label of '%s' and "
+                                "given obj has '%s'" % (app_label, obj._meta.app_label))
+
+        perm = perm.split('.')[-1]
+        return perm in self.get_perms(user_obj, obj)
+
     def get_perms(self, user_obj, obj):
         """
         Returns list of ``codename``'s of all permissions for given ``obj``.

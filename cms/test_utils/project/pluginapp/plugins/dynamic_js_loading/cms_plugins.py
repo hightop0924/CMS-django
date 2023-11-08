@@ -8,6 +8,17 @@ from .models import DummyModel
 
 @plugin_pool.register_plugin
 class DynamicJsLoadingPlugin(CMSPluginBase):
+    model = DummyModel
+    name = "DynamicJsLoading"
+    render_template = "dynamic_js_loading/dynamic_js_loading.html"
+
+    def render(self, context, instance, placeholder):
+        """
+        This generates a list of all 16 class usage permutations.
+        originally from https://stackoverflow.com/a/54059999
+        >>> import itertools
+        >>> l=[False,True]
+        >>> list(itertools.product(l,repeat=4))
 
         [(False, False, False, False),
         (False, False, False, True),

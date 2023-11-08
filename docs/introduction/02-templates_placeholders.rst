@@ -8,6 +8,17 @@ In this tutorial we'll introduce Placeholders, and we're also going to show how
 you can make your own HTML templates CMS-ready.
 
 
+*********
+Templates
+*********
+
+You can use HTML templates to customise the look of your website, define
+Placeholders to mark sections for managed content and use special tags to
+generate menus and more.
+
+You can define multiple templates, with different layouts or built-in
+components, and choose them for each page as required. A page's template
+can be switched for another at any time.
 
 You'll find the site's templates in ``django-cms-quickstart/backend/templates``.
 

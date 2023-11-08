@@ -8,6 +8,17 @@ var KEYS = Modal.__GetDependency__('KEYS');
 var showLoader;
 var hideLoader;
 
+window.CMS = window.CMS || CMS;
+CMS.Modal = Modal;
+
+describe('CMS.Modal', function() {
+    fixture.setBase('cms/tests/frontend/unit/fixtures');
+
+    beforeEach(() => {
+        showLoader = jasmine.createSpy();
+        hideLoader = jasmine.createSpy();
+        Modal.__Rewire__('showLoader', showLoader);
+        Modal.__Rewire__('hideLoader', hideLoader);
         CMS._eventRoot = $('#cms-top');
         CMS.ChangeTracker = function() {
             return {

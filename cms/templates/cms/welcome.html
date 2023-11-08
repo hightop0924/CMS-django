@@ -8,6 +8,17 @@
     <link rel="icon" type="image/png" href="{% static 'cms/img/favicon.png' %}">
     {% render_block "css" %}
     <link rel="stylesheet" href="{% static_with_version 'cms/css/cms.base.css' %}">
+    <link rel="stylesheet" href="{% static_with_version 'cms/css/cms.welcome.css' %}">
+</head>
+<body class="cms-welcome-bg">
+    {% cms_toolbar %}
+    {% language request.toolbar.toolbar_language %}
+    <div class="cms-reset cms-welcome">
+        <header class="cms-welcome-header">
+            <h1 class="cms-welcome-heading">
+                <span class="cms-icon cms-icon-check"></span>
+                {% trans "Installation successful!" %}
+            </h1>
             <a href="/" class="cms-welcome-logo">
                 <span class="cms-hidden">{% trans "django CMS" %}</span>
             </a>

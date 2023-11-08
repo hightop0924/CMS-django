@@ -13,22 +13,6 @@ from cms.utils.conf import get_cms_setting, get_site_id
 @contextmanager
 def force_language(new_lang):
     old_lang = get_current_language()
-    if old_lang != new_lang:
-        translation.activate(new_lang)
-    yield
-    translation.activate(old_lang)
-
-
-def get_languages(site_id=None):
-    site_id = get_site_id(site_id)
-    result = get_cms_setting('LANGUAGES').get(site_id)
-    if not result:
-        result = []
-        defaults = get_cms_setting('LANGUAGES').get('default', {})
-        for code, name in settings.LANGUAGES:
-            lang = {'code': code, 'name': _(name)}
-            lang.update(defaults)
-            result.append(lang)
         get_cms_setting('LANGUAGES')[site_id] = result
     return result
 

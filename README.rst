@@ -8,16 +8,11 @@ django CMS
     :target: https://pypi.python.org/pypi/django-cms/
 .. image:: https://img.shields.io/badge/wheel-yes-green.svg
     :target: https://pypi.python.org/pypi/django-cms/
-
-.. ATTENTION::
-
-    Please use the ``develop`` branch as the target for pull requests for on-going development.
-
-    Security fixes will be backported to older branches by the core team as appropriate.
-
-
-********
-Features
+.. image:: https://img.shields.io/pypi/l/django-cms.svg
+    :target: https://pypi.python.org/pypi/django-cms/
+.. image:: https://codeclimate.com/github/divio/django-cms/badges/gpa.svg
+   :target: https://codeclimate.com/github/divio/django-cms
+   :alt: Code Climate
 ********
 
 * hierarchical pages

@@ -8,6 +8,17 @@ class UrlconfRevision(models.Model):
 
     class Meta:
         app_label = 'cms'
+
+    def save(self, *args, **kwargs):
+        """
+        Simply forces this model to be a singleton.
+        """
+        self.pk = 1
+        super().save(*args, **kwargs)
+
+    @classmethod
+    def get_or_create_revision(cls, revision=None):
+        """
         Convenience method for getting or creating revision.
         """
         if revision is None:

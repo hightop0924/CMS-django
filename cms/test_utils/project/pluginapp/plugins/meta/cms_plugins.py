@@ -9,6 +9,17 @@ class TestPlugin(CMSPluginBase):
     render_template = 'cms/content.html'
 
 
+plugin_pool.register_plugin(TestPlugin)
+
+
+class TestPlugin2(CMSPluginBase):
+    model = TestPluginModel2
+    render_template = 'cms/content.html'
+
+
+plugin_pool.register_plugin(TestPlugin2)
+
+
 class TestPlugin3(CMSPluginBase):
     model = TestPluginModel3
     render_template = 'cms/content.html'

@@ -13,6 +13,3 @@ $pagetree: false !default;
     @include button-variant($btn-caution-color, $btn-caution-bgcolor, $btn-caution-border, $pagetree);
 }
 
-.cms-btn-disabled img {
-    opacity: 0.2 !important;
-}

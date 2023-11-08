@@ -8,6 +8,17 @@ In :ref:`apphooks_how_to` we discuss some basic points of using apphooks. In thi
 complex implementation possibilities.
 
 
+.. _multi_apphook:
+
+***************************************
+Attaching an application multiple times
+***************************************
+
+Define a namespace at class-level
+=================================
+
+If you want to attach an application multiple times to different pages, then the class defining the apphook *must*
+have an ``app_name`` attribute::
 
     class MyApphook(CMSApp):
         name = _("My Apphook")

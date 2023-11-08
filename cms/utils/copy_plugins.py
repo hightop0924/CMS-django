@@ -8,16 +8,11 @@ def copy_plugins_to(old_plugins, to_placeholder,
     old_parent_cache = {}
     # For subplugin copy, top-level plugin's parent must be nulled
     # before copying.
-    if new_plugins and parent_plugin_id:
-        from cms.models import CMSPlugin
-        parent_plugin = CMSPlugin.objects.get(pk=parent_plugin_id)
-        for idx, plugin in enumerate(new_plugins):
-            if plugin.parent_id is None:
-                plugin.parent_id = parent_plugin_id
-                # Always use update fields to avoid side-effects.
-                # In this case "plugin" has invalid values for internal fields
-                # like numchild.
-                # The invalid value is only in memory because the instance
+    if old_plugins:
+        old_parent = old_plugins[0].parent
+        for old_plugin in old_plugins:
+            if old_plugin.parent == old_parent:
+                old_plugin.parent = old_plugin.parent_id = None
                 # was never updated.
                 plugin.save(update_fields=['parent'])
                 new_plugins[idx] = plugin.move(parent_plugin, pos="last-child")

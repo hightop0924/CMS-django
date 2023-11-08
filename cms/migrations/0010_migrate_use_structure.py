@@ -8,6 +8,17 @@ from django.db import models, migrations
 def _get_manager(model, db_alias):
     return model.objects.db_manager(db_alias)
 
+
+def forwards(apps, schema_editor):
+    db_alias = schema_editor.connection.alias
+
+    get_manager = functools.partial(_get_manager, db_alias=db_alias)
+
+    ContentType = apps.get_model('contenttypes', 'ContentType')
+    Permission = apps.get_model('auth', 'Permission')
+    Group = apps.get_model('auth', 'Group')
+    user_model = apps.get_model(settings.AUTH_USER_MODEL)
+    ph_model = apps.get_model('cms', 'Placeholder')
     page_model = apps.get_model('cms', 'Page')
 
     try:

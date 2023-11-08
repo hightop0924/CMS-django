@@ -8,6 +8,17 @@
 
 {% block toolbar_bottom %}
     {# start: messages #}
+    <div class="cms-messages">
+        <div class="cms-messages-close" title="{% trans 'Close' %}"><span class="cms-icon cms-icon-close"></span></div>
+        <div class="cms-messages-inner"></div>
+    </div>
+    {# end: messages #}
+
+    <div class="cms-sideframe">
+        <div class="cms-sideframe-frame"></div>
+        <div class="cms-sideframe-shim"></div>
+        <div class="cms-sideframe-dimmer"></div>
+        <div class="cms-sideframe-copy"></div>
         {% spaceless %}
             <div class="cms-sideframe-controls">
                 <div class="cms-sideframe-history">

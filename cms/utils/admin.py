@@ -13,4 +13,3 @@ def jsonify_request(response):
          * content: original response content
     """
     content = {'status': response.status_code, 'content': smart_str(response.content, response.charset)}
-    return HttpResponse(json.dumps(content), content_type="application/json")

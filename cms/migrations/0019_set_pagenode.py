@@ -8,6 +8,17 @@ from . import IrreversibleMigration
 
 def unpublish_never_published_pages(apps, schema_editor):
     """
+    Prior to 3.5, pages would be marked as "pending"
+    when users tried to publish a page with an unpublished parent.
+    This is no longer allowed, as a result any page that's set as
+    published but does not have a public version is marked as unpublished.
+    """
+    Page = apps.get_model('cms', 'Page')
+    db_alias = schema_editor.connection.alias
+    draft_pages = Page.objects.using(db_alias).filter(publisher_is_draft=True)
+    never_published_pages = Page.objects.using(db_alias).filter(
+        title_set__published=True,
+        publisher_is_draft=True,
         publisher_public__isnull=True,
     )
 

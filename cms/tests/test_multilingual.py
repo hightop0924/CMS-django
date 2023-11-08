@@ -8,16 +8,11 @@ from cms.api import add_plugin, create_page, create_title, publish_page
 from cms.exceptions import LanguageError
 from cms.forms.utils import update_site_and_page_choices
 from cms.models import EmptyTitle, Title
+from cms.test_utils.testcases import URL_CMS_PAGE_CHANGE_LANGUAGE, URL_CMS_PAGE_PUBLISH, CMSTestCase
+from cms.utils.conf import get_cms_setting, get_languages
+from menus.menu_pool import menu_pool
 
-
-def get_secondary_language(current_site=None):
-    """Fetch the other language of the current site settings."""
-    current_site = current_site or Site.objects.get_current()
-    return get_languages()[current_site.id][1]['code']
-
-
-@override_settings(
-    CMS_TEMPLATES=[
+TEMPLATE_NAME = 'tests/rendering/base.html'
         (TEMPLATE_NAME, TEMPLATE_NAME),
         ('extra_context.html', 'extra_context.html'),
         ('nav_playground.html', 'nav_playground.html'),

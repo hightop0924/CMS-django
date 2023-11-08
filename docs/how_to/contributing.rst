@@ -8,16 +8,11 @@ How to contribute a patch
    :ref:`contributing-code` and :ref:`testing` sections of the documentation.
 
 django CMS is an open project, and welcomes the participation of anyone who would like to
+contribute, whatever their any level of knowledge.
 
-.. _start-contributing:
+As well as code, we welcome contributions to django CMS's :ref:`documentation
+<contributing-documentation>` and :ref:`translations <contributing-translations>`.
 
-**********
-The basics
-**********
-
-The basic workflow for a code contribution will typically run as follows:
-
-#. Fork the `django CMS project <https://github.com/django-cms/django-cms>`_ GitHub repository to your
    own GitHub account
 #. Clone your fork locally::
 

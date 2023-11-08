@@ -13,22 +13,6 @@ ALLOWED_HOSTS etc., which may be site-specific or not.
 #.  Copy and edit ``wsgi.py`` and ``manage.py``  e. g. to ``wsgi_second_site.py`` and
     ``manage_second_site.py``: Change the reference to the settings like
     ``os.environ.setdefault("DJANGO_SETTINGS_MODULE", "my_project.settings_second_site")``, if the
-    settings are in ``my_project/settings_second_site.py``. Do this for each site.
-
-#.  In the site-specific settings import common base settings  in the first line like ``from
-    .base_settings import *`` and define ``SITE_ID``, ``ROOT_URLCONF``, ``CMS_LANGUAGES`` and other
-    settings that should be different on the sites. This way all the items from the imported base
-    settings can be overridden by later definitions:
-
-    ``settings.second_site.py``:
-
-    ::
-
-        from .base_settings import *
-
-        SITE_ID: int = 2
-        ROOT_URLCONF: str = 'my_project.urls_second_site'
-        # other site-specific settings…
 
         from .settings_local import *
 

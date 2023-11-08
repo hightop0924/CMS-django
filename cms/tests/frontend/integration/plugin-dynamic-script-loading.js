@@ -13,22 +13,6 @@ var include_lists = [
     [false, false, false, true],
     [false, false, true, false],
     [false, false, true, true],
-    [false, true, false, false],
-    [false, true, false, true],
-    [false, true, true, false],
-    [false, true, true, true],
-    [true, false, false, false],
-    [true, false, false, true],
-    [true, false, true, false],
-    [true, false, true, true],
-    [true, true, false, false],
-    [true, true, false, true],
-    [true, true, true, false],
-    [true, true, true, true]
-];
-
-var full_class_list = [
-    'cms-execute-js-to-render',
     'cms-trigger-event-document-DOMContentLoaded',
     'cms-trigger-event-window-DOMContentLoaded',
     'cms-trigger-event-window-load'

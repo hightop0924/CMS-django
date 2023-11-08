@@ -13,22 +13,6 @@ A django CMS Page wizard already exists, but you can create your own for other c
 
 ********************************
 Create a content-creation wizard
-********************************
-
-Creating a CMS content creation wizard for your own module is fairly easy.
-
-To begin, create a file in the root level of your module called ``forms.py``
-to create your form(s)::
-
-    # my_apps/forms.py
-
-    from django import forms
-
-    class MyAppWizardForm(forms.ModelForm):
-        class Meta:
-            model = MyApp
-            exclude = []
-
 Now create another file in the root level called ``cms_wizards.py``.
 In this file, import ``Wizard`` as follows::
 

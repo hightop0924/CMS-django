@@ -8,6 +8,17 @@ from django.contrib.auth.models import Group
 from django.db.models import Q
 
 from cms.constants import ROOT_USER_LEVEL, SCRIPT_USERNAME
+from cms.exceptions import NoPermissionsException
+from cms.models import GlobalPagePermission, Page, PagePermission
+from cms.utils.compat.dj import available_attrs
+from cms.utils.conf import get_cms_setting
+from cms.utils.page import get_clean_username
+
+# thread local support
+_thread_locals = Local()
+
+
+def set_current_user(user):
     """
     Assigns current user from request to thread_locals, used by
     CurrentUserMiddleware.

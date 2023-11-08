@@ -8,6 +8,17 @@ from cms.models.fields import PageField, PlaceholderField
 class Category(MP_Node):
     parent = models.ForeignKey('self', blank=True, null=True, on_delete=models.CASCADE)
     name = models.CharField(max_length=20)
+    description = PlaceholderField('category_description', 600)
+
+    def __str__(self):
+        return self.name
+
+    def get_absolute_url(self):
+        return reverse('category_view', args=[self.pk])
+
+    class Meta:
+        verbose_name_plural = 'categories'
+
 
 class Picture(models.Model):
     image = models.ImageField(upload_to="pictures")

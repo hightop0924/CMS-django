@@ -8,16 +8,11 @@ Development policies
 
 *************************
 Reporting security issues
-******
-Review
-******
+*************************
 
-All patches should be made as pull requests **against develop** to
-`the GitHub repository <https://github.com/django-cms/django-cms>`_. Patches should
-never be pushed directly.
+.. ATTENTION::
 
-**Nothing** may enter the code-base, *including the documentation*, without
-proper review and formal approval from the core team.
+    If you think you have discovered a security issue in our code, please report
 
 Reviews are welcomed by all members of the community. You don't need to be a core developer, or even an experienced
 programmer, to contribute usefully to code review. Even noting that you don't understand something in a pull request

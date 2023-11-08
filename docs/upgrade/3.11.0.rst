@@ -8,6 +8,17 @@ This release focuses on support for django 4 and dark mode.
 
 ********************
 What's new in 3.11.0
+********************
+
+Features:
+=========
+* Add pre commit functionality (#7204) (d1ecb6359) -- Mark Walker
+* Run workflows in concurrency groups (#7211) (04e843337) -- Mark Walker
+* Added concurrency option to github workflows (#7205) (546b36827) -- Mark Walker
+* Add support for django 4 (#7268) (9e8eb17) -- Vinit Kumar
+* Make Plugin Confirm Template configurable (#7267) (bab1e6e) -- Jacob Rief
+* Add support for dark mode for toolbar, page tree, structure tree, modals (#7245) (b2d9a08) -- Fabian Braun
+
 Bug Fixes:
 ==========
 

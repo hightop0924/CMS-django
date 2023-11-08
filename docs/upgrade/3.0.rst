@@ -8,6 +8,17 @@
 What's new in 3.0
 *****************
 
+.. warning:: Upgrading from previous versions
+
+    3.0 introduces some changes that **require** action if you are upgrading
+    from a previous version.
+
+.. note:: :ref:`See the quick upgrade guide <upgrading-from-2.4>`
+
+New Frontend Editing
+====================
+
+django CMS 3.0 introduces a new frontend editing system as well as a
 customisable Django admin skin (`djangocms_admin_style`_).
 
 In the new system, ``Placeholders`` and their plugins are no longer managed in

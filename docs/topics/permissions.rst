@@ -8,6 +8,17 @@ The django CMS permissions system is flexible, granular and multi-layered.
 ****************
 Permission modes
 ****************
+
+Permissions operate in two different modes, depending on the :setting:`CMS_PERMISSION` setting.
+
+* Simple permissions mode (``CMS_PERMISSION = False``): only the standard Django Users and Groups
+  permissions will apply. This is the default.
+* Page permissions mode (``CMS_PERMISSION = True``): as well as standard Django permissions, django
+  CMS provides row-level permissions on pages, allowing you to control the access of users to
+  different sections of a site, and sites within a multi-site project.
+
+.. _key-user-permissions:
+
 ********************
 Key user permissions
 ********************

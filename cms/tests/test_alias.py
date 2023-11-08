@@ -13,22 +13,6 @@ from cms.utils.urlutils import admin_reverse
 
 
 class AliasTestCase(TransactionCMSTestCase):
-
-    def _get_example_obj(self):
-        obj = Example1.objects.create(
-            char_1='one',
-            char_2='two',
-            char_3='tree',
-            char_4='four'
-        )
-        return obj
-
-    def test_add_plugin_alias(self):
-        page_en = api.create_page("PluginOrderPage", "col_two.html", "en")
-        ph_en = page_en.placeholders.get(slot="col_left")
-        text_plugin_1 = api.add_plugin(ph_en, "TextPlugin", "en", body="I'm the first")
-        with self.login_user_context(self.get_superuser()):
-            response = self.client.post(admin_reverse('cms_create_alias'), data={'plugin_id': text_plugin_1.pk})
             self.assertEqual(response.status_code, 200)
             response = self.client.post(admin_reverse('cms_create_alias'), data={'placeholder_id': ph_en.pk})
             self.assertEqual(response.status_code, 200)

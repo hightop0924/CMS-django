@@ -13,22 +13,6 @@ from cms.plugin_pool import plugin_pool
 from cms.utils import get_current_site, permissions
 from cms.utils.conf import get_cms_setting
 from cms.utils.page import get_available_slug
-from cms.utils.page_permissions import user_can_add_page, user_can_add_subpage
-
-try:
-    # djangocms_text_ckeditor is not guaranteed to be available
-    from djangocms_text_ckeditor.widgets import TextEditorWidget
-    text_widget = TextEditorWidget
-except ImportError:
-    text_widget = forms.Textarea
-
-
-class SlugWidget(AdminSlugWidget):
-    """Compatibility shim with deprecation warning:
-    SlugWidget has moved to cms.admin.forms"""
-    def __init__(self, *args, **kwargs):
-        warnings.warn("Import SlugWidget from cms.admin.forms. SlugWidget will be removed from cms.forms.wizards",
-                      DeprecationWarning, stacklevel=2)
         super().__init__(*args, **kwargs)
 
 

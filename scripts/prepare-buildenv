@@ -8,6 +8,17 @@ source "${SCRIPTS}/functions"
 
 check_command_exists python git awk sed pip npm xargs grep
 
+check_virtual_env
+
+status "- Installing needed python modules (silent)"
+grep -v django-cms docs/requirements.txt | grep -v '#' | xargs pip install --quiet django-admin &>/dev/null
+
+check_command_exists django-admin
+
+if [ ! -d cms ] ; then
+    error "Please only run this command within the django CMS root folder"
+    exit 1
+fi
 
 nvm_ver="$(cat .nvmrc)"
 

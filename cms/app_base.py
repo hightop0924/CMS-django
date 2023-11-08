@@ -8,16 +8,11 @@ class CMSApp:
     #: name of the apphook (required)
     name = None
     #: name of the app, this enables Django namespaces support (optional)
-        Checking for the runtime attribute should be a sane fix
-        """
-        if cls.app_config:
-            if getattr(cls.app_config, 'cmsapp', None) and cls.app_config.cmsapp != cls:
-                raise RuntimeError(
-                    'Only one AppHook per AppHookConfiguration must exists.\n'
-                    'AppHook %s already defined for %s AppHookConfig' % (
-                        cls.app_config.cmsapp.__name__, cls.app_config.__name__
-                    )
-                )
+    app_name = None
+    #: configuration model (optional)
+    app_config = None
+    #: if set to true, apphook inherits permissions from the current page
+    permissions = True
             cls.app_config.cmsapp = cls
         return super(CMSApp, cls).__new__(cls)
 

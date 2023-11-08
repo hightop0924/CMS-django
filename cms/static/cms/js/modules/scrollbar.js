@@ -13,4 +13,3 @@ export default memoize(function measure() {
     body[0].removeChild(scrollDiv);
 
     return scrollbarWidth;
-});

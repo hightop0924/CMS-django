@@ -8,6 +8,17 @@ from cms.test_utils.project.sampleapp.cms_apps import SampleApp
 from cms.test_utils.testcases import CMSTestCase
 from cms.test_utils.util.context_managers import apphooks, signal_tester
 
+
+class SignalTests(CMSTestCase):
+    def test_urls_need_reloading_signal_set_apphook(self):
+        superuser = self.get_superuser()
+
+        with apphooks(SampleApp):
+            with self.login_user_context(superuser):
+                with signal_tester(urls_need_reloading) as env:
+                    self.assertEqual(env.call_count, 0)
+                    cms_page = create_page(
+                        "apphooked-page",
                         "nav_playground.html",
                         "en",
                         published=True,

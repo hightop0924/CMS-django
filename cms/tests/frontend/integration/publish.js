@@ -8,6 +8,17 @@ var helpers = require('djangocms-casper-helpers');
 var globals = helpers.settings;
 var cms = helpers();
 
+var SECOND_PAGE_TITLE = 'Second'; // we rely on slug being "/second"
+
+casper.test.setUp(function(done) {
+    casper
+        .start()
+        .then(cms.login())
+        .then(cms.addPage({ title: 'First page' }))
+        .then(cms.addPage({ title: SECOND_PAGE_TITLE }))
+        .run(done);
+});
+
 casper.test.tearDown(function(done) {
     casper.start().then(cms.login()).then(cms.removePage()).then(cms.removePage()).then(cms.logout()).run(done);
 });

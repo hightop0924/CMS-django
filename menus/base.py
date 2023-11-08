@@ -13,22 +13,6 @@ class Menu:
     def get_nodes(self, request):
         """
         should return a list of NavigationNode instances
-        """
-        raise NotImplementedError
-
-
-class Modifier:
-
-    def __init__(self, renderer):
-        self.renderer = renderer
-
-    def modify(self, request, nodes, namespace, root_id, post_cut, breadcrumb):
-        pass
-
-
-class NavigationNode:
-
-    selected = None
     sibling = False
     ancestor = False
     descendant = False

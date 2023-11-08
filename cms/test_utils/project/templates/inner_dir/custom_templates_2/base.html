@@ -8,6 +8,17 @@
     {% render_block "css" %}
 
 	<style type="text/css">
+	body { font:normal 16px/18px "Times New Roman", Times, serif; margin:0; background:#fcfcfc; }
+
+	#header { padding:15px 10px 15px; box-shadow:#eee 0px 2px 5px; background:#fff;
+		clear:both; overflow:hidden; }
+	#header #logo { float:left; background:#eee; border-radius:10px; }
+	#header #logo a { color:#999; display:block; text-align:center; padding:10px 25px; text-decoration:none; }
+	#header #nav_lang,
+	#header #nav_main { float:left; padding-left:15px; }
+	#header #nav_lang ul,
+	#header #nav_main ul { list-style-type:none; padding:0; margin:0; }
+	#header #nav_lang ul li,
 	#header #nav_main ul li { float:left; padding:0; margin:0; }
 	#header #nav_lang ul li a,
 	#header #nav_main ul li a { float:left; padding:10px 5px; }

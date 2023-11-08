@@ -8,6 +8,17 @@
 What's new in 3.0.13
 ********************
 
+Bug Fixes
+=========
+
+* Numerous documentation including installation and tutorial updates
+* Numerous improvements to translations
+* Improves reliability of apphooks
+* Improves reliability of Advanced Settings on page when using apphooks
+* Allow page deletion after template removal
+* Improves upstream caching accuracy
+* Improves CMSAttachMenu registration
+* Improves handling of mis-typed URLs
 * Improves redirection as a result of changes to page slugs, etc.
 * Improves performance of "watched models"
 * Improves frontend performance relating to re-sizing the sideframe

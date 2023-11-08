@@ -8,15 +8,10 @@ Content creation wizards allow you to make use of the toolbar's **Create** butto
 applications. It opens up a simple dialog box with the basic fields required to create a new item.
 
 django CMS uses it for creating Pages, but you can add your own models to it.
-            exclude = []
 
-Then add a ``cms_wizards.py`` file, containing::
+In the ``polls_cms_integration`` application, add a ``forms.py`` file::
 
-    from cms.wizards.wizard_base import Wizard
-    from cms.wizards.wizard_pool import wizard_pool
-
-    from polls_cms_integration.forms import PollWizardForm
-
+    from django import forms
 
     class PollWizard(Wizard):
         pass

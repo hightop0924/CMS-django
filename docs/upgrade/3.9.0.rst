@@ -8,15 +8,10 @@
 This release of django CMS (first community driven release) introduces support for Django 3.2, and bugfix.
 We tried to catch up with as many long waited feature/bugfix requests as possible.
 
-* Replaced Travis.CI with Github Actions (#7000) (0f33b5839) -- Vinit Kumar
-* Added support for Github Actions based CI.
-* Added Support for testing frontend, docs, test and linting in different/parallel CI pipelines.
-* Added django-treebeard 4.5.1 support, previously pinned django-treebeard<4.5 to avoid breaking changes introduced
-* Improved performance of ``cms list plugins`` command
-* Page changed date added to the Page tree admin actions dropdown
 
-Bug Fixes:
-==========
+*******************
+What's new in 3.9.0
+*******************
 
 * Fixed an issue where the wrong page title was returned (#6466) (3a0c4d26e) -- Alexandre Joly
 * Fixed #6413: migrations 0019 and 0020 on multi db setups (#6708) (826d57f0f) -- Petr Glotov

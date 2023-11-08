@@ -8,6 +8,17 @@ var globals = helpers.settings;
 var content = globals.content.page;
 var cms = helpers();
 
+casper.test.setUp(function(done) {
+    casper.start().then(cms.login()).run(done);
+});
+
+casper.test.tearDown(function(done) {
+    casper.start().then(cms.logout()).run(done);
+});
+
+casper.test.begin('Add First Page with wizard', function(test) {
+    casper
+        .start(globals.editUrl)
         .waitForSelector('.cms-ready')
         .waitUntilVisible('.cms-modal', function() {
             this.click('.cms-modal .cms-modal-close');

@@ -8,3 +8,5 @@ How to contribute
     :maxdepth: 1
 
     code
+    documentation
+    translations

@@ -8,6 +8,17 @@ module.exports = function(opts) {
     var CMS_VERSION = opts.CMS_VERSION;
     var debug = opts.debug;
 
+    if (!debug) {
+        process.env.NODE_ENV = 'production';
+    }
+
+    var baseConfig = {
+        devtool: false,
+        watch: !!opts.watch,
+        entry: {
+            // CMS frontend
+            toolbar: PROJECT_PATH.js + '/toolbar.js',
+            // CMS admin
             'admin.base': PROJECT_PATH.js + '/admin.base.js',
             'admin.pagetree': PROJECT_PATH.js + '/admin.pagetree.js',
             'admin.changeform': PROJECT_PATH.js + '/admin.changeform.js',

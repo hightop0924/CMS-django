@@ -8,16 +8,11 @@ STEPLEN = 4
 ALPHABET = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 
 
+class MP_AddHandler:
 
+    def __init__(self):
+        self.stmts = []
 
-def _str2int(num):
-    return NUM.str2int(num)
-
-
-def _get_basepath(path, depth):
-    """:returns: The base path of another path up to a given depth"""
-    if path:
-        return path[0:depth * STEPLEN]
     return ''
 
 

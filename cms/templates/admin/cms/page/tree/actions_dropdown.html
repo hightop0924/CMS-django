@@ -8,6 +8,17 @@
                 data-id="{{ page.pk|unlocalize }}"
                 data-node-id="{{ node.pk|unlocalize }}"
                 data-apphook="{{ page.application_urls|default_if_none:"" }}"
+            {% endif %}
+        >
+            <a{% if not has_copy_page_permission %} class="cms-pagetree-dropdown-item-disabled"{% endif %} href="#" title="{% filter escapejs %}{% trans "Copy" %}{% endfilter %}">
+                <span class="cms-icon cms-icon-copy"></span>
+                <span>{% trans "Copy" %}<span>
+            </a>
+        </li>
+        <li
+            {% if has_move_page_permission %}
+                class="js-cms-tree-item-cut"
+                data-id="{{ page.pk|unlocalize }}"
                 data-node-id="{{ node.pk|unlocalize }}"
             {% endif %}
         >

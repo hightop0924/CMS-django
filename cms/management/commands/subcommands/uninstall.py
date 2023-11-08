@@ -8,16 +8,11 @@ from .base import SubcommandsCommand
 
 class UninstallApphooksCommand(LabelCommand):
     args = 'APPHOK_NAME'
-You have requested to remove %d '%s' apphooks.
-Are you sure you want to do this?
-Type 'yes' to continue, or 'no' to cancel: """ % (number_of_apphooks, label))
-            else:
-                confirm = 'yes'
-            if confirm == 'yes':
-                queryset.update(application_urls=None)
-                self.stdout.write("%d '%s' apphooks uninstalled\n" % (number_of_apphooks, label))
-        else:
-            self.stdout.write("no '%s' apphooks found\n" % label)
+    command_name = 'apphooks'
+    label = 'apphook name (eg SampleApp)'
+    help_string = 'Uninstalls (sets to null) specified apphooks for all pages'
+
+    def handle_label(self, label, **options):
 
 
 class UninstallPluginsCommand(LabelCommand):

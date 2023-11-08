@@ -8,6 +8,17 @@ from cms.constants import PLACEHOLDER_TOOLBAR_JS, PLUGIN_TOOLBAR_JS
 
 
 def get_placeholder_toolbar_js(placeholder, allowed_plugins=None):
+    label = placeholder.get_label() or ''
+    help_text = gettext(
+        'Add plugin to placeholder "%(placeholder_label)s"'
+    ) % {'placeholder_label': label}
+
+    data = {
+        'type': 'placeholder',
+        'name': force_str(label),
+        'placeholder_id': str(placeholder.pk),
+        'plugin_restriction': allowed_plugins or [],
+        'addPluginHelpTitle': force_str(help_text),
         'urls': {
             'add_plugin': placeholder.get_add_url(),
             'copy_plugin': placeholder.get_copy_url(),

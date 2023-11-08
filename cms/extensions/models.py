@@ -8,16 +8,11 @@ from cms.models import Page, Title
 class BaseExtension(models.Model):
     public_extension = models.OneToOneField(
         'self',
-        raise NotImplementedError('Function must be overwritten in subclasses and return the extended page object.')
-
-    def copy_relations(self, oldinstance, language):
-        """
-        Copy relations like many to many or foreign key relations to the public version.
-        Similar to the same named cms plugin function.
-
-        :param oldinstance: the draft version of the extension
-        """
-        pass
+        on_delete=models.CASCADE,
+        null=True,
+        editable=False,
+        related_name='draft_extension',
+    )
 
     @classmethod
     def _get_related_objects(cls):

@@ -8,6 +8,17 @@
 # Bouke Haarsma <bouke@haarsma.eu>, 2012
 # Bouke Haarsma <bouke@haarsma.eu>, 2012
 # Chris Wesseling <chris.wesseling@xs4all.nl>, 2011
+# Dries Desmet <dries@urga.be>, 2015
+# Evelijn Saaltink <evelijnsaaltink@gmail.com>, 2016-2017
+# Fabian Braun <fsbraun@gmx.de>, 2022
+# Jacques de Hooge <>, 2012
+# Jonas Obrist <me@ojii.ch>, 2011
+# Koen Molenaar <koen.molenaar26@gmail.com>, 2020
+# kurdy <transifex.net@kurdyenviolien.nl>, 2013
+# 1de368575dc6c0d8d201ce55df5bf6b3_7f263b1 <d9786047fd415516826a50cdd4e7fc0a_10482>, 2012
+# 1de368575dc6c0d8d201ce55df5bf6b3_7f263b1 <d9786047fd415516826a50cdd4e7fc0a_10482>, 2012
+# Maarten Draijer <maarten@madra.nl>, 2013
+# Maarten Draijer <maarten@madra.nl>, 2013
 # 9b534940ba88da102a8b2023ae8b0a5c_833de33 <6eff1839cb13e50fd6e97f7bd38c9dda_152118>, 2014-2015
 # Stefan van den Eertwegh <stefan@corebyte.nl>, 2022
 # Steven Vande Ryse <vande.ryse.steven@gmail.com>, 2012

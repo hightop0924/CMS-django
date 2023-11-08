@@ -8,6 +8,17 @@
 
         @media only screen and (min-width: 1000px),
                only screen and (min-width: 500px) and (max-width: 768px){
+
+            .column {
+                padding-left: 5px;
+                padding-right: 5px;
+                float: left;
+            }
+
+            .column3  {
+                width: 33.3%;
+            }
+
             .column2  {
                 width: 50%;
             }

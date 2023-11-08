@@ -8,6 +8,17 @@ The toolbar can contain various items, some of which in turn can contain other i
 are represented by the classes listed in :mod:`cms.toolbar.items`, and created using the various
 APIs described below.
 
+..  admonition:: Do not instantiate these classes manually
+
+    **These classes are described here for reference purposes only.** It is strongly recommended
+    that you do not create instances yourself, but use the methods listed here.
+
+
+*******************
+Classes and methods
+*******************
+
+:ref:`Common parameters <toolbar_parameters>` (``key``, ``verbose_name``, ``position``,
 ``on_close``, ``disabled``, ``active``) and options are described at the end of this document.
 
 ..  module:: cms.toolbar.toolbar

@@ -8,16 +8,11 @@
     display: block;
     position: absolute;
     right: $submenu-right;
-        margin-top: -( math.div($icon-size, 2));
-        color: $submenu-icon-color;
-    }
-
-    .cms-hover-tooltip {
-        position: absolute;
-        left: 0;
-        top: 0;
-        right: 0;
-        bottom: 0;
+    width: $submenu-icon-area-size;
+    height: $submenu-icon-area-size;
+    cursor: pointer;
+    top: 50%;
+    margin-top: -( math.div($submenu-icon-area-size, 2));
     }
 }
 .cms-dragbar .cms-submenu-btn {

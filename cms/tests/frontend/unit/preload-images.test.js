@@ -8,6 +8,17 @@ describe('preloadImagesFromMarkup', () => {
         preload = jasmine.createSpy();
         preloadImagesFromMarkup.__Rewire__('preload', preload);
     });
+
+    afterEach(() => {
+        preloadImagesFromMarkup.__ResetDependency__('preload');
+    });
+
+    const tests = [
+        {
+            input: 'no img',
+            expected: []
+        },
+        {
             input: '<img src="whatever">',
             expected: ['whatever']
         },

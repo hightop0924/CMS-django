@@ -13,22 +13,6 @@ implementation from scratch.
 *Revert to live* is the first step in fully re-implementing revision management on a new basis.
 
 The full set of changes is listed below.
-
-*******************
-What's new in 3.4.2
-*******************
-
-Bug Fixes
-=========
-
-* Escaped strings in ``close_frame`` JS template.
-* Fixed a bug with `text-transform` styles on inputs affecting CMS login
-* Fixed a typo in the confirmation message for copying plugins from a different
-  language
-* Fixed a bug which prevented certain migrations from running in a multi-db setup.
-* Fixed a regression which prevented the ``Page`` model from rendering correctly
-  when used in a ``raw_id_field``.
-* Fixed a regression which caused the CMS to cache the toolbar when ``CMS_PAGE_CACHE``
   was set to ``True`` and an anonymous user had ``cms_edit`` set to ``True`` on their session.
 * Fixed a regression which prevented users from overriding content in an inherited
   placeholder.

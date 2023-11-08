@@ -8,16 +8,11 @@ $(function() {
     var slug = $('#id_slug');
 
     addSlugHandlers(title, slug);
-    // public api for changing the language tabs
-    // used in admin/cms/page/change_form.html
-    window.CMS.API.changeLanguage = function(url) {
-        // also make sure that we will display the confirm dialog
-        // in case users switch tabs while editing plugins
-        var answer = true;
-        var changed = false;
 
-        if (slug.length) {
-            // check if the slug has the changed attribute
+    // all permissions and page states loader
+    $('div.loading').each(function() {
+        $(this).load($(this).attr('rel'));
+    });
             if (slug.data('changed') || title.data('changed')) {
                 changed = true;
             }

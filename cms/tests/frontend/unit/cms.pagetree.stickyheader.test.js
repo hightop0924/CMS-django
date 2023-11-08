@@ -8,6 +8,17 @@ window.CMS = window.CMS || CMS;
 CMS.PageTreeStickyHeader = PageTreeStickyHeader;
 CMS.$ = $;
 
+describe('CMS.PageTreeStickyHeader', function() {
+    fixture.setBase('cms/tests/frontend/unit/fixtures');
+
+    it('creates a PageTreeStickyHeader class', function() {
+        expect(CMS.PageTreeStickyHeader).toBeDefined();
+    });
+
+    var sticky;
+    var header1;
+    var col1;
+    var header2;
     var col2;
 
     beforeEach(function(done) {

@@ -8,6 +8,17 @@
 What's new in 3.1.3
 *******************
 
+Bug Fixes
+=========
+
+* Add missing migration
+* Exclude PageUser manager from migrations
+* Fix check for template instance in Django 1.8.x
+* Fix error in PageField for Django 1.8
+* Fix some Page tree bugs
+* Declare Django 1.6.9 dependency in ``setup.py``
+* Make sure cache version returned is an int
+* Fix issue preventing migrations to run on a new database (django 1.8)
 * Fix get User model in 0010 migration
 * Fix support for unpublished language pages
 * Add documentation for plugins data migration

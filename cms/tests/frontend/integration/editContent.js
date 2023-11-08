@@ -8,15 +8,10 @@ var globals = helpers.settings;
 var randomString = helpers.randomString;
 var casperjs = require('casper');
 var xPath = casperjs.selectXPath;
-            cms.addPlugin({
-                type: 'TextPlugin',
-                content: {
-                    id_body: 'Random text'
-                }
-            })
-        )
-        .run(done);
-});
+var cms = helpers(casperjs);
+
+// random text string for filtering and content purposes
+var randomText = randomString({ length: 50, withWhitespaces: false });
 
 casper.test.tearDown(function(done) {
     casper.start().then(cms.removePage()).then(cms.logout()).run(done);

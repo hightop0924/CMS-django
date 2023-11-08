@@ -8,3 +8,14 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
+        migrations.CreateModel(
+            name='UrlconfRevision',
+            fields=[
+                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
+                ('revision', models.CharField(max_length=255)),
+            ],
+            options={
+            },
+            bases=(models.Model,),
+        ),
+    ]

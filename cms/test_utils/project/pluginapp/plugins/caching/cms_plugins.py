@@ -8,16 +8,11 @@ from cms.plugin_base import CMSPluginBase
 class NoCachePlugin(CMSPluginBase):
     name = 'NoCache'
     module = 'Test'
-    module = 'Test'
     render_plugin = True
-    # NOTE: We have both the old mechanism...
     cache = False
     render_template = "plugins/nocache.html"
 
-    # And the new...
-    def get_cache_expiration(self, request, instance, placeholder):
-        """Content is only valid until for 30 seconds."""
-        return 30
+    def render(self, context, instance, placeholder):
 
     def render(self, context, instance, placeholder):
         context['now'] = datetime.now().microsecond

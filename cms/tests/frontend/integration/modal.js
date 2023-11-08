@@ -13,22 +13,6 @@ var resizeButton;
 casper.test.setUp(function(done) {
     casper.start().then(cms.login()).run(done);
 });
-
-casper.test.tearDown(function(done) {
-    casper.start().then(cms.logout()).run(done);
-});
-
-casper.test.begin('Manipulate Modal', function(test) {
-    var expandModal = 30;
-    var standardModal = 724;
-
-    casper
-        .start(globals.editUrl)
-        .waitUntilVisible('.cms-modal-open', function() {
-            test.assertExist('.cms-modal-open', 'Modal is open');
-            this.click('.cms-modal-maximize');
-        })
-        .then(function() {
             // Page size is 1280x1024
             test.assertEvalEquals(
                 function() {

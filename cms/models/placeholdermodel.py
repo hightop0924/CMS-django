@@ -8,6 +8,17 @@ from django.template.defaultfilters import title
 from django.utils.encoding import force_str
 from django.utils.translation import gettext_lazy as _
 
+from cms.cache.placeholder import clear_placeholder_cache
+from cms.constants import EXPIRE_NOW, MAX_EXPIRATION_TTL, PUBLISHER_STATE_DIRTY
+from cms.exceptions import LanguageError
+from cms.utils import get_language_from_request, get_site_id, permissions
+from cms.utils.conf import get_cms_setting
+from cms.utils.i18n import get_language_object
+from cms.utils.urlutils import admin_reverse
+
+
+class Placeholder(models.Model):
+    """
     Attributes:
         is_static       Set to "True" for static placeholders by the template tag
         is_editable     If False the content of the placeholder is not editable in the frontend

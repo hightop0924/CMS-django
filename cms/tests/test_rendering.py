@@ -8,6 +8,17 @@ from cms.cache.placeholder import get_placeholder_cache
 from cms.models import CMSPlugin, Page, Placeholder
 from cms.plugin_rendering import PluginContext
 from cms.test_utils.project.placeholderapp.models import Example1
+from cms.test_utils.testcases import CMSTestCase
+from cms.test_utils.util.fuzzy_int import FuzzyInt
+from cms.toolbar.toolbar import CMSToolbar
+from cms.views import details
+
+TEMPLATE_NAME = 'tests/rendering/base.html'
+INHERIT_TEMPLATE_NAME = 'tests/rendering/inherit.html'
+INHERIT_WITH_OR_TEMPLATE_NAME = 'tests/rendering/inherit_with_or.html'
+
+
+def sample_plugin_processor(instance, placeholder, rendered_content, original_context):
     original_context_var = original_context['original_context_var']
     return '%s|test_plugin_processor_ok|%s|%s|%s' % (
         rendered_content,

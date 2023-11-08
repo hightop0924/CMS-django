@@ -8,6 +8,17 @@ from .subcommands.copy import CopyCommand
 from .subcommands.delete_orphaned_plugins import DeleteOrphanedPluginsCommand
 from .subcommands.list import ListCommand
 from .subcommands.publisher_publish import PublishCommand
+from .subcommands.tree import FixTreeCommand
+from .subcommands.uninstall import UninstallCommand
+
+
+class Command(SubcommandsCommand):
+    command_name = 'cms'
+    subcommands = OrderedDict((
+        ('check', CheckInstallation),
+        ('copy', CopyCommand),
+        ('delete-orphaned-plugins', DeleteOrphanedPluginsCommand),
+        ('fix-tree', FixTreeCommand),
         ('list', ListCommand),
         ('publisher-publish', PublishCommand),
         ('uninstall', UninstallCommand),

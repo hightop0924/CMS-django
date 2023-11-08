@@ -13,22 +13,6 @@ import { Helpers, KEYS } from './modules/cms.base';
 import $ from 'jquery';
 import Class from 'classjs';
 
-// exposing globals for backwards compatibility
-import Messages from './modules/cms.messages';
-import ChangeTracker from './modules/cms.changetracker';
-import Modal from './modules/cms.modal';
-import Sideframe from './modules/cms.sideframe';
-import Clipboard from './modules/cms.clipboard';
-import Plugin from './modules/cms.plugins';
-import StructureBoard from './modules/cms.structureboard';
-import Toolbar from './modules/cms.toolbar';
-import Tooltip from './modules/cms.tooltip';
-
-// CMS by this time should be a global that has `_plugins` property
-const CMS = window.CMS || {};
-
-CMS._plugins = CMS._plugins || [];
-
 CMS.Messages = Messages;
 CMS.ChangeTracker = ChangeTracker;
 CMS.Modal = Modal;

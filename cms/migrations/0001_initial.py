@@ -13,22 +13,6 @@ template_default = TEMPLATE_INHERITANCE_MAGIC if get_cms_setting('TEMPLATE_INHER
 
 class Migration(migrations.Migration):
 
-    dependencies = [
-        ('auth', '__first__'),
-        migrations.swappable_dependency(settings.AUTH_USER_MODEL),
-        ('sites', '__first__'),
-    ]
-
-    operations = [
-        migrations.CreateModel(
-            name='CMSPlugin',
-            fields=[
-                ('id', models.AutoField(primary_key=True, verbose_name=_('ID'), auto_created=True, serialize=False)),
-                ('position', models.PositiveSmallIntegerField(null=True, editable=False, blank=True, verbose_name=_('position'))),
-                ('language', models.CharField(db_index=True, max_length=15, verbose_name=_("language"), editable=False)),
-                ('plugin_type', models.CharField(db_index=True, max_length=50, verbose_name=_('plugin_name'), editable=False)),
-                ('creation_date', models.DateTimeField(default=django.utils.timezone.now, verbose_name=_('creation date'), editable=False)),
-                ('changed_date', models.DateTimeField(auto_now=True)),
                 ('level', models.PositiveIntegerField(db_index=True, editable=False)),
                 ('lft', models.PositiveIntegerField(db_index=True, editable=False)),
                 ('rght', models.PositiveIntegerField(db_index=True, editable=False)),

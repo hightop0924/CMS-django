@@ -8,3 +8,9 @@ This file should result in following placeholders:
     - recursed_one (from this)
     - recursed_two (from 'placeholder_tests/recursive_extend.html' in placeholderapp app templates)
     - three (from base.html)
+
+{% endcomment %}
+
+{% block one %}
+    {% placeholder "recursed_one" %}
+{% endblock %}

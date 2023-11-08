@@ -8,6 +8,17 @@
 }
 .cms-btn-active .cms-hover-tooltip {
     &:before,
+    &:after {
+        opacity: 0 !important;
+        transition-delay: 0s !important;
+    }
+}
+
+/* Base styles for the entire tooltip */
+.cms-hover-tooltip:before,
+.cms-hover-tooltip:after {
+    visibility: hidden;
+    position: absolute;
     pointer-events: none;
     opacity: 0;
     transition: opacity 0.2s ease-in-out,

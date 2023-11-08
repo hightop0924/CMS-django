@@ -13,22 +13,6 @@ from cms.utils.permissions import (
     get_page_actions_for_user,
     has_global_permission,
 )
-
-PAGE_ADD_CODENAME = get_model_permission_codename(Page, 'add')
-PAGE_CHANGE_CODENAME = get_model_permission_codename(Page, 'change')
-PAGE_DELETE_CODENAME = get_model_permission_codename(Page, 'delete')
-PAGE_PUBLISH_CODENAME = get_model_permission_codename(Page, 'publish')
-PAGE_VIEW_CODENAME = get_model_permission_codename(Page, 'view')
-
-
-# Maps an action to the required Django auth permission codes
-_django_permissions_by_action = {
-    'add_page': [PAGE_ADD_CODENAME, PAGE_CHANGE_CODENAME],
-    'change_page': [PAGE_CHANGE_CODENAME],
-    'change_page_advanced_settings': [PAGE_CHANGE_CODENAME],
-    'change_page_permissions': [PAGE_CHANGE_CODENAME],
-    'delete_page': [PAGE_CHANGE_CODENAME, PAGE_DELETE_CODENAME],
-    'delete_page_translation': [PAGE_CHANGE_CODENAME, PAGE_DELETE_CODENAME],
     'move_page': [PAGE_CHANGE_CODENAME],
     'publish_page': [PAGE_CHANGE_CODENAME, PAGE_PUBLISH_CODENAME],
     'revert_page_to_live': [PAGE_CHANGE_CODENAME]

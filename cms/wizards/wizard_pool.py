@@ -8,16 +8,11 @@ class AlreadyRegisteredException(Exception):
     pass
 
 
-    _entries = {}
-    _discovered = False
-
-    def __init__(self):
-        self._reset()
-
-    # PRIVATE METHODS -----------------
-
-    def _discover(self):
-        if not self._discovered:
+def entry_choices(user, page):
+    """
+    Yields a list of wizard entries that the current user can use based on their
+    permission to add instances of the underlying model objects.
+    """
             autodiscover_modules('cms_wizards')
             self._discovered = True
 

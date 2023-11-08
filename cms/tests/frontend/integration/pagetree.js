@@ -8,6 +8,17 @@ var casperjs = require('casper');
 var helpers = require('djangocms-casper-helpers');
 var globals = helpers.settings;
 var cms = helpers(casperjs);
+var xPath = casperjs.selectXPath;
+
+var createJSTreeXPathFromTree = cms.createJSTreeXPathFromTree;
+var getPasteHelpersXPath = cms.getPasteHelpersXPath;
+
+var closeWizard = function() {
+    return function() {
+        // close default wizard modal
+        return this.waitUntilVisible('.cms-modal', function() {
+            this.click('.cms-modal .cms-modal-close');
+        }).waitWhileVisible('.cms-modal');
     };
 };
 

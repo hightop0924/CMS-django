@@ -8,3 +8,8 @@ class PageMetaClass(ModelBase):
         super_new = super(PageMetaClass, cls).__new__
 
         if 'objects' in attrs:
+            if not isinstance(attrs['objects'], PublisherManager):
+                raise ValueError("Model %s extends Publisher, "
+                                 "so its 'objects' manager must be "
+                                 "a subclass of publisher.PublisherManager") % (name,)
+        else:

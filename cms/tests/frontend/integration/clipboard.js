@@ -8,6 +8,17 @@ var casperjs = require('casper');
 var helpers = require('djangocms-casper-helpers');
 var globals = helpers.settings;
 var cms = helpers(casperjs);
+var xPath = casperjs.selectXPath;
+
+casper.test.setUp(function(done) {
+    casper
+        .start()
+        .then(cms.login())
+        .then(cms.addPage({ title: 'First page' }))
+        .then(
+            cms.addPlugin({
+                type: 'TextPlugin',
+                content: {
                     id_body: 'Test text'
                 }
             })

@@ -8,6 +8,17 @@ from cms.forms.validators import validate_url_extra
 from cms.forms.widgets import PageSelectWidget, PageSmartLinkWidget
 from cms.models.pagemodel import Page
 
+
+class SuperLazyIterator:
+    def __init__(self, func):
+        self.func = func
+
+    def __iter__(self):
+        return iter(self.func())
+
+
+class LazyChoiceField(forms.ChoiceField):
+    def _set_choices(self, value):
         # we overwrite this function so no list(value) is called
         self._choices = self.widget.choices = value
 

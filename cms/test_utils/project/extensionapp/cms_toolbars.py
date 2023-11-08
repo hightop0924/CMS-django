@@ -8,16 +8,11 @@ from cms.toolbar_pool import toolbar_pool
 from cms.utils.page_permissions import user_can_change_page
 from cms.utils.urlutils import admin_reverse
 
-        if user_can_change_page(self.request.user, page=self.page):
-            try:
-                mytitleextension = MyTitleExtension.objects.get(extended_object_id=self.page.id)
-            except MyTitleExtension.DoesNotExist:
-                mytitleextension = None
-            try:
-                if mytitleextension:
-                    url = admin_reverse('extensionapp_mytitleextension_change', args=(mytitleextension.pk,))
-                else:
-                    url = admin_reverse('extensionapp_mytitleextension_add') + '?extended_object=%s' % self.page.pk
+
+@toolbar_pool.register
+class MyTitleExtensionToolbar(CMSToolbar):
+    def populate(self):
+        # always use draft if we have a page
             except NoReverseMatch:
                 # not in urls
                 pass

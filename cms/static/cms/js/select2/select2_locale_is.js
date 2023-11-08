@@ -13,5 +13,3 @@
         formatSearching: function () { return "Leita…"; }
     };
 
-    $.extend($.fn.select2.defaults, $.fn.select2.locales['is']);
-})(jQuery);

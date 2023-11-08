@@ -8,6 +8,17 @@ import Class from 'classjs';
 /**
  * Displays a message underneath the toolbar.
  *
+ * @class Messages
+ * @namespace CMS
+ */
+var Messages = new Class({
+    options: {
+        messageDuration: 300,
+        messageDelay: 3000
+    },
+
+    initialize: function initialize(options) {
+        this.options = $.extend(true, {}, this.options, options);
 
         // states and events
         this.click = 'click.cms.message';

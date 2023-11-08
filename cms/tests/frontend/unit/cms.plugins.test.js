@@ -13,22 +13,6 @@ CMS.API = CMS.API || {};
 CMS.API.Helpers = Plugin.__GetDependency__('Helpers');
 CMS.KEYS = Plugin.__GetDependency__('KEYS');
 CMS.$ = $;
-CMS.Plugin = Plugin;
-CMS.Modal = Modal;
-CMS.Messages = Messages;
-CMS.Clipboard = Clipboard;
-CMS.API.Clipboard = new CMS.Clipboard();
-var showLoader;
-var hideLoader;
-
-describe('CMS.Plugin', function() {
-    fixture.setBase('cms/tests/frontend/unit/fixtures');
-
-    it('creates a Plugin class', function() {
-        expect(CMS.Plugin).toBeDefined();
-    });
-
-    it('has public API', function() {
         expect(CMS.Plugin.prototype.addPlugin).toEqual(jasmine.any(Function));
         expect(CMS.Plugin.prototype.editPlugin).toEqual(jasmine.any(Function));
         expect(CMS.Plugin.prototype.copyPlugin).toEqual(jasmine.any(Function));

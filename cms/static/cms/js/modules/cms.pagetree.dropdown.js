@@ -8,6 +8,17 @@ import Class from 'classjs';
  *
  * @class PageTreeDropdowns
  * @namespace CMS
+ */
+var PageTreeDropdowns = new Class({
+    options: {
+        dropdownSelector: '.js-cms-pagetree-dropdown',
+        triggerSelector: '.js-cms-pagetree-dropdown-trigger',
+        menuSelector: '.js-cms-pagetree-dropdown-menu',
+        openCls: 'cms-pagetree-dropdown-menu-open'
+    },
+
+    initialize: function initialize(options) {
+        this.options = $.extend(true, {}, this.options, options);
         this.click = 'click.cms.pagetree.dropdown';
 
         this._setupUI();

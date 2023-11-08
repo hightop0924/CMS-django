@@ -13,22 +13,6 @@ def step2_form_factory(mixin_cls, entry_form_class, attrs=None):
     forms.
     """
     if attrs is None:
-        attrs = {}
-
-    # class name is hardcoded to be consistent with the step 1 form.
-    # this is meant to be used only in the context of the form wizard.
-    class_name = 'WizardStep2Form'
-    meta_class = type(entry_form_class)
-    FormClass = meta_class(class_name, (mixin_cls, entry_form_class), attrs)
-    return FormClass
-
-
-class BaseFormMixin:
-    has_separate_optional_fields = False
-
-    def __init__(self, *args, **kwargs):
-        self.page = kwargs.pop('wizard_page', None)
-        self.user = kwargs.pop('wizard_user', None)
         self.language_code = kwargs.pop('wizard_language')
         super().__init__(*args, **kwargs)
 

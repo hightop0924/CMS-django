@@ -8,3 +8,8 @@ if getattr(OriginalUser._meta, 'swapped', False):
         list_display = ('username', 'email', 'get_full_name', 'is_staff')
         search_fields = ('username', 'email',)
         fieldsets = (
+            (None, {'fields': ('username', 'password')}),
+            ('Personal info', {'fields': ('email',)}),
+            ('Permissions', {'fields': ('is_active', 'is_staff', 'is_superuser',
+                                        'groups', 'user_permissions')}),
+            ('Important dates', {'fields': ('last_login',)}),

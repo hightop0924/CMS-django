@@ -8,6 +8,17 @@ var globals = helpers.settings;
 var casperjs = require('casper');
 var xPath = casperjs.selectXPath;
 var cms = helpers(casperjs);
+
+casper.test.setUp(function(done) {
+    casper
+        .start()
+        .then(cms.login())
+        .then(cms.addPage({ title: 'home' }))
+        .then(
+            cms.addPlugin({
+                type: 'TextPlugin',
+                content: {
+                    id_body: 'Dummy to create history'
                 }
             })
         )

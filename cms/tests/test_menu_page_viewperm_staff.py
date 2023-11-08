@@ -8,6 +8,17 @@ __all__ = [
 ]
 
 
+@override_settings(
+    CMS_PERMISSION=True,
+    CMS_PUBLIC_FOR='staff',
+)
+class ViewPermissionComplexMenuStaffNodeTests(ViewPermissionTests):
+    """
+    Test CMS_PUBLIC_FOR=staff group access and menu nodes rendering
+    """
+
+    def test_public_pages_anonymous_norestrictions(self):
+        """
         All pages are INVISIBLE to an anonymous user
         """
         all_pages = self._setup_tree_pages()

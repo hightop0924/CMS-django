@@ -8,6 +8,17 @@ var showLoader;
 var hideLoader;
 
 window.CMS = window.CMS || CMS;
+CMS.Sideframe = Sideframe;
+
+describe('CMS.Sideframe', function() {
+    beforeEach(() => {
+        CMS.API.Helpers._isStorageSupported = true;
+        showLoader = jasmine.createSpy();
+        hideLoader = jasmine.createSpy();
+        Sideframe.__Rewire__('showLoader', showLoader);
+        Sideframe.__Rewire__('hideLoader', hideLoader);
+    });
+
     afterEach(() => {
         Sideframe.__ResetDependency__('showLoader');
         Sideframe.__ResetDependency__('hideLoader');

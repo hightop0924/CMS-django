@@ -8,6 +8,17 @@ from django.core import management
 from django.core.management import CommandError
 from django.test.utils import override_settings
 from djangocms_text_ckeditor.cms_plugins import TextPlugin
+
+from cms.api import add_plugin, create_page, create_title
+from cms.management.commands.subcommands.list import plugin_report
+from cms.models import Page, StaticPlaceholder
+from cms.models.placeholdermodel import Placeholder
+from cms.models.pluginmodel import CMSPlugin
+from cms.test_utils.fixtures.navextenders import NavextendersFixture
+from cms.test_utils.project.sampleapp.cms_apps import SampleApp
+from cms.test_utils.testcases import CMSTestCase
+from cms.test_utils.util.context_managers import apphooks
+
 APPHOOK = "SampleApp"
 PLUGIN = "TextPlugin"
 

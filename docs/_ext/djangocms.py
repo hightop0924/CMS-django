@@ -8,3 +8,4 @@ def setup(app):
         directivename = "templatetag",
         rolename      = "ttag",
         indextemplate = "pair: %s; template tag"
+    )

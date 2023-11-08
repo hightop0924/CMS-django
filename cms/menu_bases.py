@@ -13,22 +13,6 @@ class CMSAttachMenu(Menu):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        if self.cms_enabled and not self.name:
-            raise ValidationError(
-                "the menu %s is a CMSAttachMenu but has no name defined!" %
-                self.__class__.__name__)
-
-    @classmethod
-    def get_apphooks(cls):
-        """
-        Returns a list of apphooks to which this CMSAttachMenu is attached.
-
-        Calling this does NOT produce DB queries.
-        """
-        apps = []
-        for key, _ in apphook_pool.get_apphooks():
-            app = apphook_pool.get_apphook(key)
-            if cls in app.get_menus():
                 apps.append(app)
         return apps
 

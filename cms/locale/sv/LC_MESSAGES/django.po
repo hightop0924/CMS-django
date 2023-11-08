@@ -8,6 +8,17 @@
 # Björn Sandberg <adaptivelogic@gmail.com>, 2013
 # Christofer Huynh <christofer.huynh@gmail.com>, 2018
 # Fabian Braun <fsbraun@gmx.de>, 2022
+# hula <fredrik@1px.se>, 2014
+# hannseman <hannseman@gmail.com>, 2011
+# hannseman <hannseman@gmail.com>, 2011
+# hula <fredrik@1px.se>, 2014
+# Jakob Hedman <jakob.hedman@gmail.com>, 2014
+# Jakob Hedman <jakob.hedman@gmail.com>, 2014
+# Jakob Hedman <jakob.hedman@gmail.com>, 2014
+# joelbitar <joel@joelbitar.se>, 2014
+# joelbitar <joel@joelbitar.se>, 2014,2017
+# Mattias Lindvall <mattias.lindvall@gmail.com>, 2013
+# osterberg <mikael@osterberg.me>, 2015
 # ooskar <oskar@1px.se>, 2014
 # ooskar <oskar@1px.se>, 2014
 # osterberg <mikael@osterberg.me>, 2015

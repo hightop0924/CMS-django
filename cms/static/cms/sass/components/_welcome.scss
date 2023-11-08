@@ -8,6 +8,17 @@
 }
 .cms-welcome {
     color: $gray-darker;
+    width: $welcome-width;
+    min-width: $welcome-min-width;
+    margin: 0 auto;
+
+    a {
+        color: $color-primary;
+        &:hover,
+        &:active,
+        &:focus {
+            text-decoration: underline;
+        }
     }
 
     .cms-hidden {

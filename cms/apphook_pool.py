@@ -8,6 +8,17 @@ from cms.app_base import CMSApp
 from cms.exceptions import AppAlreadyRegistered
 from cms.utils.conf import get_cms_setting
 
+
+class ApphookPool:
+
+    def __init__(self):
+        self.apphooks = []
+        self.apps = {}
+        self.discovered = False
+
+    def clear(self):
+        # TODO: remove this method, it's Python, we don't need it.
+        self.apphooks = []
         self.apps = {}
         self.discovered = False
 

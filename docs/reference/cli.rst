@@ -8,6 +8,17 @@ Command Line Interface
 
 .. highlight:: bash
 
+You can invoke the django CMS command line interface using the ``cms`` Django
+command::
+
+    python manage.py cms
+
+
+**********************
+Informational commands
+**********************
+
+.. _cms-list-command:
 
 ``cms list``
 ============

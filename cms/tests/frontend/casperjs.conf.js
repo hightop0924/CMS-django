@@ -8,9 +8,8 @@ module.exports = {
         this.viewportSize();
         this.timeout(20000);
     },
-    },
 
-    timeout: function (timeout) {
-        casper.options.waitTimeout = timeout || 10000;
-    }
-};
+    viewportSize: function (width, height) {
+        var viewportWidth = width || 1280;
+        var viewportHeight = height || 1024;
+

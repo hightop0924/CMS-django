@@ -8,6 +8,17 @@ from .models import TestPluginAlphaModel, TestPluginBetaModel
 class TestPluginAlpha(CMSPluginBase):
     model = TestPluginAlphaModel
     render_template = 'mti_pluginapp/alpha.html'
+    name = 'test mti plugin alpha'
+
+    def render(self, context, instance, placeholder):
+        context['alpha'] = instance.alpha
+        return context
+
+
+plugin_pool.register_plugin(TestPluginAlpha)
+
+
+class TestPluginBeta(CMSPluginBase):
     model = TestPluginBetaModel
     render_template = 'mti_pluginapp/beta.html'
     name = 'test mti plugin beta'

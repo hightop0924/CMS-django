@@ -8,16 +8,11 @@ from django.core.exceptions import PermissionDenied
 from django.db import router, transaction
 from django.http import (
     HttpResponse,
-from django.utils.html import conditional_escape
-from django.utils.translation import gettext as _
-from django.views.decorators.clickjacking import xframe_options_sameorigin
-from django.views.decorators.http import require_POST
-
-from cms import operations
-from cms.admin.forms import PluginAddValidationForm
-from cms.constants import SLUG_REGEXP
-from cms.exceptions import PluginLimitReached
-from cms.models.placeholdermodel import Placeholder
+    HttpResponseBadRequest,
+    HttpResponseForbidden,
+    HttpResponseNotFound,
+    HttpResponseRedirect,
+)
 from cms.models.placeholderpluginmodel import PlaceholderReference
 from cms.models.pluginmodel import CMSPlugin
 from cms.plugin_pool import plugin_pool

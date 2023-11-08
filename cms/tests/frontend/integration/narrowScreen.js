@@ -8,6 +8,17 @@ var helpers = require('djangocms-casper-helpers');
 var globals = helpers.settings;
 var cms = helpers(casperjs);
 
+casper.test.setUp(function(done) {
+    casper.start().then(cms.login()).then(cms.addPage({ title: 'First page' })).run(done);
+});
+
+casper.test.tearDown(function(done) {
+    casper.start().then(cms.removePage()).then(cms.logout()).run(done);
+});
+
+casper.test.begin('Toolbar menu is collapsed on narrow screens (320, 240)', function(test) {
+    casper
+        .start(globals.editUrl)
         .viewport(320, 480)
         .waitForSelector('.cms-toolbar-expanded', function() {
             test.assertSelectorHasText(

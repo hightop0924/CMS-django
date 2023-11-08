@@ -8,6 +8,17 @@ var globals = helpers.settings;
 var randomString = helpers.randomString;
 var casperjs = require('casper');
 var xPath = casperjs.selectXPath;
+var cms = helpers(casperjs);
+// random text string for filtering and content purposes
+var randomText = randomString({ length: 50, withWhitespaces: false });
+
+casper.test.setUp(function(done) {
+    casper.start().then(cms.login()).then(cms.addPage({ title: 'First page' })).run(done);
+});
+
+casper.test.tearDown(function(done) {
+    casper.start().then(cms.removePage()).then(cms.logout()).run(done);
+});
 
 casper.test.begin('User Add Content', function(test) {
     casper

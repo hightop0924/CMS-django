@@ -13,22 +13,6 @@ class Migration(IrreversibleMigration):
     ]
 
     operations = [
-        migrations.AlterModelOptions(
-            name='page',
-            options={'verbose_name': 'page', 'verbose_name_plural': 'pages', 'permissions': (
-            ('view_page', 'Can view page'), ('publish_page', 'Can publish page'),
-            ('edit_static_placeholder', 'Can edit static placeholders'))},
-        ),
-        migrations.AlterField(
-            model_name='page',
-            name='node',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='cms_pages',
-                                    to='cms.TreeNode'),
-        ),
-        migrations.RemoveField(
-            model_name='page',
-            name='migration_0018_control',
-        ),
         migrations.RemoveField(
             model_name='page',
             name='site',

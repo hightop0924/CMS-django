@@ -8,6 +8,17 @@
 
 /* eslint-disable complexity, semi, no-param-reassign, no-magic-numbers, require-jsdoc, curly, wrap-regex, eqeqeq,
     new-cap, no-multi-spaces, no-bitwise, no-extra-parens */
+// modified for cms purposes - event names, parent resolutions, class names
+import $ from 'jquery';
+
+// DROPDOWN CLASS DEFINITION
+// =========================
+
+var backdrop = '.cms-dropdown-backdrop';
+var toggle = '.cms-dropdown-toggle';
+var Dropdown = function (element) {
+    $(element).on('click.cms.dropdown', this.toggle);
+};
 
 function getParent($this) {
     return $this.closest('.cms-dropdown');

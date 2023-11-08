@@ -8,16 +8,11 @@ from cms.utils.conf import get_cms_setting
 
 
 def get_request_ip_resolver():
-        raise ImproperlyConfigured(
-            _('Unable to find the specified CMS_REQUEST_IP_RESOLVER module: '
-              '"{0}".').format(module))
-    except AttributeError:
-        raise ImproperlyConfigured(
-            _('Unable to find the specified CMS_REQUEST_IP_RESOLVER function: '
-              '"{0}" in module "{1}".').format(attribute, module))
-    return ip_resolver
+    """
+    This is the recommended method for obtaining the specified
+    CMS_REQUEST_IP_RESOLVER as it also does some basic import validation.
 
-
+    Returns the resolver or raises an ImproperlyConfigured exception.
 def default_request_ip_resolver(request):
     """
     This is a hybrid request IP resolver that attempts should address most

@@ -9,6 +9,17 @@ Good code needs tests.
 A project like django CMS simply can't afford to incorporate new code that
 doesn't come with its own tests.
 
+Tests provide some necessary minimum confidence: they can show the code will
+behave as it expected, and help identify what's going wrong if something breaks
+it.
+
+Not insisting on good tests when code is committed is like letting a gang of
+teenagers without a driving license borrow your car on a Friday night, even if
+you think they are very nice teenagers and they really promise to be careful.
+
+We certainly do want your contributions and fixes, but we need your tests with
+them too. Otherwise, we'd be compromising our codebase.
+
 So, you are going to have to include tests if you want to contribute. However,
 writing tests is not particularly difficult, and there are plenty of examples to
 crib from in the code to help you.

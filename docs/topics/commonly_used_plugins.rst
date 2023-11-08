@@ -8,16 +8,11 @@ Some commonly-used plugins
     In version 3 of the CMS we removed all the plugins from the main repository
     into separate repositories to continue their development there.
     you are upgrading from a previous version. Please refer to
+    :ref:`Upgrading from previous versions <upgrade-to-3.0>`
 
 
-**********************
-django CMS Core Addons
-**********************
-
-We maintain a set of *Core Addons* for django CMS. 
-
-You don't need to use them, and for many of them alternatives exist, but they represent a good way
-to get started with a reliable project set-up. We recommend them for new users of django CMS in
+Please note that dozens if not hundreds of different django CMS plugins have been made available
+under open-source licences. Some, like the ones on this page, are likely to be of general interest,
 particular. For example, if you start a project on `Divio Cloud <https://divio.com/>`_ or using the
 `django CMS installer <https://github.com/nephila/djangocms-installer>`_, this is the set of addons
 you'll have installed by default.

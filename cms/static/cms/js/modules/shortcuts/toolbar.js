@@ -8,3 +8,8 @@ export default function () {
     keyboard.setContext('cms');
     keyboard.bind(data.shortcut.split(' / '), function () {
         if (CMS.settings.toolbar === 'expanded') {
+            $('.cms-toolbar-item-navigation:first a:first').focus();
+        } else {
+            $('.cms-toolbar-trigger a').focus();
+        }
+    });

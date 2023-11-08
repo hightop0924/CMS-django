@@ -13,22 +13,6 @@ expire and will be purged according to the policy of the cache backend in-use.
 The cache entries themselves may include additional sub-keys, according to the
 list of VARY header-names as returned by placeholder.get_vary_cache_on() and
 the current HTTPRequest object.
-
-The vary-on header-names are also stored with the version. This enables us to
-check for cache hits without re-computing placeholder.get_vary_cache_on().
-"""
-
-import hashlib
-import time
-
-from django.utils.timezone import now
-
-from cms.utils.conf import get_cms_setting
-from cms.utils.helpers import get_header_name, get_timezone_name
-
-
-def _get_placeholder_cache_version_key(placeholder, lang, site_id):
-    """
     Returns the version key for the given «placeholder», «lang» and «site_id».
 
     Invalidating this (via clear_placeholder_cache by replacing the stored

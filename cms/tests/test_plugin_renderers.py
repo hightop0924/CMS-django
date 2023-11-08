@@ -8,6 +8,17 @@ from cms.test_utils.testcases import CMSTestCase
 
 class TestStructureRenderer(CMSTestCase):
     renderer_class = StructureRenderer
+
+    def get_renderer(self, path=None, language='en', page=None):
+        if page and path is None:
+            path = page.get_absolute_url(language)
+        request = self.get_request(path, language, page=page)
+        return self.renderer_class(request)
+
+    def test_get_plugin_class_cache(self):
+        plugin = CMSPlugin(plugin_type='MultiColumnPlugin')
+        renderer = self.get_renderer()
+        plugin_class = renderer.get_plugin_class(plugin)
         self.assertIn('MultiColumnPlugin', renderer._cached_plugin_classes)
         self.assertEqual(plugin_class.__name__, 'MultiColumnPlugin')
         self.assertEqual(renderer._cached_plugin_classes['MultiColumnPlugin'], plugin_class)

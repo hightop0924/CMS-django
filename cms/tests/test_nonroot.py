@@ -8,6 +8,17 @@ from cms.test_utils.testcases import CMSTestCase
 from cms.utils.i18n import force_language
 from menus.base import NavigationNode
 
+
+@override_settings(ROOT_URLCONF='cms.test_utils.project.nonroot_urls')
+class NonRootCase(CMSTestCase):
+    def setUp(self):
+        u = self._create_user("test", True, True)
+
+        with self.login_user_context(u):
+            self.create_some_pages()
+
+    def create_some_pages(self):
+        """
         Creates the following structure:
 
         + P1

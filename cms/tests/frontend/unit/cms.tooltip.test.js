@@ -8,16 +8,11 @@ window.CMS = window.CMS || CMS;
 CMS.Tooltip = Tooltip;
 
 
-        expect(CMS.Tooltip.prototype.hide).toEqual(jasmine.any(Function));
-    });
+describe('CMS.Tooltip', function () {
+    fixture.setBase('cms/tests/frontend/unit/fixtures');
 
-    describe('instance', function () {
-        var tooltip;
-
-        beforeEach(function (done) {
-            fixture.load('tooltip.html');
-            $(function () {
-                tooltip = new CMS.Tooltip();
+    it('creates a Tooltip class', function () {
+        expect(CMS.Tooltip).toBeDefined();
                 done();
             });
         });

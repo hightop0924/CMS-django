@@ -8,16 +8,11 @@ from classytags.helpers import AsTag, InclusionTag
 from classytags.parser import Parser
 from classytags.utils import flatten_context
 from classytags.values import ListValue, StringValue
-from django.utils.translation import gettext_lazy as _
-from django.utils.translation import override as force_language
-from sekizai.templatetags.sekizai_tags import RenderBlock, SekizaiParser
-
-from cms.cache.page import get_page_url_cache, set_page_url_cache
-from cms.exceptions import PlaceholderNotFound
-from cms.models import CMSPlugin, Page, StaticPlaceholder
-from cms.models import Placeholder as PlaceholderModel
-from cms.plugin_pool import plugin_pool
-from cms.toolbar.utils import get_toolbar_from_request
+from django import template
+from django.conf import settings
+from django.contrib.sites.models import Site
+from django.core.mail import mail_managers
+from django.db.models import Model
 from cms.utils import get_current_site, get_language_from_request, get_site_id
 from cms.utils.moderator import _use_draft
 from cms.utils.page import get_page_queryset

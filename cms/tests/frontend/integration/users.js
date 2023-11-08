@@ -13,22 +13,6 @@ casper.test.setUp(function(done) {
 
 casper.test.tearDown(function(done) {
     casper.start().then(cms.removePage()).then(cms.logout()).run(done);
-});
-
-casper.test.begin('Users Management', function(test) {
-    casper
-        .start(globals.baseUrl)
-        .waitForSelector('.cms-ready', function() {
-            this.click('.cms-toolbar-item-navigation li:first-child a:first-child');
-        })
-        .waitForSelector('.cms-toolbar-item-navigation-hover', function() {
-            var x = this.evaluate(function() {
-                return JSON.stringify(CMS.settings);
-            });
-            this.echo(x);
-            this.click('.cms-toolbar-item-navigation-hover a[href$="/admin/auth/user/"]');
-        })
-        .wait(100)
         .waitUntilVisible('.cms-sideframe-frame')
         .withFrame(0, function() {
             casper

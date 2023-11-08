@@ -8,16 +8,11 @@ from cms.test_utils.testcases import CMSTestCase
 
 
 class AppAdminTestCase(CMSTestCase):
-        plugin = add_plugin(
-            placeholder,
-            plugin_type,
-            language,
-            **plugin_data[plugin_type]
-        )
-        return plugin
 
-    def _get_add_plugin_uri(self, plugin_type='LinkPlugin', language='en'):
-        uri = self.get_add_plugin_uri(
+    def setUp(self):
+        self._obj = self._get_example_obj()
+
+    def _add_plugin_to_placeholder(self, placeholder,
             placeholder=self._obj.placeholder,
             plugin_type=plugin_type,
             language=language,

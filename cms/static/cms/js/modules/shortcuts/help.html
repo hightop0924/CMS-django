@@ -13,16 +13,3 @@
                         <tr class="cms-shortcut">
                             <td class="cms-shortcut-key-wrapper">
                                 <% content.shortcut.replace(/>/g, '').split(' / ').forEach(function (k, i) { %>
-                                    <% if (i === 1) { %> / <% } %>
-                                    <kbd class="cms-shortcut-key"><%= k %></kbd>
-                                <% }); %>
-                            </td>
-                            <td class="cms-shortcut-desc">
-                                <%= content.desc %>
-                            </td>
-                        </tr>
-                <% }); %>
-            <% }); %>
-        </table>
-    </div>
-</div>

@@ -8,6 +8,17 @@ from .base import SubcommandsCommand
 class ListApphooksCommand(SubcommandsCommand):
     help_string = 'Lists all apphooks in pages'
     command_name = 'apphooks'
+
+    def handle(self, *args, **options):
+        urls = list(
+            Page.objects.exclude(application_urls='').exclude(
+                application_urls__isnull=True
+            ).values_list(
+                'application_urls', 'publisher_is_draft', 'application_namespace'
+            )
+        )
+        apphooks = {}
+        for apphook, is_draft, application_namespace in urls:
             state = 'draft' if is_draft else 'published'
             if apphook in apphooks:
                 apphooks[apphook][0].append(state)

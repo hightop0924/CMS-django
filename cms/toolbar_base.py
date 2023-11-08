@@ -13,22 +13,6 @@ class CMSToolbar(metaclass=MediaDefiningClass):
         self.toolbar = toolbar
         self.is_current_app = is_current_app
         self.app_path = app_path
-        self.current_site = get_current_site()
-        try:
-            self.current_lang = get_language_object(get_language_from_request(self.request), self.current_site.pk)['code']
-        except LanguageError:
-            self.current_lang = None
-
-    def populate(self):
-        pass
-
-    def post_template_populate(self):
-        pass
-
-    @classmethod
-    def check_current_app(cls, key, app_name):
-        if cls.supported_apps is None:
-            local_apps = ".".join(key.split(".")[:-2]),
         else:
             local_apps = cls.supported_apps
         for local_app in local_apps:

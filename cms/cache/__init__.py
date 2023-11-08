@@ -8,6 +8,17 @@ CMS_PAGE_CACHE_VERSION_KEY = get_cms_setting("CACHE_PREFIX") + '_PAGE_CACHE_VERS
 def _get_cache_version():
     """
     Returns the current page cache version, explicitly setting one if not
+    defined.
+    """
+    from django.core.cache import cache
+
+    version = cache.get(CMS_PAGE_CACHE_VERSION_KEY)
+
+    if version:
+        return version
+    else:
+        _set_cache_version(1)
+        return 1
 
 
 def _set_cache_version(version):

@@ -8,6 +8,17 @@ import django.utils.timezone
 User = get_user_model()
 
 user_model_label = '%s.%s' % (User._meta.app_label, User._meta.model_name)
+user_ptr_name = '%s_ptr' % User._meta.object_name.lower()
+
+
+class Migration(migrations.Migration):
+
+    dependencies = [
+        ('cms', '0001_initial'),
+    ]
+
+    operations = [
+        migrations.CreateModel(
             name='PageUser',
             fields=[
                 (user_ptr_name, models.OneToOneField(primary_key=True, to=settings.AUTH_USER_MODEL, auto_created=True, parent_link=True, serialize=False, on_delete=models.CASCADE)),

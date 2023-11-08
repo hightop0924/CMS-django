@@ -8,6 +8,17 @@
 # Angelo Dini <angelo.dini@divio.ch>, 2015-2017
 # Arne Schauf <transifex2@asmaps.de>, 2014
 # Michael P. Jung <michael.jung@terreon.de>, 2013
+# Kim Thoenen <kim@smuzey.ch>, 2015
+# death_ashaman <admiral_proton@yahoo.de>, 2014
+# Diana Dünki <diana.duenki@divio.ch>, 2015
+# Fabian Braun <fsbraun@gmx.de>, 2022
+# giammi <gian-maria.daffre@giammi.org>, 2017
+# Hendrik Richter <hendrikr@gnome.org>, 2014
+# Jannik Vieten <me@exploide.net>, 2016
+# Jonas Obrist <me@ojii.ch>, 2011
+# Kim Thoenen <kim@smuzey.ch>, 2015
+# Martin Koistinen <mkoistinen@gmail.com>, 2015
+# Michael P. Jung <michael.jung@terreon.de>, 2013
 # o.zander <oliver.zander@gmail.com>, 2014
 # o.zander <oliver.zander@gmail.com>, 2014
 # Patrick Lauber <patrick.lauber@divio.ch>, 2012-2015

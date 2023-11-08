@@ -8,16 +8,11 @@ var $ = jQuery;
 window.CMS = window.CMS || CMS;
 CMS.ChangeTracker = ChangeTracker;
 
-            tracker = new CMS.ChangeTracker($('.js-test-iframe'));
-            done();
-        });
-    });
+describe('CMS.ChangeTracker', function () {
+    fixture.setBase('cms/tests/frontend/unit/fixtures');
+    var tracker;
 
-    afterEach(function () {
-        fixture.cleanup();
-    });
-
-    it('creates a ChangeTracker class', function () {
+    beforeEach(function (done) {
         expect(CMS.ChangeTracker).toBeDefined();
     });
 

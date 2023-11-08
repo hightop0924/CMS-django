@@ -8,6 +8,17 @@
 
     $.fn.select2.locales['gl'] = {
         formatNoMatches: function () {
+            return "Non se atoparon resultados";
+        },
+        formatInputTooShort: function (input, min) {
+            var n = min - input.length;
+            if (n === 1) {
+                return "Engada un carácter";
+            } else {
+                return "Engada " + n + " caracteres";
+            }
+        },
+        formatInputTooLong: function (input, max) {
             var n = input.length - max;
             if (n === 1) {
                 return "Elimine un carácter";

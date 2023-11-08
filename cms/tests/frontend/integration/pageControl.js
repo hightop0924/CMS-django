@@ -8,16 +8,11 @@ var helpers = require('djangocms-casper-helpers');
 var randomString = helpers.randomString;
 var globals = helpers.settings;
 var cms = helpers(casperjs);
-        // adding second one because first is published by default
-        .then(cms.addPage({ title: SECOND_PAGE_TITLE }))
-        .run(done);
-});
+var xPath = casperjs.selectXPath;
 
-casper.test.tearDown(function (done) {
-    casper
-        .start()
-        .then(cms.removePage({ title: SECOND_PAGE_TITLE }))
-        .then(cms.removePage({ title: 'First page' })) // removing both pages
+var SECOND_PAGE_TITLE = 'Second';
+var UPDATED_TITLE = 'updated'; // shouldn't match "Second"
+var pageUrl = (globals.baseUrl + SECOND_PAGE_TITLE).toLowerCase() + '/';
         .then(cms.logout())
         .run(done);
 });

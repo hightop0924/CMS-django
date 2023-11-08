@@ -9,15 +9,10 @@ from cms.tests.test_plugins import PluginsTestBaseCase
 from cms.utils.urlutils import admin_reverse
 
 
-        # plugin in placeholder
-        plugin_1 = add_plugin(
-            placeholder, "TextPlugin", "en",
-            body="01",
-        )
-        plugin_1.save()
-
-        # IMPORTANT: plugins must be reloaded, before they can be assigned
-        # as a parent. Otherwise, the MPTT structure doesn't seem to rebuild
+class StaticPlaceholderTestCase(PluginsTestBaseCase):
+    @property
+    def admin_class(self):
+        return site._registry[StaticPlaceholder]
         # properly.
 
         # child of plugin_1

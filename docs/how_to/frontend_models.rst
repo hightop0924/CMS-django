@@ -8,6 +8,17 @@ As well as ``PlaceholderFields``, 'ordinary' Django model fields (both on CMS Pa
 Django models) can also be edited through django CMS's frontend editing interface. This is very
 convenient for the user because it saves having to switch between frontend and admin views.
 
+Using this interface, model instance values that can be edited show the "Double-click to edit"
+hint on hover. Double-clicking opens a pop-up window containing the change form for that model.
+
+.. note::
+
+    This interface is not currently available for touch-screen users, but will be improved in
+    future releases.
+
+.. warning::
+
+    This feature is only partially compatible with django-hvad: using
     ``render_model`` with hvad-translated fields (say
     ``{% render_model object 'translated_field' %}`` returns an error if the
     hvad-enabled object does not exists in the current language.

@@ -8,13 +8,8 @@
     <div id="col1" class="grid_3">
 		{% include "sidebar_submenu.html" %}
 		{% block col_sidebar %}
-		{% endblock %}
-    </div>
-	
-    <div id="col3" class="grid_3">
-		{% block col_right %}
 			{% with "220" as width %}
-				{% placeholder col_right %}
+	    		{% placeholder col_sidebar %}
 			{% endwith %}
 		{% endblock %}
     </div>

@@ -8,16 +8,11 @@ from cms.api import create_page, create_title
 from cms.constants import PUBLISHER_STATE_DIRTY
 from cms.extensions import PageExtension, TitleExtension, extension_pool
 from cms.extensions.toolbar import ExtensionToolbar
-
-class ExtensionsTestCase(CMSTestCase):
-    def test_register_extension(self):
-        initial_extension_count = len(extension_pool.page_extensions)
-        # --- None extension registering -----------------------------
-        from cms.exceptions import SubClassNeededError
-        none_extension = self.get_none_extension_class()
-        self.assertRaises(SubClassNeededError, extension_pool.register, none_extension)
-        self.assertEqual(len(extension_pool.page_extensions), initial_extension_count)
-        self.assertEqual(len(extension_pool.title_extensions), initial_extension_count)
+from cms.models import Page, PageType
+from cms.test_utils.project.extensionapp.models import (
+    MultiTablePageExtension,
+    MultiTableTitleExtension,
+    MyPageExtension,
 
         # --- Page registering ---------------------------------------
         page_extension = self.get_page_extension_class()

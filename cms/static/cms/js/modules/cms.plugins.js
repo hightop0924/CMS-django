@@ -8,6 +8,17 @@ import '../polyfills/array.prototype.findindex';
 import nextUntil from './nextuntil';
 
 import {
+    includes,
+    toPairs,
+    isNaN,
+    debounce,
+    findIndex,
+    find,
+    every,
+    uniqWith,
+    once,
+    difference,
+    isEqual
 } from 'lodash';
 
 import Class from 'classjs';

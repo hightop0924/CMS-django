@@ -8,6 +8,17 @@ from django.conf import settings
 from django.urls import clear_url_caches
 
 logger = logging.getLogger("cms")
+
+_urlconf_revision = {}
+_urlconf_revision_threadlocal = Local()
+
+use_threadlocal = False
+
+
+def ensure_urlconf_is_up_to_date():
+    global_revision = get_global_revision()
+    local_revision = get_local_revision()
+
     if not local_revision:
         set_local_revision(global_revision)
     elif global_revision != local_revision:

@@ -8,6 +8,17 @@
 
 *******************
 What's new in 3.4.4
+*******************
+
+Bug Fixes
+=========
+
+
+
+Improvements and new features
+=============================
+
+
 
 Deprecations
 ============

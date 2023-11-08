@@ -8,6 +8,17 @@ If you used the `django CMS installer <https://github.com/nephila/djangocms-inst
 that it's already set up for serving multilingual content. Our :ref:`installation` guide also does the same.
 
 This guide specifically describes the steps required to enable multilingual support, in case you need to it manually.
+
+
+.. _multilingual_urls:
+
+*****************
+Multilingual URLs
+*****************
+
+If you use more than one language, django CMS urls, *including the admin URLS*, need to be
+referenced via :func:`~django.conf.urls.i18n.i18n_patterns`. For more information about this see
+the official `Django documentation
 <https://docs.djangoproject.com/en/dev/topics/i18n/translation/#internationalization-in-url-patterns>`_
 on the subject.
 

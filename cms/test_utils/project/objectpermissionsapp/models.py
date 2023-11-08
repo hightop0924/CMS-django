@@ -13,22 +13,6 @@ class UserObjectPermissionManager(models.Manager):
         Assigns permission with given ``perm`` for an instance ``obj`` and
         ``user``.
         """
-        if getattr(obj, 'pk', None) is None:
-            raise Exception("Object %s needs to be persisted first" % obj)
-        ctype = ContentType.objects.get_for_model(obj)
-        permission = Permission.objects.get(content_type=ctype, codename=perm)
-
-        kwargs = {'permission': permission, 'user': user}
-        kwargs['content_type'] = ctype
-        kwargs['object_pk'] = obj.pk
-        obj_perm, created = self.get_or_create(**kwargs)  # @UnusedVariable
-        return obj_perm
-
-    def remove_perm(self, perm, user, obj):
-        """
-        Removes permission ``perm`` for an instance ``obj`` and given ``user``.
-        """
-        if getattr(obj, 'pk', None) is None:
             raise Exception("Object %s needs to be persisted first" % obj)
         filters = {
             'permission__codename': perm,

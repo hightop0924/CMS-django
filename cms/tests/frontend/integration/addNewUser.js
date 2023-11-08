@@ -13,22 +13,6 @@ casper.test.setUp(function(done) {
 casper.test.tearDown(function(done) {
     casper.start().then(cms.removePage()).then(cms.logout()).run(done);
 });
-
-casper.test.begin('Add New User', function(test) {
-    casper
-        .start(globals.editUrl)
-        // click on example
-        .waitForSelector('.cms-toolbar-expanded', function() {
-            this.click('.cms-toolbar-item-navigation li:first-child a');
-        })
-        // click on Users
-        .waitUntilVisible('.cms-toolbar-item-navigation-hover a', function() {
-            this.click('.cms-toolbar-item-navigation-hover a[href$="/en/admin/auth/user/"]');
-        })
-        // waits for sideframe to open
-        .waitUntilVisible('.cms-sideframe-frame')
-        .withFrame(0, function() {
-            casper
                 .waitForSelector('#content-main', function() {
                     test.assertExists('.addlink', 'Add User Button exists');
 

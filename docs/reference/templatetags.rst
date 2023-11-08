@@ -13,22 +13,6 @@ CMS template tags
 To use any of the following template tags you first need to load them at the
 top of your template::
 
-    {% load cms_tags %}
-
-
-Placeholders
-============
-
-..  templatetag:: placeholder
-
-placeholder
------------
-
-The ``placeholder`` template tag defines a placeholder on a page. All
-placeholders in a template will be auto-detected and can be filled with
-plugins when editing a page that is using said template. When rendering, the
-content of these plugins will appear where the ``placeholder`` tag was.
-
 Example::
 
     {% placeholder "content" %}

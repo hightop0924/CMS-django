@@ -13,6 +13,3 @@ class ExtraContextPlugin(CMSPluginBase):
 
     def render(self, context, instance, placeholder):
         return context
-
-
-plugin_pool.register_plugin(ExtraContextPlugin)

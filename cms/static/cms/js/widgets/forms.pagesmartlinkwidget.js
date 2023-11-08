@@ -8,16 +8,11 @@
 __webpack_public_path__ = require('../modules/get-dist-path')('bundle.forms.pagesmartlinkwidget');
 
 // #############################################################################
-     *
-     * @class PageSmartLinkWidget
-     * @namespace CMS
-     */
-    var PageSmartLinkWidget = new Class({
-
-        initialize: function initialize(options) {
-            this.options = $.extend(true, {}, this.options, options);
-            // load functionality
-            this._setup(options);
+// PAGE SMART LINK WIDGET
+// cms/forms/widgets.py used for redirects in admin/cms/page/advanced-settings
+require.ensure([], function (require) {
+    var $ = require('jquery');
+    var Class = require('classjs');
         },
 
         /**

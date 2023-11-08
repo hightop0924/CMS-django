@@ -13,22 +13,6 @@
 // HELPERS
 .cms-btn-toolbar {
     display: inline-block;
-    line-height: $toolbar-button-height + 2px;
-    height: $toolbar-button-height + 2px;
-    font-size: $toolbar-button-font-size;
-    padding: 0 $toolbar-button-padding-horizontal + 10px;
-}
-
-.cms-hidden,
-.hidden {
-    display: none !important;
-}
-.cms-clear {
-    clear: both;
-    overflow: hidden;
-}
-.cms-clear-mobile {
-    clear: both;
     overflow: hidden;
     @media (min-width: $pagetree-mobile) {
         display: none;

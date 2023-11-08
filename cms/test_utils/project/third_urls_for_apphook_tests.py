@@ -8,5 +8,8 @@ from django.views.static import serve
 from cms.utils.conf import get_cms_setting
 
 admin.autodiscover()
-    re_path(r'^', include('cms.test_utils.project.third_cms_urls_for_apphook_tests')),
-)
+
+urlpatterns = [
+    re_path(r'^admin/', admin.site.urls),
+    re_path(r'^media/(?P<path>.*)$', serve,
+            {'document_root': settings.MEDIA_ROOT, 'show_indexes': True}),

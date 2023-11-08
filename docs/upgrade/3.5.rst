@@ -8,6 +8,17 @@ This release of django CMS concentrates on usability and user-experience, by imp
 its responsiveness while performing editing operations, particularly those that
 involve updates to plugin trees.
 
+It also continues our move to decouple logical layers in the system. Most significant in this
+release is the new separation of the structure board from page rendering, which allows the
+structure board to be updated without requiring the page to be re-rendered. This vastly
+speeds up page editing, especially when dealing with complex plugin structures.
+
+Another significant example is that the Page model has been decoupled from the site navigation
+hierarchy. The navigation tree now exists independently, offering further speed advantages, as well
+as future benefits for development and extensibility.
+
+Our work to improve separation of concerns can also be seen in the renaming of publishing controls,
+so that they no longer refer to specifically to pages. Ultimately, publishing actions could apply
 to any kind of content, and this is a step in that direction.
 
 

@@ -8,6 +8,17 @@ from cms.test_utils.project.pluginapp.plugins.manytomany_rel.models import (
     ArticlePluginModel,
     PluginModelWithFKFromModel,
     PluginModelWithM2MToModel,
+)
+
+
+class ArticlePlugin(CMSPluginBase):
+    model = ArticlePluginModel
+    name = _("Articles")
+    render_template = "articles.html"
+    admin_preview = False
+    filter_horizontal = ['sections']
+
+    def render(self, context, instance, placeholder):
         article_qs = Article.objects.filter(section__in=instance.sections.all())
         context.update({'instance': instance,
                         'article_qs': article_qs,

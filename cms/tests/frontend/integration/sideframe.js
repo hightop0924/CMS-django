@@ -8,16 +8,11 @@ var cms = helpers();
 
 casper.test.setUp(function(done) {
     casper.start().then(cms.login()).run(done);
-            this.click('.cms-modal .cms-modal-close');
-        })
-        .waitWhileVisible('.cms-modal', function() {
-            // open "Example.com" menu
-            this.click('.cms-toolbar-item-navigation li:first-child a');
-        })
-        // open "Administration"
-        .waitForSelector('.cms-toolbar-item-navigation-hover', function() {
-            this.click('.cms-toolbar-item-navigation-hover a[href$="/admin/"]');
-        })
+});
+
+casper.test.tearDown(function(done) {
+    casper.start().then(cms.logout()).run(done);
+});
         // wait until sideframe is open
         .waitUntilVisible('.cms-sideframe-frame', function() {
             test.assertVisible('.cms-sideframe-frame', 'The sideframe has been opened');

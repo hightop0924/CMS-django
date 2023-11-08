@@ -13,5 +13,3 @@ class Migration(migrations.Migration):
             name='redirect',
             field=models.CharField(max_length=2048, null=True, verbose_name='redirect', blank=True),
             preserve_default=True,
-        ),
-    ]

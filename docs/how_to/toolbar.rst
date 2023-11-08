@@ -8,6 +8,17 @@ The django CMS toolbar provides an API that allows you to add, remove and manipu
 in your own code. It helps you to integrate django CMS's frontend editing mode into your
 application, and provide your users with a streamlined editing experience.
 
+..  seealso::
+
+    * :ref:`Extending the Toolbar <toolbar_introduction>` in the tutorial
+    * :ref:`Toolbar API reference <toolbar-api-reference>`
+
+
+*********************************
+Create a ``cms_toolbars.py`` file
+*********************************
+
+In order to interact with the toolbar API, you need to create a
 :class:`~cms.toolbar_base.CMSToolbar` sub-class in your own code, and register it.
 
 This class should be created in your application's ``cms_toolbars.py`` file, where it will be
