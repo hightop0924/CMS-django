@@ -23,32 +23,6 @@ class PageQuerySet(PublisherQuerySet):
                 Q(publication_end_date__gt=now) | Q(publication_end_date__isnull=True),
                 title_set__published=True, title_set__language=language,
             )
-        else:
-            pub = self.on_site(site).filter(
-                Q(publication_date__lte=now) | Q(publication_date__isnull=True),
-                Q(publication_end_date__gt=now) | Q(publication_end_date__isnull=True),
-                title_set__published=True,
-            )
-        return pub.exclude(title_set__publisher_state=4)
-
-    def get_home(self, site=None):
-        try:
-            home = self.published(site).distinct().get(is_home=True)
-        except self.model.DoesNotExist:
-            raise NoHomeFound('No Root page found. Publish at least one page!')
-        return home
-
-    def has_apphooks(self):
-        """
-        Returns True if any page on this queryset has an apphook attached.
-        """
-        return self.exclude(application_urls=None).exclude(application_urls='').exists()
-
-
-class PageNodeQuerySet(MP_NodeQuerySet):
-
-    def get_descendants(self, parent=None):
-        if parent is None:
             return self.all()
 
         if parent.is_leaf():

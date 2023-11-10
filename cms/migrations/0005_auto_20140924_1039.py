@@ -13,26 +13,16 @@ class MP_AddHandler:
     def __init__(self):
         self.stmts = []
 
-    return ''
+
+NUM = NumConv(len(ALPHABET), ALPHABET)
 
 
-def _get_path(path, depth, newstep):
-    """
-    Builds a path given some values
-
-    :param path: the base path
-    :param depth: the depth of the  node
-    :param newstep: the value (integer) of the new step
-    """
-    parentpath = _get_basepath(path, depth - 1)
-    key = _int2str(newstep)
-    return '{0}{1}{2}'.format(
-        parentpath,
-        ALPHABET[0] * (STEPLEN - len(key)),
-        key
-    )
+def _int2str(num):
+    return NUM.int2str(num)
 
 
+def _str2int(num):
+    return NUM.str2int(num)
 def _inc_path(obj):
     """:returns: The path of the next sibling of a given node path."""
     newpos = _str2int(obj.path[-STEPLEN:]) + 1

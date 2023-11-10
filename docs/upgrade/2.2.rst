@@ -13,26 +13,16 @@ What's new in 2.2
 proper dependency and is no longer shipped with the django CMS. This solves the
 version conflict issues many people were experiencing when trying to use the django CMS
 together with other Django apps that require django-mptt. django CMS 2.2
+requires django-mptt 0.5.1.
 
-View permissions
-================
+.. warning::
 
-You can now give view permissions for django CMS pages to groups and users.
+    Please remove the old ``mptt`` package from your Python site-packages
+    directory before upgrading. The ``setup.py`` file will install the
+    `django-mptt`_ package as an external dependency!
 
-.. _backwards-incompatible-changes:
+.. _django-mptt: https://github.com/django-mptt/django-mptt/
 
-******************************
-Backwards incompatible changes
-******************************
-
-``django-sekizai`` instead of PluginMedia
-=========================================
-
-Due to the sorry state of the old plugin media framework, it has been dropped in
-favour of the more stable and more flexible django-sekizai, which is a new
-dependency for the django CMS 2.2.
-
-The following methods and properties of :class:`cms.plugin_base.CMSPluginBase`
 are affected:
 
 * ``cms.plugins_base.CMSPluginBase.PluginMedia``

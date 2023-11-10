@@ -13,26 +13,16 @@ contribute, whatever their any level of knowledge.
 As well as code, we welcome contributions to django CMS's :ref:`documentation
 <contributing-documentation>` and :ref:`translations <contributing-translations>`.
 
-   own GitHub account
-#. Clone your fork locally::
+.. note::
+   Feel free to dive into coding for django CMS in whichever way suits you. However, you need to be
+   aware of the :ref:`guidelines <contributing-code>` and :ref:`policies <management>` for
+   django CMS project development. Adhering to them will make much easier for the core developers
+   to validate and accept your contribution.
 
-    git clone git@github.com:YOUR_USERNAME/django-cms.git
 
-#. Create a virtualenv::
+.. _start-contributing:
 
-    virtualenv cms-develop
-    source cms-develop/bin/activate
-
-#. Install its dependencies::
-
-    cd django-cms
-    pip install -r test_requirements/django-X.Y.txt
-
-   Replace ``X.Y`` with whichever version of Django you want to work with.
-
-#. Install pre-commit hooks::
-
-    pre-commit install
+**********
 
 #. Create a new branch for your work::
 

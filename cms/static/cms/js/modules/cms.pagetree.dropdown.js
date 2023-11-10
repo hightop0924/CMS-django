@@ -23,32 +23,6 @@ var PageTreeDropdowns = new Class({
 
         this._setupUI();
         this._events();
-    },
-
-    /**
-     * @method _setupUI
-     * @private
-     */
-    _setupUI: function _setupUI() {
-        this.ui = {
-            container: this.options.container,
-            document: $(document)
-        };
-    },
-
-    /**
-     * Event handlers.
-     *
-     * @method _events
-     * @private
-     */
-    _events: function _events() {
-        var that = this;
-
-        // attach event to the trigger
-        this.ui.container.on(this.click, this.options.triggerSelector, function(e) {
-            e.preventDefault();
-            e.stopImmediatePropagation();
 
             that._toggleDropdown(this);
         });

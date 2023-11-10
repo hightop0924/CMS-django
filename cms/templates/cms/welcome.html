@@ -23,32 +23,6 @@
                 <span class="cms-hidden">{% trans "django CMS" %}</span>
             </a>
         </header>
-        {{ request.version }}
-
-        <section class="cms-welcome-section">
-            <h2>
-                {% if user.is_authenticated %}
-                    {% trans "Add your first page" %}
-                {% else %}
-                    {% trans "Please log in" %}
-                {% endif %}
-            </h2>
-            <p>
-                {% blocktrans %}
-                    Welcome to django CMS version <strong>{{ cms_version }}</strong>.
-                {% endblocktrans %}
-            </p>
-            <p>
-                {% url "admin:cms_page_add" as admin_add_page %}
-                {% if user.is_authenticated %}
-                    {% blocktrans %}
-                        <a href="{{ admin_add_page }}" class="js-welcome-add">Add the first page</a> to the system to continue.
-                    {% endblocktrans %}
-                {% else %}
-                    {% blocktrans %}
-                        JavaScript seems to be disabled so please
-                        <a href="{{ admin_add_page }}" class="js-welcome-add">add a page</a> manually.
-                    {% endblocktrans %}
                 {% endif %}
             </p>
         </section>

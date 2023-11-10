@@ -23,32 +23,6 @@ them too. Otherwise, we'd be compromising our codebase.
 So, you are going to have to include tests if you want to contribute. However,
 writing tests is not particularly difficult, and there are plenty of examples to
 crib from in the code to help you.
-
-
-*************
-Running tests
-*************
-
-There's more than one way to do this, but here's one to help you get started::
-
-    # create a virtual environment
-    virtualenv test-django-cms
-
-    # activate it
-    cd test-django-cms/
-    source bin/activate
-
-    # get django CMS from GitHub
-    git clone https://github.com/django-cms/django-cms.git
-
-    # install the dependencies for testing
-    # note that requirements files for other Django versions are also provided
-    pip install -r django-cms/test_requirements/django-X.Y.txt
-
-    # run the test suite
-    # note that you must be in the django-cms directory when you do this,
-    # otherwise you'll get "Template not found" errors
-    cd django-cms
     python manage.py test
 
 

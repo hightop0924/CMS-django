@@ -23,32 +23,6 @@ APPHOOK = "SampleApp"
 PLUGIN = "TextPlugin"
 
 TEST_INSTALLED_APPS = [
-    "django.contrib.auth",
-    "cms",
-    "menus",
-    "sekizai",
-    "treebeard",
-] + settings.PLUGIN_APPS
-if settings.AUTH_USER_MODEL == "emailuserapp.EmailUser":
-    TEST_INSTALLED_APPS.append("cms.test_utils.project.emailuserapp")
-if settings.AUTH_USER_MODEL == "customuserapp.User":
-    TEST_INSTALLED_APPS.append("cms.test_utils.project.customuserapp")
-
-
-class ManagementTestCase(CMSTestCase):
-    @override_settings(INSTALLED_APPS=TEST_INSTALLED_APPS)
-    def test_list_apphooks(self):
-        with apphooks(SampleApp):
-            out = io.StringIO()
-            create_page('Hello Title', "nav_playground.html", "en", apphook=APPHOOK)
-            self.assertEqual(Page.objects.filter(application_urls=APPHOOK).count(), 1)
-            management.call_command(
-                "cms",
-                "list",
-                "apphooks",
-                interactive=False,
-                stdout=out,
-            )
             self.assertEqual(out.getvalue(), "SampleApp (draft)\n")
 
     def test_uninstall_apphooks_without_apphook(self):

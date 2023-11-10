@@ -13,26 +13,16 @@ from cms.utils.conf import get_cms_setting, get_languages
 from menus.menu_pool import menu_pool
 
 TEMPLATE_NAME = 'tests/rendering/base.html'
-        (TEMPLATE_NAME, TEMPLATE_NAME),
-        ('extra_context.html', 'extra_context.html'),
-        ('nav_playground.html', 'nav_playground.html'),
-    ],
-)
-class MultilingualTestCase(CMSTestCase):
 
-    def test_create_page(self):
-        """
-        Test that a page can be created
-        and that a new language can be created afterwards in the admin pages
-        """
 
-        # Create a new page
+def get_primary_language(current_site=None):
+    """Fetch the first language of the current site settings."""
+    current_site = current_site or Site.objects.get_current()
+    return get_languages()[current_site.id][0]['code']
 
-        # Use the very first language in the list of languages
-        # for the current site
-        current_site = Site.objects.get_current()
-        TESTLANG = get_primary_language(current_site=current_site)
-        page_data = self.get_new_page_data_dbfields(
+
+def get_secondary_language(current_site=None):
+    """Fetch the other language of the current site settings."""
             site=current_site,
             language=TESTLANG
         )

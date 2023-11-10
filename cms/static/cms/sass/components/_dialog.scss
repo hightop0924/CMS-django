@@ -13,26 +13,16 @@
     margin: -100px 0 0  math.div(-$dialog-width, 2);
     padding: $padding-large;
     border: 1px solid $gray-lighter;
-            position: relative;
-            top: auto;
-            vertical-align: middle;
-            line-height: 20px;
-        }
-        p {
-            margin: 0 $padding-large;
-            margin-bottom: 0;
-            padding: $padding-normal 0;
-            &:after {
-                display: none;
-            }
-        }
-        input[type="submit"] {
-            margin-bottom: 0 !important;
-        }
-        .submit-row {
-            margin: 0 (-$padding-large);
-            padding: $padding-large $padding-large 0;
-            input {
+    border-radius: $dialog-border-radius;
+    background: $white;
+    box-shadow: $dialog-shadow;
+    transform: translateZ(0);
+    h1 {
+        margin: 0 0 $padding-normal;
+        padding: 0;
+    }
+    form {
+        margin: 0 - $padding-large;
                 margin-left: 0;
             }
         }

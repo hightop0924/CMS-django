@@ -23,32 +23,6 @@ from cms.api import create_page
 from cms.constants import PUBLISHER_STATE_DEFAULT, PUBLISHER_STATE_DIRTY, PUBLISHER_STATE_PENDING
 from cms.models import Page
 from cms.models.permissionmodels import GlobalPagePermission, PagePermission, PageUser
-from cms.plugin_rendering import ContentRenderer, StructureRenderer
-from cms.test_utils.util.context_managers import UserLoginContext
-from cms.utils.conf import get_cms_setting
-from cms.utils.permissions import set_current_user
-from cms.utils.urlutils import admin_reverse
-from menus.menu_pool import menu_pool
-
-URL_CMS_PAGE = "/en/admin/cms/page/"
-URL_CMS_PAGE_ADD = urljoin(URL_CMS_PAGE, "add/")
-URL_CMS_PAGE_CHANGE_BASE = urljoin(URL_CMS_PAGE, "%d/")
-URL_CMS_PAGE_CHANGE = urljoin(URL_CMS_PAGE_CHANGE_BASE, "change/")
-URL_CMS_PAGE_ADVANCED_CHANGE = urljoin(URL_CMS_PAGE, "%d/advanced-settings/")
-URL_CMS_PAGE_PERMISSION_CHANGE = urljoin(URL_CMS_PAGE, "%d/permission-settings/")
-URL_CMS_PAGE_PERMISSIONS = urljoin(URL_CMS_PAGE, "%d/permissions/")
-URL_CMS_PAGE_PUBLISHED = urljoin(URL_CMS_PAGE, "published-pages/")
-URL_CMS_PAGE_MOVE = urljoin(URL_CMS_PAGE, "%d/move-page/")
-URL_CMS_PAGE_COPY = urljoin(URL_CMS_PAGE, "%d/copy-page/")
-URL_CMS_PAGE_CHANGE_LANGUAGE = URL_CMS_PAGE_CHANGE + "?language=%s"
-URL_CMS_PAGE_CHANGE_TEMPLATE = urljoin(URL_CMS_PAGE_CHANGE, "change-template/")
-URL_CMS_PAGE_PUBLISH = urljoin(URL_CMS_PAGE_CHANGE_BASE, "%s/publish/")
-URL_CMS_PAGE_DELETE = urljoin(URL_CMS_PAGE_CHANGE_BASE, "delete/")
-URL_CMS_PLUGIN_ADD = urljoin(URL_CMS_PAGE, "add-plugin/")
-URL_CMS_PLUGIN_EDIT = urljoin(URL_CMS_PAGE, "edit-plugin/")
-URL_CMS_PLUGIN_MOVE = urljoin(URL_CMS_PAGE, "move-plugin/")
-URL_CMS_PLUGIN_PAGE_MOVE = urljoin(URL_CMS_PAGE_CHANGE_BASE, "move-plugin/")
-URL_CMS_PLUGIN_PAGE_ADD = urljoin(URL_CMS_PAGE_CHANGE_BASE, "add-plugin/")
 URL_CMS_PLUGIN_REMOVE = urljoin(URL_CMS_PAGE, "delete-plugin/")
 URL_CMS_PLUGIN_DELETE = urljoin(URL_CMS_PAGE, "delete-plugin/%s/")
 URL_CMS_PLUGINS_COPY = urljoin(URL_CMS_PAGE, "copy-plugins/")

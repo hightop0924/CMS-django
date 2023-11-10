@@ -13,26 +13,16 @@ var cms = helpers(casperjs);
 // random text string for filtering and content purposes
 var randomText = randomString({ length: 50, withWhitespaces: false });
 
-casper.test.tearDown(function(done) {
-    casper.start().then(cms.removePage()).then(cms.logout()).run(done);
-});
-
-casper.test.begin('Edit content', function(test) {
-    var previousContentText;
-
+casper.test.setUp(function(done) {
     casper
-        .start(globals.editUrl)
-        // make sure we are in content mode
-        .then(cms.switchTo('content'))
-        // check edit modal window appearance after double click in content mode
-        // double click on last added plugin content
-        .waitForSelector('.cms-toolbar-expanded', function() {
-            this.mouse.doubleclick(
-                // pick a div with class cms-plugin that has a p that has text "Random text"
-                xPath('//*[contains(@class, "cms-plugin")][contains(text(), "Random text")]')
-            );
-        })
-        .waitUntilVisible('.cms-modal-open')
+        .start()
+        .then(cms.login())
+        .then(cms.addPage({ title: 'First page' }))
+        .then(
+            cms.addPlugin({
+                type: 'TextPlugin',
+                content: {
+                    id_body: 'Random text'
         // change content inside appeared modal window
         .withFrame(0, function() {
             casper.waitUntilVisible('#text_form', function() {

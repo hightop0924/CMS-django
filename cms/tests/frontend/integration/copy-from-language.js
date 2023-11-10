@@ -13,6 +13,22 @@ casper.test.setUp(function(done) {
         .then(cms.login())
         .then(cms.addPage({ title: 'First page' }))
         .then(
+            cms.addPlugin({
+                type: 'TextPlugin',
+                content: {
+                    id_body: 'Test text'
+                }
+            })
+        )
+        .run(done);
+});
+
+casper.test.tearDown(function(done) {
+    casper.start().then(cms.removePage()).then(cms.logout()).run(done);
+});
+
+casper.test.begin('Plugins can be copied from same page in a different language', function(test) {
+    var pageId;
 
     casper
         .start()

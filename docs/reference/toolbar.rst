@@ -23,32 +23,6 @@ Classes and methods
 
 ..  module:: cms.toolbar.toolbar
 
-..  class:: CMSToolbar
-
-    The toolbar is an instance of the ``cms.toolbar.toolbar.CMSToolbar`` class. This should not be
-    confused with the :class:`~cms.toolbar_base.CMSToolbar`, the base class for *toolbar modifier
-    classes* in other applications, that add items to and otherwise manipulates the toolbar.
-
-    It is strongly recommended that you **only** interact with the toolbar in your own code via:
-
-    * the APIs documented here
-    * toolbar modifier classes based on ``cms.toolbar_base.CMSToolbar``
-
-    You will notice that some of the methods documented here do not include some arguments present
-    in the code. This is the *public* reference documentation, while the code may be subject to
-    change without warning.
-
-    Several of the following methods to create and add objects other objects to the toolbar are
-    inherited from :class:`~cms.toolbar.items.ToolbarAPIMixin`.
-
-    ..  method:: add_link_item
-
-        See :meth:`ToolbarAPIMixin.add_link_item
-        <cms.toolbar.items.ToolbarAPIMixin.add_link_item>`
-
-    ..  method:: add_sideframe_item
-
-        See :meth:`ToolbarAPIMixin.add_sideframe_item
         <cms.toolbar.items.ToolbarAPIMixin.add_sideframe_item>`
 
     ..  method:: add_modal_item

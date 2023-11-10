@@ -13,26 +13,16 @@ import { showLoader, hideLoader } from './loader';
 import { Helpers, KEYS } from './cms.base';
 
 var SECOND = 1000;
-}
+var TOOLBAR_OFFSCREEN_OFFSET = 10; // required to hide box-shadow
+
+export const getPlaceholderIds = pluginRegistry =>
+    uniq(filter(pluginRegistry, ([, opts]) => opts.type === 'placeholder').map(([, opts]) => opts.placeholder_id));
 
 /**
- * The toolbar is the generic element which holds various components
- * together and provides several commonly used API methods such as
- * show/hide, message display or loader indication.
- *
- * @class Toolbar
- * @namespace CMS
- * @uses CMS.API.Helpers
+ * @function hideDropdownIfRequired
+ * @private
+ * @param {jQuery} publishBtn
  */
-var Toolbar = new Class({
-    implement: [Helpers],
-
-    options: {
-        toolbarDuration: 200
-    },
-
-    initialize: function initialize(options) {
-        this.options = $.extend(true, {}, this.options, options);
 
         // elements
         this._setupUI();

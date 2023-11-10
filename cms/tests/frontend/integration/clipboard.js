@@ -23,32 +23,6 @@ casper.test.setUp(function(done) {
                 }
             })
         )
-        .then(
-            cms.addPlugin({
-                type: 'TextPlugin',
-                content: {
-                    id_body: 'Another Test text'
-                }
-            })
-        )
-        .run(done);
-});
-
-casper.test.tearDown(function(done) {
-    casper.start().then(cms.removePage()).then(cms.logout()).run(done);
-});
-
-casper.test.begin('Copy/paste plugin from the structure board with dnd', function(test) {
-    var contentNumber;
-
-    casper
-        .start(globals.editUrl)
-        // go to the Structure mode
-        .then(cms.switchTo('structure'))
-        // click settings for last content plugin
-        .waitUntilVisible('.cms-structure', function() {
-            // save initial number of content plugins
-            contentNumber = this.evaluate(function() {
                 return document.querySelectorAll('.cms-structure-content .cms-draggable').length;
             });
             // click settings for last content plugin

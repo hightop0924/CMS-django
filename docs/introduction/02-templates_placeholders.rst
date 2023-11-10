@@ -23,32 +23,6 @@ can be switched for another at any time.
 You'll find the site's templates in ``django-cms-quickstart/backend/templates``.
 
 By default, pages in your site will use the ``fullwidth.html`` template, the first one listed in
-the project's ``settings.py`` ``CMS_TEMPLATES`` tuple:
-
-..  code-block:: python
-    :emphasize-lines: 3
-
-    CMS_TEMPLATES = (
-        ## Customize this
-        ('fullwidth.html', 'Fullwidth'),
-        ('sidebar_left.html', 'Sidebar Left'),
-        ('sidebar_right.html', 'Sidebar Right')
-    )
-
-
-************
-Placeholders
-************
-
-Placeholders are an easy way to define sections in an HTML template that will
-be filled with content from the database when the page is rendered. This
-content is edited using django CMS's frontend editing mechanism, using Django
-template tags.
-
-``fullwidth.html`` contains a single placeholder, ``{% placeholder "content" %}``.
-
-You'll also see ``{% load cms_tags %}`` in that file - ``cms_tags`` is the
-required template tag library.
 
 If you're not already familiar with Django template tags, you can find out more in the `Django documentation
 <https://docs.djangoproject.com/en/dev/topics/templates/>`_.

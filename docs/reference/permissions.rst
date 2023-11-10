@@ -13,3 +13,5 @@ Permissions
 ..  data:: ACCESS_CHILDREN
 
 ..  data:: ACCESS_DESCENDANTS
+
+..  data:: ACCESS_PAGE_AND_DESCENDANTS

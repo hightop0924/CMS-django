@@ -13,26 +13,16 @@ class StaticPlaceholderTestCase(PluginsTestBaseCase):
     @property
     def admin_class(self):
         return site._registry[StaticPlaceholder]
-        # properly.
 
-        # child of plugin_1
-        plugin_2 = add_plugin(
+    def fill_placeholder(self, placeholder=None):
+        if placeholder is None:
+            placeholder = Placeholder(slot="some_slot")
+            placeholder.save()  # a good idea, if not strictly necessary
+
+
+        # plugin in placeholder
+        plugin_1 = add_plugin(
             placeholder, "TextPlugin", "en",
-            body="02",
-        )
-        plugin_1 = self.reload(plugin_1)
-        plugin_2.parent = plugin_1
-        plugin_2.save()
-        return placeholder
-
-    def get_admin(self):
-        usr = self._create_user("admin", True, True)
-        return usr
-
-    def test_template_creation(self):
-        self.assertObjectDoesNotExist(StaticPlaceholder.objects.all(), code='foobar')
-        self.assertObjectDoesNotExist(Placeholder.objects.all(), slot='foobar')
-        t = Template('{% load cms_tags %}{% static_placeholder "foobar" %}')
         t.render(self.get_context('/'))
         self.assertObjectExist(StaticPlaceholder.objects.all(), code='foobar',
                                creation_method=StaticPlaceholder.CREATION_BY_TEMPLATE)

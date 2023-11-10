@@ -13,6 +13,22 @@ class CMSPageWizard(Wizard):
     def user_has_add_permission(self, user, page=None, **kwargs):
         if page:
             parent_page = page.get_parent_page()
+        else:
+            parent_page = None
+
+        if page and page.get_parent_page():
+            # User is adding a page which will be a right
+            # sibling to the current page.
+            has_perm = user_can_add_subpage(user, target=parent_page)
+        else:
+            has_perm = user_can_add_page(user)
+        return has_perm
+
+
+class CMSSubPageWizard(Wizard):
+
+    def user_has_add_permission(self, user, page=None, **kwargs):
+        if not page or page.application_urls:
             # We can't really add a sub-page to a non-existent page. Or to an
             # app-hooked page.
             return False

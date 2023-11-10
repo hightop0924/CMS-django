@@ -13,26 +13,16 @@ possible.
 
 .. warning:: Upgrading from previous versions
 
-reliability.
+    3.1 introduces some changes that **require** action if you are upgrading
+    from a previous version. Please read :ref:`upgrade-guide-3.1` for a step-by-step guide to the
+    process of upgrading from 3.0 to 3.1.
 
-Over the years MPTT has proved not to be fast enough for big tree operations (>1000 pages); tree
-corruption, because of transactional errors, has also been a problem.
+*****************
+What's new in 3.1
+*****************
 
-django-treebeard uses MP (Materialised Path). MP is more efficient and has more error resistance
-then MPTT. It should make working with and using django CMS better - faster and reliable.
-
-Other than this, end users should not notice any changes.
-
-.. note:: User feedback required
-
-    We require as much feedback as possible about the performance of django-treebeard in this
-    release. Please let us know your experiences with it, especially if you encounter any problems.
-
-.. note:: Backward incompatible change
-
-    While most of the low-level interface is very similar between ``django-mptt`` and
-    ``django-treebeard`` they are not exactly the same. If any custom code needs to make use of the
-    low-level interfaces of the page or plugins tree, please see the `django-treebeard
+Switch from MPTT to MP
+======================
     documentation <http://django-treebeard.readthedocs.io/en/latest/>`_ for information
     on how to use equivalent calls in ``django-treebeard``.
 

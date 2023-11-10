@@ -23,32 +23,6 @@
             bottom: 96px;
         }
     }
-    .cms-pagetree-dropdown-item {
-        .cms-pagetree-node-state {
-            margin-right: 10px;
-        }
-        .cms-icon {
-            margin-right: 8px;
-        }
-        .cms-icon-home,
-        .cms-icon-sitemap,
-        .cms-icon-puzzle {
-            color: $gray-light;
-        }
-    }
-
-    .cms-icon {
-        text-align: center;
-        width: 20px;
-        margin-left: -2px;
-    }
-    .cms-icon-check-square {
-        color: $color-success;
-        font-size: $pagetree-icon-size - 4;
-    }
-    .cms-icon-minus-square {
-        font-size: $pagetree-icon-size - 4;
-    }
 }
 .cms-pagetree-legend-title-wrap {
     cursor: pointer;

@@ -13,6 +13,22 @@ class DeleteOrphanedPluginsCommand(SubcommandsCommand):
         """
         Obtains a plugin report -
         cms.management.commands.subcommands.list.plugin_report - and uses it
+        to delete orphaned plugins from the database, i.e. ones that are no
+        longer installed, and ones that have no corresponding saved plugin
+        instances (as will happen if a plugin is inserted into a placeholder,
+        but not saved).
+        """
+        self.stdout.write('Obtaining plugin report\n')
+        uninstalled_instances = []
+        unsaved_instances = []
+
+        for plugin in plugin_report():
+            if not plugin['model']:
+                for instance in plugin['instances']:
+                    uninstalled_instances.append(instance)
+
+            for instance in plugin['unsaved_instances']:
+                unsaved_instances.append(instance)
 
         if options.get('interactive'):
             confirm = input("""

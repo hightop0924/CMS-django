@@ -13,25 +13,15 @@ class UninstallApphooksCommand(LabelCommand):
     help_string = 'Uninstalls (sets to null) specified apphooks for all pages'
 
     def handle_label(self, label, **options):
+        queryset = Page.objects.filter(application_urls=label)
+        number_of_apphooks = queryset.count()
 
-
-class UninstallPluginsCommand(LabelCommand):
-    args = 'PLUGIN_NAME'
-    command_name = 'plugins'
-    label = 'plugin name (eg SamplePlugin)'
-    help_string = 'Uninstalls (deletes) specified plugins from the CMSPlugin model'
-    missing_args_message = 'foo bar'
-
-    def handle_label(self, label, **options):
-        queryset = CMSPlugin.objects.filter(plugin_type=label)
-        number_of_plugins = queryset.count()
-
-        if number_of_plugins > 0:
+        if number_of_apphooks > 0:
             if options.get('interactive'):
                 confirm = input("""
-You have requested to remove %d '%s' plugins.
+You have requested to remove %d '%s' apphooks.
 Are you sure you want to do this?
-Type 'yes' to continue, or 'no' to cancel: """ % (number_of_plugins, label))
+Type 'yes' to continue, or 'no' to cancel: """ % (number_of_apphooks, label))
             else:
                 confirm = 'yes'
             if confirm == 'yes':

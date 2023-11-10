@@ -13,26 +13,16 @@ Some commonly-used plugins
 
 Please note that dozens if not hundreds of different django CMS plugins have been made available
 under open-source licences. Some, like the ones on this page, are likely to be of general interest,
-particular. For example, if you start a project on `Divio Cloud <https://divio.com/>`_ or using the
-`django CMS installer <https://github.com/nephila/djangocms-installer>`_, this is the set of addons
-you'll have installed by default.
+while others are highly specialised.
 
-The django CMS Core Addons are:
+This page only lists those that fall under the responsibility of the django CMS project. Please see
+the `Django Packages <https://djangopackages.org/search/?q=django+cms>`_ site for some more, or
+just do a web search for the functionality you seek - you'll be surprised at the range of plugins
+that has been created.
 
-* `Django Filer <http://github.com/divio/django-filer>`_ - a file management application for
-  images and other documents.
-* `django CMS Admin Style <https://github.com/django-cms/djangocms-admin-style>`_ - a CSS theme for the
-  Django admin
-* `django CMS Text CKEditor <https://github.com/django-cms/djangocms-text-ckeditor>`_ - our default rich
-  text WYSIYG editor
-* `django CMS Link <https://github.com/django-cms/djangocms-link>`_ - add links to content
-* `django CMS Picture <https://github.com/django-cms/djangocms-picture>`_ - add images to your site
-  (Filer-compatible)
-* `django CMS File <https://github.com/django-cms/djangocms-file>`_ - add files or an entire folder to
-  your pages (Filer-compatible)
-* `django CMS Style <https://github.com/django-cms/djangocms-style>`_ - create HTML containers with
-  classes, styles, ids and other attributes
-* `django CMS Snippet <https://github.com/django-cms/djangocms-snippet>`_ - insert arbitrary HTML content
+
+**********************
+django CMS Core Addons
 * `django CMS Audio <https://github.com/django-cms/djangocms-audio>`_ - publish audio files
   (Filer-compatible)
 * `django CMS Video <https://github.com/django-cms/djangocms-video>`_ - embed videos from YouTube, Vimeo

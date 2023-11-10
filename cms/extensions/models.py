@@ -13,26 +13,16 @@ class BaseExtension(models.Model):
         editable=False,
         related_name='draft_extension',
     )
+    extended_object = None
 
-    @classmethod
-    def _get_related_objects(cls):
-        fields = cls._meta._get_fields(
-            forward=False, reverse=True,
-            include_parents=True,
-            include_hidden=False,
-        )
-        return [obj for obj in fields if not isinstance(obj.field, ManyToManyField)]
+    class Meta:
+        abstract = True
 
-    def copy(self, target, language):
+    def get_page(self):  # pragma: no cover
+        raise NotImplementedError('Function must be overwritten in subclasses and return the extended page object.')
+
+    def copy_relations(self, oldinstance, language):
         """
-        This method copies this extension to an unrelated-target. If you intend
-        to "publish" this extension to the publisher counterpart of target, then
-        use copy_to_publish() instead.
-        """
-        clone = self.__class__.objects.get(pk=self.pk)  # get a copy of this instance
-        clone.pk = None
-        clone.public_extension = None
-        clone.extended_object = target  # set the new public object
 
         # Nullify all concrete parent primary keys. See issue #5494
         for parent, field in clone._meta.parents.items():

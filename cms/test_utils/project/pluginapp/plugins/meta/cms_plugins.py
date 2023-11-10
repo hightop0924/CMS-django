@@ -23,22 +23,3 @@ plugin_pool.register_plugin(TestPlugin2)
 class TestPlugin3(CMSPluginBase):
     model = TestPluginModel3
     render_template = 'cms/content.html'
-
-
-plugin_pool.register_plugin(TestPlugin3)
-
-
-class TestPlugin4(CMSPluginBase):
-    model = TestPluginModel4
-    render_template = 'cms/content.html'
-
-
-plugin_pool.register_plugin(TestPlugin4)
-
-
-class TestPlugin5(CMSPluginBase):
-    model = TestPluginModel5
-    render_template = 'cms/content.html'
-
-
-plugin_pool.register_plugin(TestPlugin5)

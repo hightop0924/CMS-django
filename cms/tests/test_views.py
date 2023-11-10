@@ -23,32 +23,6 @@ APP_MODULE = "cms.test_utils.project.sampleapp.cms_apps"
 
 
 @override_settings(
-    CMS_PERMISSION=True,
-    ROOT_URLCONF='cms.test_utils.project.urls',
-)
-class ViewTests(CMSTestCase):
-
-    def setUp(self):
-        clear_url_caches()
-
-    def tearDown(self):
-        super().tearDown()
-        clear_url_caches()
-
-    def test_welcome_screen_debug_on(self):
-        clear_url_caches()
-        with self.settings(DEBUG=True):
-            response = self.client.get('/en/')
-            self.assertEqual(response.status_code, 200)
-            self.assertEqual(response.template_name, 'cms/welcome.html')
-
-    def test_welcome_screen_debug_off(self):
-        with self.settings(DEBUG=False):
-            response = self.client.get('/en/')
-            self.assertEqual(response.status_code, 200)
-            self.assertEqual(response.template_name, 'cms/welcome.html')
-
-    def test_handle_no_page(self):
         """
         Test handle nopage correctly works with DEBUG=True
         """

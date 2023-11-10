@@ -23,32 +23,6 @@ Informational commands
 ``cms list``
 ============
 
-The ``list`` command is used to display information about your installation.
-
-It has two sub-commands:
-
-* ``cms list plugins`` lists all plugins that are used in your project.
-* ``cms list apphooks`` lists all apphooks that are used in your project.
-
-``cms list plugins`` will issue warnings when it finds orphaned plugins (see
-``cms delete-orphaned-plugins`` below).
-
-
-.. _cms-check-command:
-
-``cms check``
-=============
-
-Checks your configuration and environment.
-
-
-**************************************
-Plugin and apphook management commands
-**************************************
-
-.. _cms-delete-orphaned-plugins-command:
-
-``cms delete-orphaned-plugins``
 ===============================
 
 .. warning::

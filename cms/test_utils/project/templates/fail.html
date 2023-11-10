@@ -13,6 +13,22 @@
             <div id="logo">
                 <a href="/">Company name</a>
             </div>
+            <div id="nav_lang">
+                {% spaceless %}
+                <ul>
+                    {% language_chooser %}
+                </ul>
+                {% endspaceless %}
+            </div>
+            <div id="nav_main" class="clearfix">
+                {% spaceless %}
+                <ul>
+                     {% show_menu 0 0 100 100 %}
+                </ul>
+                {% endspaceless %}
+            </div>
+        </div>
+        <ul class="breadcrumb clearfix">
             {% show_breadcrumb %}
         </ul>
         <div id="main">

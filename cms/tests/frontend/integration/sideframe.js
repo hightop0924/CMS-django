@@ -13,26 +13,16 @@ casper.test.setUp(function(done) {
 casper.test.tearDown(function(done) {
     casper.start().then(cms.logout()).run(done);
 });
-        // wait until sideframe is open
-        .waitUntilVisible('.cms-sideframe-frame', function() {
-            test.assertVisible('.cms-sideframe-frame', 'The sideframe has been opened');
+
+casper.test.begin('Sideframe', function(test) {
+    casper
+        .start(globals.baseUrl)
+        // close default wizard modal
+        .waitUntilVisible('.cms-modal', function() {
+            this.click('.cms-modal .cms-modal-close');
         })
-        // wait until animation finishes
-        .wait(300, function() {
-            test.assertEvalEquals(
-                function() {
-                    return CMS.$('.cms-sideframe').width();
-                },
-                1280 * 0.95,
-                'Sideframe opens with default width'
-            );
-        })
-        // changes viewport to mobile
-        .then(function() {
-            this.viewport(767, 1024);
-        })
-        // checks current mobile width to be equal with sideframe width
-        .wait(300, function() {
+        .waitWhileVisible('.cms-modal', function() {
+            // open "Example.com" menu
             test.assertEvalEquals(
                 function() {
                     return CMS.$('.cms-sideframe').width();

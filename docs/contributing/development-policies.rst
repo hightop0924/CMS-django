@@ -13,26 +13,16 @@ Reporting security issues
 .. ATTENTION::
 
     If you think you have discovered a security issue in our code, please report
+    it **privately**, by emailing us at `security@django-cms.org <security@django-cms.org>`_.
 
-Reviews are welcomed by all members of the community. You don't need to be a core developer, or even an experienced
-programmer, to contribute usefully to code review. Even noting that you don't understand something in a pull request
-is valuable feedback and will be taken seriously.
-
-
-Formal approval
-===============
-
-Formal approval means "OK to merge" comments, following review, from at least
-one member of the core team who has expertise in the relevant areas, and excluding
-the author of the pull request.
+    Please **do not** raise it in any public forum until we have had a
+    chance to deal with it.
 
 
-**********************************************
-Proposal and discussion of significant changes
-**********************************************
+******
+Review
+******
 
-New features and backward-incompatible changes should follow the best practice of `DEPS <https://github.com/django/deps>`_ and
-should be discussed in the community first. After your proposal has been reviewed by the community,
 it needs to be finally approved by the `Tech Committee <https://github.com/django-cms/django-cms-mgmt/blob/master/tech-committee/about.md>`_.
 This is in the interests of openness and transparency,
 and to give the community a chance to participate in and understand the decisions taken by the project.

@@ -13,26 +13,16 @@ class AppAdminTestCase(CMSTestCase):
         self._obj = self._get_example_obj()
 
     def _add_plugin_to_placeholder(self, placeholder,
-            placeholder=self._obj.placeholder,
-            plugin_type=plugin_type,
-            language=language,
-        )
-        return uri
-
-    def _get_example_obj(self):
-        obj = Example1.objects.create(
-            char_1='one',
-            char_2='two',
-            char_3='tree',
-            char_4='four'
-        )
-        return obj
-
-
-class AppAdminTest(AppAdminTestCase):
-    placeholderconf = {'placeholder': {
-        'limits': {
-            'global': 2,
+                                   plugin_type='LinkPlugin', language='en'):
+        plugin_data = {
+            'StylePlugin': {'tag_type': 'div'},
+            'LinkPlugin': {'name': 'A Link', 'external_link': 'https://www.django-cms.org'},
+            'PlaceholderPlugin': {'name': 'Content'},
+        }
+        plugin = add_plugin(
+            placeholder,
+            plugin_type,
+            language,
             'StylePlugin': 1,
         }
     }

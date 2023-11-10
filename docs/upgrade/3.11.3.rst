@@ -23,32 +23,6 @@ Statistics:
 This release includes 2 pull requests, and was created with the help of the following contributors (in alphabetical order):
 
 * Corentin Bettiol (1 pull request)
-* Fabian Braun (1 pull requests)
-
-With the review help of the following contributors:
-
-* Fabian Braun
-* Vinit Kumar
-
-Thanks to all contributors for their efforts!
-
-
-************************
-How to upgrade to
-************************
-
-We assume you are upgrading from django CMS 3.11.2 or django CMS 3.11.1.
-
-Please make sure that your current database is consistent and in a healthy
-state, and **make a copy of the database before proceeding further.**
-
-Check your settings of `CMS_LANGUAGES` (if used), as it was ignored by default in preceding versions.
-For more information, please see: https://github.com/django-cms/django-cms/pull/6795
-
-Then run::
-
-    python manage.py migrate  # to ensure that your database is up-to-date with migrations
-    python manage.py cms fix-tree
 
 Check custom code and third-party applications for use of deprecated or removed functionality or
 APIs (see above). Some third-party components may need to be updated.

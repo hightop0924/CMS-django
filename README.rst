@@ -13,26 +13,16 @@ django CMS
 .. image:: https://codeclimate.com/github/divio/django-cms/badges/gpa.svg
    :target: https://codeclimate.com/github/divio/django-cms
    :alt: Code Climate
-********
 
-* hierarchical pages
-* extensive built-in support for multilingual websites
-* multi-site support
-* draft/publish workflows
-* version control
-* a sophisticated publishing architecture, that's also usable in your own applications
-* frontend content editing
-* a hierarchical content structure for nested plugins
-* an extensible navigation system that your own applications can hook into
-* SEO-friendly URLs
-* designed to integrate thoroughly into other applications
+Open source enterprise content management system based on the Django framework and backed by the non-profit django CMS Association (`Sponsor us! <https://www.django-cms.org/en/memberships/>`_).
 
-Developing applications that integrate with and take advantage of django CMS features is easy and well-documented.
+*******************************************
+Contribute to this project and win rewards
+*******************************************
 
+.. ATTENTION::
 
-**************************
-The django CMS Association
-**************************
+    Please use the ``develop`` branch as the target for pull requests for on-going development.
 
 The django CMS Association is a non-profit organization that was founded in 2020 with the goal to drive the success of django CMS, by increasing customer happiness, market share and open-source contributions. We provide infrastructure and guidance for the django CMS project.
 

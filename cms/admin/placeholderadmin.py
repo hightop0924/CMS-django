@@ -13,26 +13,16 @@ from django.http import (
     HttpResponseNotFound,
     HttpResponseRedirect,
 )
-from cms.models.placeholderpluginmodel import PlaceholderReference
-from cms.models.pluginmodel import CMSPlugin
-from cms.plugin_pool import plugin_pool
-from cms.signals import post_placeholder_operation, pre_placeholder_operation
-from cms.toolbar.utils import get_plugin_tree_as_json
-from cms.utils import copy_plugins, get_current_site
-from cms.utils.conf import get_cms_setting
-from cms.utils.i18n import get_language_code, get_language_list
-from cms.utils.plugins import has_reached_plugin_limit, reorder_plugins
-from cms.utils.urlutils import admin_reverse
-
-_no_default = object()
-
-
-def get_int(int_str, default=_no_default):
-    """
-    For convenience a get-like method for taking the int() of a string.
-    :param int_str: the string to convert to integer
-    :param default: an optional value to return if ValueError is raised.
-    :return: the int() of «int_str» or «default» on exception.
+from django.shortcuts import get_list_or_404, get_object_or_404, render
+from django.template.response import TemplateResponse
+from django.urls import re_path
+from django.utils import translation
+from django.utils.decorators import method_decorator
+from django.utils.encoding import force_str
+from django.utils.html import conditional_escape
+from django.utils.translation import gettext as _
+from django.views.decorators.clickjacking import xframe_options_sameorigin
+from django.views.decorators.http import require_POST
     """
     if default == _no_default:
         return int(int_str)

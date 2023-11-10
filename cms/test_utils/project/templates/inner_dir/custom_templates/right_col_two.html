@@ -13,3 +13,17 @@
 			{% with "220" as width %}
 	    		{% placeholder col_sidebar %}
 			{% endwith %}
+		{% endblock %}
+    </div>
+
+    <div id="col2" class="grid_9">
+        {% render_model request.current_page "page_title" %}
+		{% block col_left %}
+			{% with "640" as width %}
+				{% placeholder col_left %}
+			{% endwith %}
+		{% endblock %}
+    </div>
+
+    <footer>{% render_model request.current_page "title" %}</footer>
+{% endblock %}

@@ -14,6 +14,22 @@ class ItemSearchResult:
         self.item = item
         self.index = index
 
+    def __add__(self, other):
+        return ItemSearchResult(self.item, self.index + other)
+
+    def __sub__(self, other):
+        return ItemSearchResult(self.item, self.index - other)
+
+    def __int__(self):
+        return self.index
+
+
+def may_be_lazy(thing):
+    if isinstance(thing, Promise):
+        return thing._proxy____args[0]
+    else:
+        return thing
+
 
 class ToolbarAPIMixin(metaclass=ABCMeta):
     REFRESH_PAGE = REFRESH_PAGE

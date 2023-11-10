@@ -13,6 +13,22 @@ class TestToolbar(CMSToolbar):
     pass
 
 
+class ToolbarPoolTests(CMSTestCase):
+    def test_register(self):
+        pool = ToolbarPool()
+        pool.register(TestToolbar)
+        pool.register(CMSToolbar)
+        self.assertEqual(pool.toolbars, {
+            'cms.toolbar_base.CMSToolbar': CMSToolbar,
+            'cms.tests.test_toolbar_pool.TestToolbar': TestToolbar})
+
+        self.assertRaises(ToolbarAlreadyRegistered,
+                          pool.register, TestToolbar)
+
+    def test_register_type(self):
+        pool = ToolbarPool()
+        self.assertRaises(ImproperlyConfigured, pool.register, str)
+        self.assertRaises(ImproperlyConfigured, pool.register, object)
 
     def test_register_order(self):
         pool = ToolbarPool()

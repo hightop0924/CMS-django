@@ -23,10 +23,3 @@ class TestPluginBeta(CMSPluginBase):
     render_template = 'mti_pluginapp/beta.html'
     name = 'test mti plugin beta'
 
-    def render(self, context, instance, placeholder):
-        context['alpha'] = instance.alpha
-        context['beta'] = instance.beta
-        return context
-
-
-plugin_pool.register_plugin(TestPluginBeta)

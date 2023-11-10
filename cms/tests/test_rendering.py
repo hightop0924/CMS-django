@@ -23,32 +23,6 @@ def sample_plugin_processor(instance, placeholder, rendered_content, original_co
     return '%s|test_plugin_processor_ok|%s|%s|%s' % (
         rendered_content,
         instance.body,
-        placeholder.slot,
-        original_context_var
-    )
-
-
-def sample_plugin_context_processor(instance, placeholder, original_context):
-    content = 'test_plugin_context_processor_ok|' + instance.body + '|' + \
-        placeholder.slot + '|' + original_context['original_context_var']
-    return {
-        'test_plugin_context_processor': content,
-    }
-
-
-@override_settings(
-    CMS_TEMPLATES=[
-        (TEMPLATE_NAME, TEMPLATE_NAME),
-        (INHERIT_TEMPLATE_NAME, INHERIT_TEMPLATE_NAME),
-        (INHERIT_WITH_OR_TEMPLATE_NAME, INHERIT_WITH_OR_TEMPLATE_NAME),
-        ('extra_context.html', 'extra_context.html')
-    ],
-)
-class RenderingTestCase(CMSTestCase):
-
-    def setUp(self):
-        super().setUp()
-        self.test_user = self._create_user("test", True, True)
 
         with self.login_user_context(self.test_user):
             self.test_data = {

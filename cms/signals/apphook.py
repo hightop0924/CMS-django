@@ -13,6 +13,22 @@ DISPATCH_UID = 'cms-restart'
 
 
 def trigger_server_restart(**kwargs):
+    """
+    Marks the URLs as stale so that they can be reloaded.
+    """
+    mark_urlconf_as_changed()
+
+
+def set_restart_trigger():
+    request_finished.connect(trigger_restart, dispatch_uid=DISPATCH_UID)
+
+
+def trigger_restart(**kwargs):
+    from cms.signals import urls_need_reloading
+
+    request_finished.disconnect(trigger_restart, dispatch_uid=DISPATCH_UID)
+    urls_need_reloading.send(sender=None)
+
 
 def debug_server_restart(**kwargs):
     from cms.appresolver import clear_app_resolvers

@@ -13,26 +13,16 @@ class CMSApp:
     app_config = None
     #: if set to true, apphook inherits permissions from the current page
     permissions = True
-            cls.app_config.cmsapp = cls
-        return super(CMSApp, cls).__new__(cls)
+    #: list of application names to exclude from inheriting CMS permissions
+    exclude_permissions = []
 
-    def get_configs(self):
+    def __new__(cls):
         """
-        Returns all the apphook configuration instances.
+        We want to bind the CMSapp class to a specific AppHookConfig, but only one at a time
+        Checking for the runtime attribute should be a sane fix
         """
-        raise NotImplementedError('Configurable AppHooks must implement this method')
-
-    def get_config(self, namespace):
-        """
-        Returns the apphook configuration instance linked to the given namespace
-        """
-        raise NotImplementedError('Configurable AppHooks must implement this method')
-
-    def get_config_add_url(self):
-        """
-        Returns the url to add a new apphook configuration instance
-        (usually the model admin add view)
-        """
+        if cls.app_config:
+            if getattr(cls.app_config, 'cmsapp', None) and cls.app_config.cmsapp != cls:
         raise NotImplementedError('Configurable AppHooks must implement this method')
 
     def get_menus(self, page=None, language=None, **kwargs):

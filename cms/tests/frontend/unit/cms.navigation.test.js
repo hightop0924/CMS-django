@@ -13,6 +13,22 @@ describe('CMS.Navigation', function () {
         expect(CMS.Navigation).toBeDefined();
     });
 
+    it('has no public API', function () {
+        // eslint-disable-next-line
+        for (var key in CMS.Navigation.prototype) {
+            expect(key[0]).not.toEqual('_');
+        }
+    });
+
+    describe('instance', function () {
+        var nav;
+
+        beforeEach(function (done) {
+            fixture.load('toolbar.html');
+            $(function () {
+                nav = new CMS.Navigation();
+                // fake the resize until we have complete fixture in place
+                spyOn(CMS.Navigation.prototype, '_handleResize');
                 done();
             });
         });

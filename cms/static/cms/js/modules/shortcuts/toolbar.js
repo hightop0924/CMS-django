@@ -13,3 +13,4 @@ export default function () {
             $('.cms-toolbar-trigger a').focus();
         }
     });
+}

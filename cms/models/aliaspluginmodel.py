@@ -13,6 +13,22 @@ class AliasPluginModel(CMSPlugin):
         parent_link=True,
     )
     plugin = models.ForeignKey(
+        CMSPlugin,
+        on_delete=models.CASCADE,
+        editable=False,
+        related_name='alias_reference',
+        null=True,
+    )
+    alias_placeholder = models.ForeignKey(
+        Placeholder,
+        on_delete=models.CASCADE,
+        editable=False,
+        related_name='alias_placeholder',
+        null=True,
+    )
+
+    class Meta:
+        app_label = 'cms'
 
     def __str__(self):
         if self.plugin_id:

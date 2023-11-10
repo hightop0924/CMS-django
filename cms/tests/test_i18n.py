@@ -13,6 +13,22 @@ from cms.utils.compat import DJANGO_2_2
     LANGUAGE_CODE='en',
     LANGUAGES=(('fr', 'French'),
                ('en', 'English'),
+               ('de', 'German'),
+               ('es', 'Spanish')),
+    CMS_LANGUAGES={
+        1: [{'code' : 'en',
+             'name': 'English',
+             'public': True},
+            {'code': 'fr',
+             'name': 'French',
+             'public': False},
+        ],
+        'default': {
+            'public': True,
+            'hide_untranslated': False,
+        },
+    },
+    SITE_ID=1,
 )
 class TestLanguages(CMSTestCase):
 

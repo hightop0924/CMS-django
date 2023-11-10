@@ -23,32 +23,6 @@ from cms.constants import PUBLISHER_STATE_DIRTY
 from cms.middleware.page import get_page
 from cms.models import Page, Title
 from cms.test_utils.project.placeholderapp.models import Example1
-from cms.test_utils.testcases import CMSTestCase
-from cms.tests.test_menu_utils import DumbPageLanguageUrl
-from cms.toolbar.toolbar import CMSToolbar
-from cms.utils.compat import DJANGO_2_2, DJANGO_3, DJANGO_4_1
-from cms.utils.conf import get_cms_setting
-from cms.utils.urlutils import admin_reverse
-from menus.menu_pool import menu_pool
-from menus.utils import DefaultLanguageChanger
-
-APP_NAME = 'SampleApp'
-NS_APP_NAME = 'NamespacedApp'
-APP_MODULE = "cms.test_utils.project.sampleapp.cms_apps"
-MENU_MODULE = "cms.test_utils.project.sampleapp.cms_menus"
-
-
-class ApphooksTestCase(CMSTestCase):
-    def setUp(self):
-        clear_app_resolvers()
-        clear_url_caches()
-
-        if APP_MODULE in sys.modules:
-            del sys.modules[APP_MODULE]
-
-        self.reload_urls()
-        self.apphook_clear()
-
     def tearDown(self):
         clear_app_resolvers()
         clear_url_caches()

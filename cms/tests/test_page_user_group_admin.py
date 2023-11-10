@@ -13,6 +13,22 @@ class PermissionsOnTestCase(CMSTestCase):
         if not name:
             name = 'Test group'
         return PageUserGroup.objects.filter(name=name).exists()
+
+    def _get_group_data(self, **kwargs):
+        data = {
+            'name': 'Test group',
+            'can_add_page': 'on',
+            'can_change_page': 'on',
+            'can_delete_page': 'on',
+        }
+        data.update(**kwargs)
+        return data
+
+    def _get_group(self, created_by=None):
+        if not created_by:
+            created_by = self.get_superuser()
+
+        data = {
             'name': 'Test group',
             'created_by': created_by,
         }

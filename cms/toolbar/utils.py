@@ -23,32 +23,6 @@ def get_placeholder_toolbar_js(placeholder, allowed_plugins=None):
             'add_plugin': placeholder.get_add_url(),
             'copy_plugin': placeholder.get_copy_url(),
         }
-    }
-    return PLACEHOLDER_TOOLBAR_JS % {'pk': placeholder.pk, 'config': json.dumps(data)}
-
-
-def get_plugin_toolbar_info(plugin, children=None, parents=None):
-    data = plugin.get_plugin_info(children=children, parents=parents)
-    help_text = gettext(
-        'Add plugin to %(plugin_name)s'
-    ) % {'plugin_name': data['plugin_name']}
-
-    data['onClose'] = False
-    data['addPluginHelpTitle'] = force_str(help_text)
-    data['plugin_order'] = ''
-    data['plugin_restriction'] = children or []
-    data['plugin_parent_restriction'] = parents or []
-    return data
-
-
-def get_plugin_toolbar_js(plugin, children=None, parents=None):
-    data = get_plugin_toolbar_info(
-        plugin,
-        children=children,
-        parents=parents,
-    )
-    return PLUGIN_TOOLBAR_JS % {'pk': plugin.pk, 'config': json.dumps(data)}
-
 
 def get_plugin_tree_as_json(request, plugins):
     from cms.utils.plugins import build_plugin_tree, downcast_plugins, get_plugin_restrictions

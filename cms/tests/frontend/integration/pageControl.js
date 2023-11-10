@@ -13,26 +13,16 @@ var xPath = casperjs.selectXPath;
 var SECOND_PAGE_TITLE = 'Second';
 var UPDATED_TITLE = 'updated'; // shouldn't match "Second"
 var pageUrl = (globals.baseUrl + SECOND_PAGE_TITLE).toLowerCase() + '/';
-        .then(cms.logout())
+
+casper.test.setUp(function (done) {
+    casper
+        .start()
+        .then(cms.login())
+        .then(cms.addPage({ title: 'First page' }))
+        // adding second one because first is published by default
+        .then(cms.addPage({ title: SECOND_PAGE_TITLE }))
         .run(done);
 });
-
-casper.test.begin('Page settings are accessible and can be edited from modal', function (test) {
-    casper
-        .start(globals.editUrl)
-        // wait till toolbar is visible
-        .waitForSelector('.cms-toolbar-expanded')
-        .then(function () {
-            this.thenOpen(pageUrl);
-        })
-        .then(function () {
-            test.assertTitleMatch(new RegExp(SECOND_PAGE_TITLE), 'Current page is the correct one');
-        })
-        // wait till toolbar is visible
-        .waitForSelector('.cms-toolbar-expanded')
-        .then(function () {
-            // click on "Page" menu item
-            this.click('.cms-toolbar-item-navigation > li:nth-child(2) > a');
         })
         // opening "Page settings" menu item
         .waitForSelector('.cms-toolbar-item-navigation-hover', function () {

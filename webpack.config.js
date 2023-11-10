@@ -23,32 +23,6 @@ module.exports = function(opts) {
             'admin.pagetree': PROJECT_PATH.js + '/admin.pagetree.js',
             'admin.changeform': PROJECT_PATH.js + '/admin.changeform.js',
             // CMS widgets
-            // they will load the on-demand bundle called admin.widget
-            'forms.pageselectwidget': PROJECT_PATH.js + '/widgets/forms.pageselectwidget.js',
-            'forms.slugwidget': PROJECT_PATH.js + '/widgets/forms.slugwidget.js',
-            'forms.pagesmartlinkwidget': PROJECT_PATH.js + '/widgets/forms.pagesmartlinkwidget.js',
-            'forms.apphookselect': PROJECT_PATH.js + '/widgets/forms.apphookselect.js'
-        },
-        output: {
-            path: PROJECT_PATH.js + '/dist/' + CMS_VERSION + '/',
-            filename: 'bundle.[name].min.js',
-            chunkFilename: 'bundle.[name].min.js',
-            jsonpFunction: 'cmsWebpackJsonp'
-        },
-        plugins: [
-            // this way admin.pagetree bundle won't
-            // include deps already required in admin.base bundle
-            new webpack.optimize.CommonsChunkPlugin({
-                name: 'admin.base',
-                chunks: ['admin.pagetree', 'admin.changeform']
-            })
-        ],
-        resolve: {
-            alias: {
-                jquery: PROJECT_PATH.js + '/libs/jquery.min.js',
-                classjs: PROJECT_PATH.js + '/libs/class.min.js',
-                jstree: PROJECT_PATH.js + '/libs/jstree/jstree.min.js'
-            }
         },
         module: {
             rules: [

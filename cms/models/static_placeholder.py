@@ -13,6 +13,22 @@ from cms.utils.copy_plugins import copy_plugins_to
 def static_slotname(instance):
     """
     Returns a string to be used as the slot
+    for the static placeholder field.
+    """
+    return instance.code
+
+
+class StaticPlaceholder(models.Model):
+    CREATION_BY_TEMPLATE = 'template'
+    CREATION_BY_CODE = 'code'
+    CREATION_METHODS = (
+        (CREATION_BY_TEMPLATE, _('by template')),
+        (CREATION_BY_CODE, _('by code')),
+    )
+    name = models.CharField(
+        verbose_name=_(u'static placeholder name'), max_length=255, blank=True, default='',
+        help_text=_(u'Descriptive name to identify this static placeholder. Not displayed to users.'))
+    code = models.CharField(
         verbose_name=_(u'placeholder code'), max_length=255, blank=True,
         help_text=_(u'To render the static placeholder in templates.'))
     draft = PlaceholderField(static_slotname, verbose_name=_(u'placeholder content'), related_name='static_draft')

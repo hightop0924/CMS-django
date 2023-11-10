@@ -13,26 +13,16 @@ describe('CMS.ChangeTracker', function () {
     var tracker;
 
     beforeEach(function (done) {
-        expect(CMS.ChangeTracker).toBeDefined();
-    });
+        fixture.load('iframe_form.html');
 
-    it('has public API', function () {
-        expect(CMS.ChangeTracker.prototype.isFormChanged).toEqual(jasmine.any(Function));
-    });
-
-    describe('instance', function () {
-        it('has ui', function () {
-            expect(tracker.ui).toEqual({
-                iframe: jasmine.any(Object)
-            });
+        $(function () {
+            // since _trackChange is being bound in the constructor
+            // we cannot spy on it normally
+            spyOn(CMS.ChangeTracker.prototype, '_trackChange');
+            tracker = new CMS.ChangeTracker($('.js-test-iframe'));
+            done();
         });
-
-        it('has initial state', function () {
-            expect(tracker.state).toEqual({
-                fields: jasmine.any(Object),
-                formChanged: false
-            });
-        });
+    });
     });
 
     describe('_setupEvents()', function () {

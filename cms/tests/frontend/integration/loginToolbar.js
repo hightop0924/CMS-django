@@ -23,19 +23,3 @@ casper.test.tearDown(function(done) {
     [1280, 1024] // standard - it's important that the last one resets
 ].forEach(function(dimensions) {
     casper.test.begin('User Login (via Toolbar) ' + JSON.stringify(dimensions), function(test) {
-        casper
-            .start(globals.editUrl)
-            .viewport(dimensions[0], dimensions[1])
-            .waitForSelector('.cms-toolbar-expanded', function() {
-                test.assertExists('.cms-toolbar .cms-form-login', 'The toolbar login form is available');
-
-                this.fill('.cms-form-login', globals.credentials, true);
-            })
-            .waitForSelector('.cms-ready', function() {
-                test.assertExists('.cms-toolbar-item-navigation', 'Login via the toolbar done');
-            })
-            .run(function() {
-                test.done();
-            });
-    });
-});

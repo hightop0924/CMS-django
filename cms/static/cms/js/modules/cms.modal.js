@@ -13,6 +13,22 @@ import { Helpers, KEYS } from './cms.base';
 import { showLoader, hideLoader } from './loader';
 
 var previousKeyboardContext;
+var previouslyFocusedElement;
+
+/**
+ * The modal is triggered via API calls from the backend either
+ * through the toolbar navigation or from plugins. The APIs allow to
+ * open content from a url (iframe) or inject html directly.
+ *
+ * @class Modal
+ * @namespace CMS
+ */
+class Modal {
+    constructor(options) {
+        this.options = $.extend(true, {}, Modal.options, options);
+
+        // elements
+        this._setupUI();
 
         // states and events
         this.click = 'click.cms.modal';

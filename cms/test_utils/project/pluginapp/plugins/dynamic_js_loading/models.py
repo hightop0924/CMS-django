@@ -13,3 +13,5 @@ class DummyModel(CMSPlugin):
         verbose_name='Testcase',
     )
 
+    def __str__(self):
+        return str(self.testcase) or str(self.pk)

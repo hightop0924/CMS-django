@@ -13,6 +13,22 @@ from cms.cms_wizards import CMSPageWizard
 from cms.constants import TEMPLATE_INHERITANCE_MAGIC
 from cms.forms.wizards import CreateCMSPageForm, CreateCMSSubPageForm
 from cms.models import Page, PageType, UserSettings
+from cms.test_utils.testcases import CMSTestCase, TransactionCMSTestCase
+from cms.utils import get_current_site
+from cms.utils.conf import get_cms_setting
+from cms.wizards.forms import WizardStep2BaseForm, step2_form_factory
+from cms.wizards.wizard_base import Wizard
+from cms.wizards.wizard_pool import AlreadyRegisteredException, wizard_pool
+
+CreateCMSPageForm = step2_form_factory(
+    mixin_cls=WizardStep2BaseForm,
+    entry_form_class=CreateCMSPageForm,
+)
+
+CreateCMSSubPageForm = step2_form_factory(
+    mixin_cls=WizardStep2BaseForm,
+    entry_form_class=CreateCMSSubPageForm,
+)
 
 
 class WizardForm(forms.Form):

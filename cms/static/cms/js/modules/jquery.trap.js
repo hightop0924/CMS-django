@@ -13,6 +13,22 @@ This is version 1.2.0.
 (this comment is after the first line of code so that uglifyjs removes it)
 
 Redistribution and use in source and binary forms, with or without
+modification, are permitted without condition.
+
+Although that's not an obligation, I would appreciate that you provide a
+link to the official repository.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS
+IS" AND ANY EXPRESS OR IMPLIED WARRANTIES ARE DISCLAIMED.
+*/
+
+/*jshint boss: true, bitwise: true, curly: true, expr: true, newcap: true, noarg: true, nonew: true, latedef: true, regexdash: true */
+
+    var DATA_ISTRAPPING_KEY = "trap.isTrapping";
+
+    function onkeypress(e) {
+        if (e.keyCode === 9) {
+            var goReverse = !!(e.shiftKey);
             if (processTab(this, e.target, goReverse)) {
                 e.preventDefault();
                 e.stopPropagation();

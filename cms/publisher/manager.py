@@ -13,3 +13,13 @@ class PublisherManager(models.Manager):
 
     def drafts(self):
         return self.get_queryset().drafts()
+
+    def public(self):
+        return self.get_queryset().public()
+
+    """
+    def all(self):
+        raise NotImplementedError, ("Calling all() on manager of publisher "
+            "object is not allowed. Please use drafts() or public() method "
+            "instead. If this isn't accident use get_queryset().all() for "
+            "all instances.")

@@ -13,6 +13,22 @@
   /**
    * This module implements an map of pointer states
    */
+  var USE_MAP = window.Map && window.Map.prototype.forEach;
+  var POINTERS_FN = function(){ return this.size; };
+  function PointerMap() {
+    if (USE_MAP) {
+      var m = new Map();
+      m.pointers = POINTERS_FN;
+      return m;
+    } else {
+      this.keys = [];
+      this.values = [];
+    }
+  }
+
+  PointerMap.prototype = {
+    set: function(inId, inEvent) {
+      var i = this.keys.indexOf(inId);
       if (i > -1) {
         this.values[i] = inEvent;
       } else {

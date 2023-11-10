@@ -13,3 +13,4 @@ module.exports = {
             casper.echo('500 page found: ' + resource.url, 'ERROR');
         });
     }
+};

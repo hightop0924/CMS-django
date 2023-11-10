@@ -13,26 +13,16 @@ __webpack_public_path__ = require('../modules/get-dist-path')('bundle.forms.page
 require.ensure([], function (require) {
     var $ = require('jquery');
     var Class = require('classjs');
-        },
 
-        /**
-         * Setup internal functions and events.
-         *
-         * @private
-         * @method _setup
-         * @param {Object} options
-         * @param {String} options.id
-         * @param {String} options.url
-         */
-        _setup: function _setup(options) {
-            $('#' + options.id).select2({
-                placeholder: options.text,
-                allowClear: true,
-                multiple: false,
-                ajax: {
-                    url: options.url,
-                    dataType: 'json',
-                    data: function (term) {
+    require('../select2/select2');
+
+    /**
+     * Creates a select field using jquery.select2 to filter through
+     * available pages or set a custom url.
+     *
+     * @class PageSmartLinkWidget
+     * @namespace CMS
+     */
                         return {
                             q: term,
                             language_code: options.lang

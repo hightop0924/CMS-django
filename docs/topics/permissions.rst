@@ -23,32 +23,6 @@ Permissions operate in two different modes, depending on the :setting:`CMS_PERMI
 Key user permissions
 ********************
 
-You can find the permissions you can set for a user or groups in the Django admin, in the
-*Authentication and Authorization* section. These apply equally in Simple permissions mode and
-Page permissions mode.
-
-Filtering by ``cms`` will show the ones that belong to the CMS application. Permissions that a CMS
-editor will need are likely to include:
-
-* ``cms | cms plugin``
-* ``cms | page``
-* ``cms | placeholder``
-* ``cms | placeholder reference``
-* ``cms | static placeholder``
-* ``cms | placeholder reference``
-* ``cms | title``
-
-Most of these offer the usual add/change/delete options, though there are some exceptions, such as
-``cms | placeholder | Can use Structure mode``.
-
-See :ref:`use-permissions-on-groups` below on applying permissions to groups rather than users.
-
-
-************************************
-Permissions in Page permissions mode
-************************************
-
-In Page permissions mode, you also need to give users permission to the right pages and sub-sites.
 
 
 .. _global-and-per-page-permissions:

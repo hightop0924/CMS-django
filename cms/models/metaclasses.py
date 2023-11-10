@@ -13,3 +13,5 @@ class PageMetaClass(ModelBase):
                                  "so its 'objects' manager must be "
                                  "a subclass of publisher.PublisherManager") % (name,)
         else:
+            attrs['objects'] = PublisherManager()
+        return super_new(cls, name, bases, attrs)

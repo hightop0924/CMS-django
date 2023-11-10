@@ -13,6 +13,22 @@ Set-up
 ******
 
 .. toctree::
+    :maxdepth: 1
+
+    Install django CMS by hand <install>
+
+
+************************
+Using core functionality
+************************
+
+.. toctree::
+    :maxdepth: 1
+
+    Use placeholders outside the CMS <placeholders>
+    Serve multiple languages <languages>
+    Create a multi-site set-up <multi-site>
+    Work with templates <templates>
     Manage caching <caching>
     Enable frontend editing for Page and Django models <frontend_models>
     Create sitemaps <sitemap>

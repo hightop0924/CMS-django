@@ -13,26 +13,16 @@ from cms.test_utils.project.extensionapp.models import (
     MultiTablePageExtension,
     MultiTableTitleExtension,
     MyPageExtension,
+    MyTitleExtension,
+)
+from cms.test_utils.testcases import CMSTestCase
+from cms.toolbar_pool import toolbar_pool
+from cms.utils.urlutils import admin_reverse
 
-        # --- Page registering ---------------------------------------
-        page_extension = self.get_page_extension_class()
 
-        # register first time
-        extension_pool.register(page_extension)
-        self.assertEqual(len(extension_pool.page_extensions), initial_extension_count+1)
-
-        # register second time
-        extension_pool.register(page_extension)
-        self.assertEqual(len(extension_pool.page_extensions), initial_extension_count+1)
-
-        self.assertIs(extension_pool.signaling_activated, True)
-
-        # --- Title registering --------------------------------------
-        title_extension = self.get_title_extension_class()
-
-        # register first time
-        extension_pool.register(title_extension)
-        self.assertEqual(len(extension_pool.title_extensions), initial_extension_count+1)
+class ExtensionsTestCase(CMSTestCase):
+    def test_register_extension(self):
+        initial_extension_count = len(extension_pool.page_extensions)
 
         # register second time
         extension_pool.register(title_extension)

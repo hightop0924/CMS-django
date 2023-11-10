@@ -13,26 +13,16 @@ from django.conf import settings
 from django.contrib.sites.models import Site
 from django.core.mail import mail_managers
 from django.db.models import Model
-from cms.utils import get_current_site, get_language_from_request, get_site_id
-from cms.utils.moderator import _use_draft
-from cms.utils.page import get_page_queryset
-from cms.utils.placeholder import validate_placeholder_name
-from cms.utils.urlutils import admin_reverse
+from django.template.loader import render_to_string
+from django.urls import reverse
+from django.utils.encoding import smart_str
+from django.utils.html import escape
+from django.utils.http import urlencode
+from django.utils.translation import get_language, override
+from django.utils.translation import gettext_lazy as _
+from django.utils.translation import override as force_language
+from sekizai.templatetags.sekizai_tags import RenderBlock, SekizaiParser
 
-NULL = object()
-DeclaredPlaceholder = namedtuple('DeclaredPlaceholder', ['slot', 'inherit'])
-DeclaredStaticPlaceholder = namedtuple('DeclaredStaticPlaceholder', ['slot', 'site_bound'])
-
-
-register = template.Library()
-
-
-def _get_page_by_untyped_arg(page_lookup, request, site_id):
-    """
-    The `page_lookup` argument can be of any of the following types:
-    - Integer: interpreted as `pk` of the desired page
-    - String: interpreted as `reverse_id` of the desired page
-    - `dict`: a dictionary containing keyword arguments to find the desired page
     (for instance: `{'pk': 1}`)
     - `Page`: you can also pass a Page object directly, in which case there will be no database lookup.
     - `None`: the current page will be used

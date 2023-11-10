@@ -23,32 +23,6 @@ $wizard-input-size: 16px;
     .errornote {
         box-sizing: border-box;
         display: block;
-        width: 100%;
-    }
-
-    // choice options used in cms/wizards/start.html
-    .choice-wrapper {
-        clear: both;
-        overflow: hidden;
-        margin: -1%;
-    }
-    .choice {
-        @include button-variant($btn-default-color, $btn-default-bgcolor, $btn-default-border, false);
-        box-sizing: border-box;
-        position: relative;
-
-        text-transform: none;
-        height: 85px;
-        padding: $wizard-padding;
-        margin: 1% !important;
-
-        // tablet and up
-        @media (min-width: $screen-tablet) {
-            float: left !important;
-            width: 48% !important;
-        }
-
-        input {
             position: absolute;
             left: -9999px;
             opacity: 0;

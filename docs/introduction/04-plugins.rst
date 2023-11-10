@@ -14,6 +14,22 @@ the CMS.
 Create a plugin model
 *********************************
 
+In the ``models.py`` of ``polls_cms_integration`` add the following:
+
+..  code-block:: python
+
+    from django.db import models
+    from cms.models import CMSPlugin
+    from polls.models import Poll
+
+
+    class PollPluginModel(CMSPlugin):
+        poll = models.ForeignKey(Poll, on_delete=models.CASCADE)
+
+        def __str__(self):
+            return self.poll.question
+
+
 This creates a plugin model class; these all inherit from the
 :class:`cms.models.pluginmodel.CMSPlugin` base class.
 

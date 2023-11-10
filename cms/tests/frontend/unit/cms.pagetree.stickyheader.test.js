@@ -23,32 +23,6 @@ describe('CMS.PageTreeStickyHeader', function() {
 
     beforeEach(function(done) {
         fixture.load('pagetree.html');
-
-        $(function() {
-            var container = $('.cms-pagetree');
-            header1 = $('<div class="jstree-grid-header"></div>');
-            col1 = $('<div class="jstree-grid-column" style="width: 100px"></div>');
-            header2 = $('<div class="jstree-grid-header"></div>');
-            col2 = $('<div class="jstree-grid-column" style="width: 200px"></div>');
-            container.append(col1);
-            container.append(col2);
-            col1.append(header1);
-            col2.append(header2);
-
-            spyOn(CMS.API.Helpers, '_getWindow').and.returnValue({
-                CMS: CMS
-            });
-
-            sticky = new CMS.PageTreeStickyHeader({
-                container: container
-            });
-            done();
-        });
-    });
-
-    afterEach(function() {
-        $(window).off(sticky.resize);
-        $(window).off(sticky.scroll);
         fixture.cleanup();
     });
 

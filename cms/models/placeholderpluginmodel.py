@@ -13,6 +13,22 @@ class PlaceholderReference(CMSPlugin):
         parent_link=True,
     )
     name = models.CharField(max_length=255)
+    placeholder_ref = PlaceholderField(slotname='clipboard')
+    class Meta:
+        app_label = 'cms'
+
+    def __str__(self):
+        return self.name
+
+    def copy_to(self, placeholder, language):
+        copy_plugins_to(self.placeholder_ref.get_plugins(), placeholder, to_language=language)
+
+    def copy_from(self, placeholder, language):
+        plugins = placeholder.get_plugins(language)
+        return copy_plugins_to(plugins, self.placeholder_ref, to_language=self.language)
+
+    def move_to(self, placeholder, language):
+        for plugin in self.placeholder_ref.get_plugins():
             plugin.placeholder = placeholder
             plugin.language = language
             plugin.save()

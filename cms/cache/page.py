@@ -23,32 +23,6 @@ def _page_cache_key(request):
         settings.SITE_ID,
         hashlib.sha1(iri_to_uri(request.get_full_path()).encode('utf-8')).hexdigest(),
         translation.get_language()
-    )
-    if settings.USE_TZ:
-        cache_key += '.%s' % get_timezone_name()
-    return cache_key
-
-
-def set_page_cache(response):
-    from django.core.cache import cache
-
-    request = response._request
-    toolbar = get_toolbar_from_request(request)
-    is_authenticated = request.user.is_authenticated
-
-    if is_authenticated or toolbar._cache_disabled or not get_cms_setting("PAGE_CACHE"):
-        add_never_cache_headers(response)
-        return response
-
-    # This *must* be TZ-aware
-    timestamp = now()
-
-    placeholders = toolbar.content_renderer.get_rendered_placeholders()
-    # Checks if there's a plugin using the legacy "cache = False"
-    ttl_list = []
-    vary_cache_on_set = set()
-    for ph in placeholders:
-        # get_cache_expiration() always returns:
         #     EXPIRE_NOW <= int <= MAX_EXPIRATION_IN_SECONDS
         ttl = ph.get_cache_expiration(request, timestamp)
         vary_cache_on = ph.get_vary_cache_on(request)

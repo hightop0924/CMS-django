@@ -13,6 +13,22 @@ declare -A SCOPES_HEADINGS
 declare -a SCOPES
 
 SCOPES=("feat" "security" "fix" "style" "refactor" "tools")
+SCOPES_HEADINGS["feat"]="Features:"
+SCOPES_HEADINGS["fix"]="Bug Fixes:"
+SCOPES_HEADINGS["security"]="Security Updates:"
+SCOPES_HEADINGS["style"]="Styles:"
+SCOPES_HEADINGS["refactor"]="Refactoring and Cleanups:"
+SCOPES_HEADINGS["tools"]="Internal Tools:"
+
+
+# argument checks
+
+if [ -z "$1" ] ; then
+    echo "Usage $0 <version> [base_version]"
+    echo
+    echo "Update the CHANGELOG.rst to create <version>"
+    echo "Version can be X.Y.Zsuffix"
+    echo "suffix can be rc, or anything, X,Y,Z are numbers"
     exit 1
 fi
 

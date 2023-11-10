@@ -13,6 +13,22 @@ from cms.constants import TEMPLATE_INHERITANCE_MAGIC
 from cms.middleware.toolbar import ToolbarMiddleware
 from cms.models import CMSPlugin, Page
 from cms.test_utils.testcases import URL_CMS_PAGE_ADD, URL_CMS_PAGE_CHANGE_TEMPLATE, CMSTestCase
+from cms.toolbar.toolbar import CMSToolbar
+from cms.utils.conf import get_cms_setting
+
+overrides = {
+    "LANGUAGE_CODE": 'en-us',
+    "LANGUAGES": [],
+    "CMS_LANGUAGES": {},
+    "USE_I18N": False,
+    "ROOT_URLCONF": 'cms.test_utils.project.urls_no18n',
+    "TEMPLATE_CONTEXT_PROCESSORS": [
+        'django.contrib.auth.context_processors.auth',
+        'django.contrib.messages.context_processors.messages',
+        'django.core.context_processors.debug',
+        'django.core.context_processors.request',
+        'django.core.context_processors.media',
+        'django.core.context_processors.csrf',
         'cms.context_processors.cms_settings',
         'sekizai.context_processors.sekizai',
         'django.core.context_processors.static',

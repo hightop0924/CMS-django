@@ -24,32 +24,6 @@ from cms.utils.conf import get_cms_setting
 # fired after page location is changed - is moved from one node to other
 page_moved = Signal()
 
-# fired after page gets published - copied to public model - there may be more
-# than one instances published before this signal gets called
-post_publish = Signal()
-post_unpublish = Signal()
-
-# fired if a public page with an apphook is added or changed
-urls_need_reloading = Signal()
-
-# *disclaimer*
-# The generic object operation signals are very likely to change
-# as their usage evolves.
-# As a result, rely on these at your own risk
-pre_obj_operation = Signal()
-
-post_obj_operation = Signal()
-
-pre_placeholder_operation = Signal()
-
-post_placeholder_operation = Signal()
-
-
-# ---------------- apphook reloading ---------------- #
-
-if settings.DEBUG:
-    urls_need_reloading.connect(debug_server_restart)
-
 
 urls_need_reloading.connect(
     trigger_server_restart,

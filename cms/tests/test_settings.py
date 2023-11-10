@@ -13,6 +13,22 @@ class SettingsTests(CMSTestCase):
         CMS_TEMPLATES=[('subdir/template.html', 'Subdir')],
         DEBUG=True,
         TEMPLATE_DEBUG=True,
+    )
+    def test_cms_templates_with_pathsep(self):
+        from sekizai.context import SekizaiContext
+        context = flatten_context(SekizaiContext())
+        self.assertEqual(render_to_string('subdir/template.html', context).strip(), 'test')
+
+    @override_settings(SITE_ID='broken')
+    def test_non_numeric_site_id(self):
+        self.assertRaises(
+            ImproperlyConfigured,
+            get_cms_setting, 'LANGUAGES'
+        )
+
+    @override_settings(LANGUAGE_CODE='en-us')
+    def test_invalid_language_code(self):
+        self.assertRaises(
             ImproperlyConfigured,
             get_cms_setting, 'LANGUAGES'
         )

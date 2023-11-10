@@ -13,26 +13,16 @@ class Marker(Modifier):
     def modify(self, request, nodes, namespace, root_id, post_cut, breadcrumb):
         if post_cut or breadcrumb:
             return nodes
-                        newnode.ancestor = True
-                    for sibling in node.parent.children:
-                        if not sibling.selected:
-                            sibling.sibling = True
-                else:
-                    for root_node in root_nodes:
-                        if not root_node.selected:
-                            root_node.sibling = True
-                if node.children:
-                    self.mark_descendants(node.children)
-                selected = node
-            if node.children:
-                node.is_leaf_node = False
-            else:
-                node.is_leaf_node = True
-        return nodes
-
-    def mark_descendants(self, nodes):
+        selected = None
+        root_nodes = []
         for node in nodes:
-            node.descendant = True
+            if not hasattr(node, "descendant"):
+                node.descendant = False
+            if not hasattr(node, "ancestor"):
+                node.ancestor = False
+            if not node.parent:
+                if selected and not selected.parent:
+                    node.sibling = True
             self.mark_descendants(node.children)
 
 

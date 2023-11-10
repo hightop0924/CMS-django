@@ -23,22 +23,3 @@ fi
 nvm_ver="$(cat .nvmrc)"
 
 cd cms
-status "- Installing node/npm"
-
-load_nvm
-
-nvm install "${nvm_ver}"
-nvm use "${nvm_ver}"
-
-status "- Installing required node packages (silent)"
-npm install &>/dev/null
-
-if ! command -v gulp; then
-    npm install gulp@4.0.2 --loglevel warn
-    check_command_exists gulp
-fi
-
-status "- Installing transifex cli and gettext"
-( cd "$SCRIPTS" && curl -o- https://raw.githubusercontent.com/transifex/cli/master/install.sh | bash &>/dev/null )
-sudo apt-get -qq install gettext &>/dev/null
-

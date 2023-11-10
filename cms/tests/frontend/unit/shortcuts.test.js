@@ -13,6 +13,22 @@ CMS.config.lang = CMS.config.lang || {};
 var shortcutAreas = [
     {
         title: 'CMS Wide Shortcuts',
+        shortcuts: {
+            help: {
+                shortcut: '?',
+                desc: 'Bring up this help dialog'
+            },
+            esc: {
+                shortcut: 'ESC',
+                desc: 'Close / cancel'
+            },
+            'toggle-structure-board': {
+                shortcut: 'space',
+                desc: 'Toggle structure mode'
+            },
+            'toggle-structure-board-using-hovered-plugin': {
+                shortcut: 'shift+space',
+                desc: 'Toggle structure mode and highlight hovered plugin'
             },
             'create-dialog': {
                 shortcut: 'alt+c',

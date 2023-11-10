@@ -23,32 +23,6 @@ customisable Django admin skin (`djangocms_admin_style`_).
 
 In the new system, ``Placeholders`` and their plugins are no longer managed in
 the admin site, but only from the frontend.
-
-In addition, the system now offer two editing views:
-
-* **content** view, for editing the configuration and content of plugins.
-* **structure** view, in which plugins can be added and rearranged.
-
-Page titles can also be modified directly from the frontend.
-
-.. _djangocms_admin_style: https://github.com/django-cms/djangocms-admin-style
-
-New Toolbar
-===========
-
-The toolbar's code has been simplified and its appearance refreshed. The
-toolbar is now a more consistent management tool for adding and changing
-objects. See :doc:`/how_to/toolbar`.
-
-.. warning:: Upgrading from previous versions
-
-    3.0 now requires the ``django.contrib.messages`` application for the
-    toolbar to work.
-
-New Page Types
-==============
-
-You can now save pages as page types. If you then create a new page you may
 select a page type and all plugins and contents will be pre-filled.
 
 
